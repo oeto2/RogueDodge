@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         float inputX = Input.GetAxisRaw("Horizontal");//Left, Right
         float inputY = Input.GetAxisRaw("Vertical");//Up, Down
         //A variable that determines the direction when the operation is performed. In the case of a diagonal, the vector value is larger than if it is directed only in one direction, so "normalized" is used to equalize the vector value.
-        Vector3 moveDirection = new Vector3(inputX, inputY, 0).normalized;
+        Vector3 moveDirection = ((Vector3.right * inputX) + (Vector3.up * inputY)).normalized;
         //If the magnitude of the direction vector is greater than zero
         if (moveDirection.magnitude > 0)
             PlayerRigid.AddForce(moveDirection * speed);
