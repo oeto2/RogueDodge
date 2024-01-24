@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class MonsterController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public event Action<Vector2> OnMoveEvent;
+    public event Action<Vector2> OnLookEvent;
+
+    public void CallOnMoveEvent(Vector2 dir)
     {
-        
+        OnMoveEvent?.Invoke(dir);
+    }
+    public void CallOnLookEvent(Vector2 dir)
+    {
+        OnLookEvent?.Invoke(dir);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
