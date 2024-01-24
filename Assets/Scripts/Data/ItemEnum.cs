@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 //Item type to be used in the game
 public enum ITEMTYPE
 {
     BATTLE,
     BUFF,
-    USE
 }
 
 //Weapon type to be used in the game
@@ -18,12 +18,29 @@ public enum WEAPONTYPE
     STAFF
 }
 
-public class Item
+//Use type to be used in the game
+public enum USETYPE
 {
-    int key;
-    string name;
-    string info;
-    bool isUsed;
-    ITEMTYPE eItemType;
-    WEAPONTYPE eWeaponType;
+    POTION
 }
+
+//Item Rear value
+public enum SCARCITY
+{
+    NORMAL,
+    RARE,
+    UNIQUE
+}
+
+public enum VALUETYPE
+{
+    ADD,
+    MUTIPLE
+}
+
+public class ItemEnum
+{
+   
+}
+
+
