@@ -77,7 +77,7 @@ MonoBehaviour:
   followRange: 5
   attackRange: 0
   attackCoolTime: 0
-  runawayRange: 2
+  runawayRange: 0
   projectileSpawner: {fileID: 0}
   target:
     serializedVersion: 2

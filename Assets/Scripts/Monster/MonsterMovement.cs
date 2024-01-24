@@ -5,30 +5,29 @@ using UnityEngine;
 public class MonsterMovement : MonsterController
 {
     //
-    Rigidbody2D rigidbody;
+    Rigidbody2D _rigidbody;
 
     public Transform player;
-
-    //move
-    public MonsterStats monsterStats;
 
     Vector2 dir = Vector2.zero;
 
     private void Awake()
     {
-        monsterStats = GetComponent<MonsterStats>();
-        rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
         
 
     }
-    private void Start()
+    protected override void Start()
     {
+        base.Start(); 
+
         player = GameManager.Instance.player;
         OnMoveEvent += Move;
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         CheckPlayerDistance();
     }
 
@@ -40,7 +39,7 @@ public class MonsterMovement : MonsterController
 
     void Move(Vector2 _dir)
     {
-        rigidbody.position += _dir * Time.deltaTime * monsterStats.speed;
+        _rigidbody.position += _dir * Time.deltaTime * monsterStats.speed;
         for (int i = 0; i < monsterStats.spriteRendererss.Length; i++)
         {
             monsterStats.spriteRendererss[i].flipX = _dir.x > 0;
@@ -57,7 +56,7 @@ public class MonsterMovement : MonsterController
             CallOnMoveEvent(dir);
         }else if(monsterStats.eMONSTER_STATE == MONSTER_STATE.RUNAWAY)
         {
-            //CallOnMoveEvent(-dir);
+            CallOnMoveEvent(-dir);
         }
     }
 
