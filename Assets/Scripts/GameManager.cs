@@ -22,7 +22,9 @@ public class GameManager : MonoBehaviour
             if (Instance != this)
                 Destroy(this.gameObject);
         }
-
+        //test
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        //
     }
 
 }

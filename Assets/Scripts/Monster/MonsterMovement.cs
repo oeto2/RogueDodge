@@ -8,7 +8,6 @@ public class MonsterMovement : MonsterController
     Rigidbody2D rigidbody;
 
     public Transform player;
-    SpriteRenderer spriteRenderer;
 
     //move
     public MonsterStats monsterStats;
@@ -19,12 +18,13 @@ public class MonsterMovement : MonsterController
     {
         monsterStats = GetComponent<MonsterStats>();
         rigidbody = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        
+
+    }
+    private void Start()
+    {
         player = GameManager.Instance.player;
-
         OnMoveEvent += Move;
-        OnLookEvent += Look;
-
     }
 
     private void Update()
@@ -34,20 +34,20 @@ public class MonsterMovement : MonsterController
 
     private void FixedUpdate()
     {
+        
         MoveAction();
     }
 
     void Move(Vector2 _dir)
     {
         rigidbody.position += _dir * Time.deltaTime * monsterStats.speed;
-        
+        for (int i = 0; i < monsterStats.spriteRendererss.Length; i++)
+        {
+            monsterStats.spriteRendererss[i].flipX = _dir.x > 0;
+        }
     }
 
 
-    void Look(Vector2 _dir)
-    {
-        spriteRenderer.flipX = _dir.x > 0;
-    }
 
     void MoveAction()
     {
@@ -66,15 +66,10 @@ public class MonsterMovement : MonsterController
     {
         float distance = Vector3.Distance(player.position, transform.position);
        
-            if (distance < monsterStats.runawayRange)
-            {
-                monsterStats.eMONSTER_STATE = MONSTER_STATE.RUNAWAY;
-            }
-            else if (distance < monsterStats.followRange)
-            {
-                CallOnLookEvent(dir);
-                monsterStats.eMONSTER_STATE = MONSTER_STATE.CHASE;
-            }
+           if (distance < monsterStats.followRange)
+           {
+            monsterStats.eMONSTER_STATE = MONSTER_STATE.CHASE;
+           }
         
         
     }
