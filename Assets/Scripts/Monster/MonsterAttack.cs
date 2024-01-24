@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class MonsterAttack : MonsterController
 {
-    Vector2 dir = Vector2.zero;
-    Transform player;
 
-    private void Awake()
-    {
-        monsterStats = GetComponent<MonsterStats>();
-    }
+   
     protected override void Start()
     {
         base.Start();
@@ -31,18 +26,23 @@ public class MonsterAttack : MonsterController
         if (distance < monsterStats.attackRange)
         {
             monsterStats.eMONSTER_STATE = MONSTER_STATE.ATTACK;
-            //함수
+            //Todo
+            //Todo
+            //Todo
+
         }
     }
 
     IEnumerator AttackCooltime_CountDownCo()
     {
+        monsterStats.IsAttacking = true;
         float percent = 0;
         while (percent < monsterStats.attackCoolTime)
         {
             percent += Time.deltaTime;
             yield return null;
         }
+        monsterStats.IsAttacking = false;
 
     }
 

@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class MonsterMovement : MonsterController
 {
-    //
-    Rigidbody2D _rigidbody;
-
-    public Transform player;
-
-    Vector2 dir = Vector2.zero;
-
-    private void Awake()
+    
+    protected override void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
-        
-
+        base.Awake();
     }
     protected override void Start()
     {
