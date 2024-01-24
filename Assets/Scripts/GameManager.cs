@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     private int gold { get; set; }
 
-    Transform PlayerTransform;
+    public Transform PlayerTransform;
 
     private void Awake()
     {

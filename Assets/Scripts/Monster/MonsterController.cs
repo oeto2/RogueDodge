@@ -22,19 +22,19 @@ public class MonsterController : MonoBehaviour
     protected virtual void Start()
     {
         monsterStats = GetComponent<MonsterStats>();
-        //player = GameManager.Instance.player;
+        player = GameManager.Instance.PlayerTransform;
     }
 
     protected virtual void Update()
     {
-        if(monsterStats.eMONSTER_STATE == MONSTER_STATE.ATTACK && !monsterStats.IsAttacking)
-        {
-            //발사체 생성
-            //Todo
-            //Todo
-            //Todo
-            CreateProjectil();
-        }
+        //if(monsterStats.eMONSTER_STATE == MONSTER_STATE.ATTACK && !monsterStats.IsAttacking)
+        //{
+        //    //발사체 생성
+        //    //Todo
+        //    //Todo
+        //    //Todo
+        //    CreateProjectil();
+        //}
     }
 
 

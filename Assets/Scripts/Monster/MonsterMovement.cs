@@ -13,7 +13,6 @@ public class MonsterMovement : MonsterController
     {
         base.Start(); 
 
-        //player = GameManager.Instance.player;
         OnMoveEvent += Move;
     }
 
@@ -25,7 +24,10 @@ public class MonsterMovement : MonsterController
 
     private void FixedUpdate()
     {
-        MoveAction();
+        if(monsterStats.eMONSTER_STATE != MONSTER_STATE.ATTACK)
+        {
+          MoveAction();
+        }
     }
 
     void Move(Vector2 _dir)
@@ -42,6 +44,7 @@ public class MonsterMovement : MonsterController
     void MoveAction()
     {
         dir = (player.position - transform.position).normalized;
+        CallOnMoveEvent(dir);
         //Todo
         //Todo
     }
@@ -51,13 +54,11 @@ public class MonsterMovement : MonsterController
     {
         float distance = Vector3.Distance(player.position, transform.position);
 
-        if (Physics2D.OverlapCircle(transform.position, monsterStats.followRange, monsterStats.target))
+        if( distance < monsterStats.followRange)
         {
-            //Todo
-            //Todo
-            //Todo
-            
+            CallOnMoveEvent(dir);
         }
+       
     }
 
 }

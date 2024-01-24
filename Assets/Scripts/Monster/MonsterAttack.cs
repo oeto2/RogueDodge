@@ -9,7 +9,6 @@ public class MonsterAttack : MonsterController
     protected override void Start()
     {
         base.Start();
-        //player = GameManager.Instance.player;
     }
 
     protected override void Update()
