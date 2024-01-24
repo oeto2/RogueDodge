@@ -25,7 +25,6 @@ public class MonsterMovement : MonsterController
 
     private void FixedUpdate()
     {
-        
         MoveAction();
     }
 
@@ -42,30 +41,24 @@ public class MonsterMovement : MonsterController
 
     void MoveAction()
     {
-        Vector2 dir = (player.position - transform.position).normalized;
-        if (monsterStats.eMONSTER_STATE == MONSTER_STATE.CHASE)
-        {
-            CallOnMoveEvent(dir);
-        }else if(monsterStats.eMONSTER_STATE == MONSTER_STATE.RUNAWAY)
-        {
-            CallOnMoveEvent(-dir);
-        }
+        dir = (player.position - transform.position).normalized;
+        //Todo
+        //Todo
     }
 
 
     void CheckPlayerDistance() // 
     {
         float distance = Vector3.Distance(player.position, transform.position);
-       
-           if (distance < monsterStats.followRange)
-           {
-            monsterStats.eMONSTER_STATE = MONSTER_STATE.CHASE;
-           }
-        
-        
+
+        if (Physics2D.OverlapCircle(transform.position, monsterStats.followRange, monsterStats.target))
+        {
+            //Todo
+            //Todo
+            //Todo
+            
+
+        }
     }
-
-  
-
 
 }

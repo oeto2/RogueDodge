@@ -33,6 +33,7 @@ public class MonsterController : MonoBehaviour
             //Todo
             //Todo
             //Todo
+            CreateProjectil();
         }
     }
 
@@ -46,11 +47,10 @@ public class MonsterController : MonoBehaviour
         OnAttackEvent?.Invoke(_dir);
     }
 
-
-
-    public void CreateProjectil(Vector2 dir)
+    public void CreateProjectil()
     {
-        Instantiate(monsterStats.projectile, monsterStats.projectileSpawner.position, Quaternion.identity);
-
+        Debug.Log("aa");
+       GameObject projectile= Instantiate(monsterStats.projectile, monsterStats.projectileSpawner.position, Quaternion.identity);
+        projectile.GetComponent<Projectile>().SetDir(dir);
     }
 }

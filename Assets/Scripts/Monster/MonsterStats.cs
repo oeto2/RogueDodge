@@ -5,8 +5,6 @@ using UnityEngine;
 public enum MONSTER_STATE
 {
     IDLE,
-    CHASE,
-    RUNAWAY,
     ATTACK,
     DIE
 }

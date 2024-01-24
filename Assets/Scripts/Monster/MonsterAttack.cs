@@ -29,7 +29,15 @@ public class MonsterAttack : MonsterController
             //Todo
             //Todo
             //Todo
+            StartCoroutine(AttackCooltime_CountDownCo());
 
+        }
+        else
+        {
+            //Todo
+            //Todo
+            //Todo
+            monsterStats.eMONSTER_STATE = MONSTER_STATE.IDLE;
         }
     }
 
