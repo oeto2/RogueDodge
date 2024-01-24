@@ -13,7 +13,7 @@ public class MonsterMovement : MonsterController
     {
         base.Start(); 
 
-        player = GameManager.Instance.player;
+        //player = GameManager.Instance.player;
         OnMoveEvent += Move;
     }
 
@@ -57,7 +57,6 @@ public class MonsterMovement : MonsterController
             //Todo
             //Todo
             
-
         }
     }
 

@@ -22,7 +22,7 @@ public class MonsterController : MonoBehaviour
     protected virtual void Start()
     {
         monsterStats = GetComponent<MonsterStats>();
-        player = GameManager.Instance.player;
+        //player = GameManager.Instance.player;
     }
 
     protected virtual void Update()
@@ -50,7 +50,7 @@ public class MonsterController : MonoBehaviour
     public void CreateProjectil()
     {
         Debug.Log("aa");
-       GameObject projectile= Instantiate(monsterStats.projectile, monsterStats.projectileSpawner.position, Quaternion.identity);
-        projectile.GetComponent<Projectile>().SetDir(dir);
+        GameObject projectile= Instantiate(monsterStats.projectile, monsterStats.projectileSpawner.position, Quaternion.identity);
+        projectile.GetComponent<MonsterProjectile>().SetDir(dir);
     }
 }
