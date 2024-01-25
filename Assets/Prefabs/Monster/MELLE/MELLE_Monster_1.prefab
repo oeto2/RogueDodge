@@ -39,7 +39,7 @@ Transform:
   m_Children:
   - {fileID: 7214082131157640357}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3479115861999183076
 Animator:
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Pig
   hp: 50
-  atk: 5
+  atk: 0
   speed: 1
   followRange: 5
   attackRange: 1
@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e77b9f5e854196b7a8b35cea86c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitBox: {fileID: 0}
   attackCooltime: 3.4028235e+38
 --- !u!1 &2942876542468839000
 GameObject:
@@ -323,6 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7703142900915580059}
   - component: {fileID: 4379880458554096480}
+  - component: {fileID: 2087518628129535436}
   m_Layer: 0
   m_Name: attack
   m_TagString: MonsterHitBox
@@ -390,3 +392,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18594742, y: 0.22517863}
   m_EdgeRadius: 0
+--- !u!114 &2087518628129535436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5185785265754871381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60095ef3842abfc4584e4e7d11e8f8f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
