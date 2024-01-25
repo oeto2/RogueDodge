@@ -8,6 +8,7 @@ public enum ITEMTYPE
 {
     BATTLE,
     BUFF,
+    Use
 }
 
 //Weapon type to be used in the game
