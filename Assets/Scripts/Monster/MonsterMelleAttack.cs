@@ -6,6 +6,7 @@ public class MonsterMelleAttack : MonoBehaviour
 {
     MonsterController monsterController;
     MonsterStats monsterStats;
+    public GameObject hitBox;
 
     public float attackCooltime = float.MaxValue;
 
@@ -37,7 +38,6 @@ public class MonsterMelleAttack : MonoBehaviour
     {
         if (monsterController.distance <= monsterController.monsterStats.attackRange)
         {
-
             attackCooltime = 0;
             monsterController.CallOnAttackEvent();
 
@@ -47,5 +47,6 @@ public class MonsterMelleAttack : MonoBehaviour
             monsterController.monsterStats.eMONSTER_STATE = MONSTER_STATE.IDLE;
         }
     }
+
 
 }
