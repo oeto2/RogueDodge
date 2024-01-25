@@ -7,7 +7,7 @@ public class MonsterRangeAttack : MonoBehaviour
     MonsterController monsterController;
     MonsterStats monsterStats;
 
-    public float attackCooltime = float.MaxValue;
+    public float attackCooltime = 100;
 
 
     private void Awake()
