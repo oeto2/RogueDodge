@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+[RequireComponent(typeof(MonsterStats))]
+[RequireComponent(typeof(MonsterMovement))]
+[RequireComponent(typeof(MonsterLifeCycle))]
+[RequireComponent(typeof(MonsterAnimationController))]
+
 public class MonsterController : MonoBehaviour
 {
-
-    //todo 상속 시키지말고 사용하기, 상속시키니까 개벼 이벤트로 처리됌
+   
     public Rigidbody2D _rigidbody;
     public MonsterStats monsterStats;
     public Transform player;
 
     public event Action<Vector2> OnMoveEvent;
-    public event Action<Vector2> OnAttackEvent;
+    public event Action OnAttackEvent;
+    public event Action<float> OnHitEvent;
+    public event Action OnDeathEvent;
 
     
     public float distance;
@@ -21,6 +27,7 @@ public class MonsterController : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         monsterStats = GetComponent<MonsterStats>();
+        
     }
 
     void Start()
@@ -31,6 +38,10 @@ public class MonsterController : MonoBehaviour
     void Update()
     {
         distance = Vector3.Distance(player.position, transform.position);
+        if(monsterStats.hp <= 0)
+        {
+            monsterStats.eMONSTER_STATE = MONSTER_STATE.DIE;
+        }
     }
 
 
@@ -38,11 +49,18 @@ public class MonsterController : MonoBehaviour
     {
         OnMoveEvent?.Invoke(_dir);
     }
-    public void CallOnAttackEvent(Vector2 _dir)
+    public void CallOnAttackEvent()
     {
-        OnAttackEvent?.Invoke(_dir);
+        OnAttackEvent?.Invoke();
     }
- 
+    public void CallOnHitEvent(float damage)
+    {
+        OnHitEvent?.Invoke(damage);
+    }
+    public void CallOnDeathEvent()
+    {
+        OnDeathEvent?.Invoke();
+    }
 
-   
+
 }
