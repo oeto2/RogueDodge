@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4424973645887013310}
   - component: {fileID: 7572453678998888757}
   - component: {fileID: 8602017141086556440}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AttackProjectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783350374c5be124889d7da23871858c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 20
+  range: 10
 --- !u!50 &7572453678998888757
 Rigidbody2D:
   serializedVersion: 4

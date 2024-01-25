@@ -5,36 +5,32 @@ using System;
 
 public class MonsterController : MonoBehaviour
 {
+
+    //todo 상속 시키지말고 사용하기, 상속시키니까 개벼 이벤트로 처리됌
+    public Rigidbody2D _rigidbody;
+    public MonsterStats monsterStats;
+    public Transform player;
+
     public event Action<Vector2> OnMoveEvent;
     public event Action<Vector2> OnAttackEvent;
-    public MonsterStats monsterStats;
+
+    
     public float distance;
-    public Transform player;
-    public Vector2 dir = Vector2.zero;
-
-    public Rigidbody2D _rigidbody;
-
-    protected virtual void Awake()
+    
+    void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        monsterStats = GetComponent<MonsterStats>();
     }
 
-    protected virtual void Start()
+    void Start()
     {
-        monsterStats = GetComponent<MonsterStats>();
         player = GameManager.Instance.PlayerTransform;
     }
 
-    protected virtual void Update()
+    void Update()
     {
-        //if(monsterStats.eMONSTER_STATE == MONSTER_STATE.ATTACK && !monsterStats.IsAttacking)
-        //{
-        //    //발사체 생성
-        //    //Todo
-        //    //Todo
-        //    //Todo
-        //    CreateProjectil();
-        //}
+        distance = Vector3.Distance(player.position, transform.position);
     }
 
 
@@ -46,11 +42,7 @@ public class MonsterController : MonoBehaviour
     {
         OnAttackEvent?.Invoke(_dir);
     }
+ 
 
-    public void CreateProjectil()
-    {
-        Debug.Log("aa");
-        GameObject projectile= Instantiate(monsterStats.projectile, monsterStats.projectileSpawner.position, Quaternion.identity);
-        projectile.GetComponent<MonsterProjectile>().SetDir(dir);
-    }
+   
 }

@@ -12,7 +12,7 @@ public enum MONSTER_TYPE
 {
     MELLE,
     RANGE,
-    Stationary
+    STATIONARY
 }
 
 public class MonsterStats : MonoBehaviour
@@ -21,15 +21,14 @@ public class MonsterStats : MonoBehaviour
     public string monsterName = "";
     public int hp;
     public float atk;
+    float collisionDamage = 5;
     public float speed;
     public float followRange;
     public float attackRange;
     public float attackCoolTime;
-    public float runawayRange;
-    //public float runawayDuration;
+    //public float runawayRange;
 
     public bool IsAttacking;
-   
 
     public Transform projectileSpawner;
     public LayerMask target;

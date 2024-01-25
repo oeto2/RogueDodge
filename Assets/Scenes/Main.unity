@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  atkCoolTime: 2
+  atkCoolTime: 0.1
   PlayerAttack_Projectile: {fileID: 5979131315597062299, guid: 551c303d05e4aec48a7ceed4cae04672,
     type: 3}
 --- !u!50 &1341382337
