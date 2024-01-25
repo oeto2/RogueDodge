@@ -18,7 +18,7 @@ public class PlayerAttack : MonoBehaviour
     {
         Stats = GetComponent<PlayerStats>();
         PlayerObjectList = new List<GameObject>();
-        if(Stats != null) Debug.Log("PlayerAttack.cs : Stats is Null!");
+        if(!Stats) Debug.Log("PlayerAttack.cs : Stats is Null!");
         onAttack = true;
     }
 
