@@ -34,8 +34,7 @@ public class MonsterStats : MonoBehaviour
     public LayerMask target;
     public MONSTER_TYPE eMONSTER_TYPE;
     public MONSTER_STATE eMONSTER_STATE = MONSTER_STATE.IDLE;
-    public SpriteRenderer[] spriteRendererss;
-
+ 
     //Range
     public GameObject projectile;
 

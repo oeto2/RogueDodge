@@ -17,7 +17,7 @@ public class MonsterAnimationController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         monsterController = GetComponent<MonsterController>();
-        monsterController.OnAttackEvent += AnimationAttack;
+        //monsterController.OnAttackEvent += AnimationAttack;
         monsterController.OnDeathEvent += AnimationDeath;
         monsterController.OnMoveEvent += AnimationMoving;
         monsterController.OnHitEvent += AnimationHit;
