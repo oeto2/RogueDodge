@@ -8,7 +8,7 @@ public class MonsterMelleAttack : MonoBehaviour
     MonsterStats monsterStats;
     public GameObject hitBox;
 
-    public float attackCooltime = float.MaxValue;
+    public float attackCooltime = 100;
 
     private void Awake()
     {
@@ -38,6 +38,7 @@ public class MonsterMelleAttack : MonoBehaviour
     {
         if (monsterController.distance <= monsterController.monsterStats.attackRange)
         {
+            hitBox.SetActive(true);
             attackCooltime = 0;
             monsterController.CallOnAttackEvent();
 

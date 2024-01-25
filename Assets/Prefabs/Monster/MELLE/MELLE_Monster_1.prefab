@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e77b9f5e854196b7a8b35cea86c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitBox: {fileID: 0}
+  hitBox: {fileID: 5185785265754871381}
   attackCooltime: 3.4028235e+38
 --- !u!1 &2942876542468839000
 GameObject:
@@ -331,7 +331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7703142900915580059
 Transform:
   m_ObjectHideFlags: 0

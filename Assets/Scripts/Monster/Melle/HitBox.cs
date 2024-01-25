@@ -10,6 +10,7 @@ public class HitBox : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             GameManager.Instance.PlayerTransform.GetComponent<PlayerStats>().PlayerDamaged(damage);
+            gameObject.SetActive(false);
         }
     }
 }
