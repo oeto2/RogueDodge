@@ -25,7 +25,6 @@ public class MonsterAnimationController : MonoBehaviour
     }
 
 
-
     void AnimationAttack() //todo
     {
         animator.SetTrigger(IsAttack);
