@@ -28,20 +28,20 @@ public class MapCreator : MonoBehaviour
     GameObject CreateNewMap()
     {
         int rand = Random.Range(0, maps.Count);
-
         GameObject newMap = Instantiate(maps[rand]);
 
         return newMap;
     }
 
-    public void CreateNextMap(int curX)
+    public void CreateNextMap(GameObject curMap)
     {
         GameObject newMap = CreateNewMap();
 
         Map nMap = newMap.GetComponent<Map>();
-
         int newX = nMap.mapX;
 
-        newMap.transform.position = new Vector3((curX + newX) / 2 + 5, 0, 0);
+        int curX = curMap.GetComponent<Map>().mapX;
+
+        newMap.transform.position = new Vector3(curMap.transform.position.x + (curX + newX) / 2 + 5, 0, 0);
     }
 }

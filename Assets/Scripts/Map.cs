@@ -9,10 +9,9 @@ public class Map : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("enter");
         if(other.tag == "Player")
         {
-            MapCreator.I.CreateNextMap(mapX);
+            MapCreator.I.CreateNextMap(gameObject);
         }
     }
 }
