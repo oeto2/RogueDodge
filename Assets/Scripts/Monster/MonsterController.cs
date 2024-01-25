@@ -20,11 +20,11 @@ public class MonsterController : MonoBehaviour
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        monsterStats = GetComponent<MonsterStats>();
     }
 
     void Start()
     {
-        monsterStats = GetComponent<MonsterStats>();
         player = GameManager.Instance.PlayerTransform;
     }
 
