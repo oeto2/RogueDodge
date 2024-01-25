@@ -40,7 +40,7 @@ public class MonsterLifeCycle : MonoBehaviour
 
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) //todo
     {
         if (collision.gameObject.CompareTag("Player"))
         {
