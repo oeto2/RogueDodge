@@ -22,9 +22,8 @@ public class MonsterLifeCycle : MonoBehaviour
         //player = monsterController.player.GetComponent<Player>(); //todo
     }
 
-    void Hit(float damage)
+    void Hit()
     {
-        monsterStats.hp -= (int)damage;
         Death();
     }
 
@@ -40,12 +39,11 @@ public class MonsterLifeCycle : MonoBehaviour
     }
 
 
-
-    private void OnCollisionEnter2D(Collision2D collision) //todo
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Projectile"))
         {
-            monsterController.CallOnHitEvent(5);
+            monsterController.CallOnHitEvent();
         }
     }
 

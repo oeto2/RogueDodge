@@ -17,7 +17,7 @@ public class MonsterController : MonoBehaviour
 
     public event Action<Vector2> OnMoveEvent;
     public event Action OnAttackEvent;
-    public event Action<float> OnHitEvent;
+    public event Action OnHitEvent;
     public event Action OnDeathEvent;
 
     
@@ -38,10 +38,10 @@ public class MonsterController : MonoBehaviour
     void Update()
     {
         distance = Vector3.Distance(player.position, transform.position);
-        if(monsterStats.hp <= 0)
-        {
-            monsterStats.eMONSTER_STATE = MONSTER_STATE.DIE;
-        }
+        //if(monsterStats.hp <= 0)
+        //{
+        //    monsterStats.eMONSTER_STATE = MONSTER_STATE.DIE;
+        //}
     }
 
 
@@ -53,9 +53,9 @@ public class MonsterController : MonoBehaviour
     {
         OnAttackEvent?.Invoke();
     }
-    public void CallOnHitEvent(float damage)
+    public void CallOnHitEvent()
     {
-        OnHitEvent?.Invoke(damage);
+        OnHitEvent?.Invoke();
     }
     public void CallOnDeathEvent()
     {

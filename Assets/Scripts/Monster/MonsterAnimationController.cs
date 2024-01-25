@@ -47,7 +47,7 @@ public class MonsterAnimationController : MonoBehaviour
             animator.SetBool(IsMoving, false);
         }
     }
-    void AnimationHit(float non)
+    void AnimationHit()
     {
         animator.SetTrigger(IsHit);
     }
