@@ -6,6 +6,7 @@ public class CurItemData : MonoBehaviour
 {
     public int ItemIndexNum;
     public SpriteRenderer ItemSPirteRenderer;
+
     public Sprite[] BattleItemSprites;
     public Sprite[] BuffItemSprites;
     public Sprite[] UseItemSprites;
@@ -13,14 +14,9 @@ public class CurItemData : MonoBehaviour
     //This itemtype
     public ITEMTYPE eItemType;
 
-    public void Start()
+    public void ChangeItem(int _index)
     {
-        ChangeItemSprite(ItemIndexNum);
-    }
-    
-    public void ChangeItemSprite(int _index)
-    {
-        switch(eItemType)
+        switch (eItemType)
         {
             case ITEMTYPE.BATTLE:
                 ItemSPirteRenderer.sprite = BattleItemSprites[_index];
@@ -38,4 +34,4 @@ public class CurItemData : MonoBehaviour
                 break;
         }
     }
- }
+}
