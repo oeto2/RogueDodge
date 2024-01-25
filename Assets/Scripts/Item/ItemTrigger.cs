@@ -12,9 +12,4 @@ public class ItemTrigger : MonoBehaviour
             ItemManager.Instance.CallGetItemEvnet();
         }
     }
-
-    public void PrintGetItemMessage()
-    {
-
-    }    
 }
