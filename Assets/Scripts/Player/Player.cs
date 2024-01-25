@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +9,11 @@ public class Player : MonoBehaviour
     [SerializeField] float speed;
     string name;
     float atk;
-    float atkTime;
     [SerializeField] float atkCoolTime;
     //Variables that control the player's movement. Can only move when in the "true" state.
     bool onMove;
     bool onAttack;
+    IEnumerator AttackCourt;
     Rigidbody2D PlayerRigid;
     SpriteRenderer PlayerRenderer;
     [SerializeField] GameObject PlayerAttack_Projectile;
@@ -25,7 +26,6 @@ public class Player : MonoBehaviour
         PlayerObjectList = new List<GameObject>();
         onMove = true;
         onAttack = true;
-        atkTime = atkCoolTime;
     }
 
     void Update()
@@ -54,32 +54,42 @@ public class Player : MonoBehaviour
     }
     void Attack()
     {
-        atkTime += Time.deltaTime;
         float inputAttack = Input.GetAxisRaw("Fire1");
         
-        if(inputAttack > 0 && atkTime >= atkCoolTime)
+        if(inputAttack > 0 && AttackCourt == null)
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //How to create an attack projectile, not an attack. Generation is also created using object pooling.
-            ObjectPooling(PlayerAttack_Projectile, mousePos);
-            atkTime = 0;
+            AttackCourt = Attack_Coroutine();
+            StartCoroutine(AttackCourt);
         }
+    }
+
+    IEnumerator Attack_Coroutine()
+    {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //How to create an attack projectile, not an attack. Generation is also created using object pooling.
+        ObjectPooling(PlayerAttack_Projectile, mousePos);
+
+        yield return new WaitForSeconds(atkCoolTime);
+
+        AttackCourt = null;
     }
 
     void ObjectPooling(GameObject _obj, Vector2 _mousePos)
     {
         //No tag or layer value to distinguish objects at the moment. Need to add more afterwards.
-        GameObject obj = PlayerObjectList.Find(item => item.gameObject == _obj && !item.activeSelf);
+        GameObject obj = PlayerObjectList.Find(item => item.gameObject.tag == _obj.tag && !item.activeSelf);
+        //Code to move objects in the direction of the mouse. Not a fully aware and written code yet. Need to learn.
+        float attackDirection = Mathf.Atan2(_mousePos.y - transform.position.y, _mousePos.x - transform.position.x) * Mathf.Rad2Deg;
+        Quaternion objAngle = Quaternion.AngleAxis(attackDirection - 90f, Vector3.forward);
         if (obj)
         {
             obj.transform.position = transform.position;
+            obj.transform.rotation = objAngle;
             obj.SetActive(true);
         }
         else
         {
-            //Code to move objects in the direction of the mouse. Not a fully aware and written code yet. Need to learn.
-            float attackDirection = Mathf.Atan2(_mousePos.y - transform.position.y, _mousePos.x - transform.position.x) * Mathf.Rad2Deg;
-            PlayerObjectList.Add(Instantiate(_obj, transform.position, Quaternion.AngleAxis(attackDirection - 90f, Vector3.forward)));
+            PlayerObjectList.Add(Instantiate(_obj, transform.position, objAngle));
         }
     }
 }
