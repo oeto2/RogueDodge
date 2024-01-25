@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class BattleItem : MonoBehaviour
-{
-    public BattleItem Data;
 
+[System.Serializable]
+public class BattleItemData
+{
     public int index;
     public string name;
     public string info;
@@ -16,30 +16,21 @@ public class BattleItem : MonoBehaviour
     public SCARCITY eScarcity;
     public WEAPONTYPE eWeaponType;
 
-    public BattleItem(int _index, string _name, string _info, float _atkValue,
-        float _atkCoolTimeValue, bool _isGet, SCARCITY _eScarcity, WEAPONTYPE _eWeaponType)
+    public BattleItemData(BattleItemDataBaseEntity _battleItemEntity)
     {
-        index = _index;
-        name = _name;
-        info = _info;
-        atkValue = _atkValue;
-        atkCoolTimeValue = _atkCoolTimeValue;
-        isGet = _isGet;
-        eScarcity = _eScarcity;
-        eWeaponType = _eWeaponType;
+        index = _battleItemEntity.index;
+        name = _battleItemEntity.name;
+        info = _battleItemEntity.info;
+        atkValue = _battleItemEntity.atkValue;
+        atkCoolTimeValue = _battleItemEntity.atkCoolTimeValue;
+        isGet = _battleItemEntity.isGet;
+        eScarcity = _battleItemEntity.eScarcity;
+        eWeaponType = _battleItemEntity.eWeaponType;
     }
+}
 
-    public BattleItem(BattleItemDataBaseEntity _battleData)
-    {
-        index = _battleData.index;
-        name = _battleData.name;
-        info = _battleData.info;
-        atkValue = _battleData.atkValue;
-        atkCoolTimeValue = _battleData.atkCoolTimeValue;
-        isGet = _battleData.isGet;
-        eScarcity = _battleData.eScarcity;
-        eWeaponType = _battleData.eWeaponType;
-    }
-
-    public BattleItem() { }
+[System.Serializable]
+public class BattleItem : MonoBehaviour
+{
+    public BattleItemData Data;
 }

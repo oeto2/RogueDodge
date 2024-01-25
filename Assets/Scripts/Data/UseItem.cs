@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class UseItem : MonoBehaviour
+[System.Serializable]
+public class UseItemData
 {
     public int index;
     public string name;
@@ -13,17 +14,20 @@ public class UseItem : MonoBehaviour
     public USETYPE eUseType;
     public SCARCITY eScarcity;
 
-    public UseItem(int _index, string _name, string _info, float _recoveryHpValue,
-         bool _isGet, USETYPE _eUseType, SCARCITY _eScarcity)
+    public UseItemData(UseItemDataBaseEntity _useItemEntity)
     {
-        index = _index;
-        name = _name;
-        info = _info;
-        recoveryHpValue = _recoveryHpValue;
-        isGet = _isGet;
-        eUseType = _eUseType;
-        eScarcity = _eScarcity;
+        index = _useItemEntity.index;
+        name = _useItemEntity.name;
+        info = _useItemEntity.info;
+        recoveryHpValue = _useItemEntity.recoveryHpValue;
+        isGet = _useItemEntity.isGet;
+        eUseType = _useItemEntity.eUseType;
+        eScarcity = _useItemEntity.eScarcity;
     }
+}
 
-    public UseItem() { }
+
+public class UseItem : MonoBehaviour
+{
+    public UseItemData Data;
 }
