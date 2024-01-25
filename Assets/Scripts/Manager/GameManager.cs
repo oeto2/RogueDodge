@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
     //Singleton
     public static GameManager Instance = null;
 
-    private int gold { get; set;}
+    private int gold { get; set; }
+
+    public Transform PlayerTransform;
 
     private void Awake()
     {
@@ -20,5 +22,7 @@ public class GameManager : MonoBehaviour
             if (Instance != this)
                 Destroy(this.gameObject);
         }
+
+        PlayerTransform = GameObject.FindWithTag("Player").transform;
     }
 }
