@@ -7,7 +7,7 @@ public class MonsterLifeCycle : MonoBehaviour
     MonsterController monsterController;
     MonsterStats monsterStats;
     BoxCollider2D collider;
-    Player player;
+    //Player player;
 
     private void Awake()
     {
