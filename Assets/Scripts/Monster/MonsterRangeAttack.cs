@@ -7,29 +7,44 @@ public class MonsterRangeAttack : MonoBehaviour
     MonsterController monsterController;
     MonsterStats monsterStats;
 
+    public float attackCooltime = float.MaxValue;
+
+
     private void Awake()
     {
         monsterController = GetComponent<MonsterController>();
     }
     private void Start()
     {
-        monsterStats = monsterController.monsterStats;
+        monsterStats = monsterController.monsterStats;        
     }
+   
 
     void Update()
     {
-        Check_PlayerInAttackBounder();
+        if(monsterController.monsterStats.eMONSTER_STATE != MONSTER_STATE.DIE)
+        {
+            if(attackCooltime > monsterStats.attackCoolTime)
+            {
+             Check_PlayerInAttackBounder();
+            }
+            else
+            {
+                attackCooltime += Time.deltaTime*1;
+            }
+        }
     }
 
 
     void Check_PlayerInAttackBounder()
     {
-        
-        if (monsterController.distance <= monsterController.monsterStats.attackRange && !monsterController.monsterStats.IsAttacking)
+        if (monsterController.distance <= monsterController.monsterStats.attackRange )
         {
+            
+            attackCooltime = 0;
             CreateProjectil();
             monsterController.CallOnAttackEvent();
-            StartCoroutine(AttackCooltime_CountDownCo());
+            
         }
         else
         {
@@ -37,22 +52,6 @@ public class MonsterRangeAttack : MonoBehaviour
         }
     }
 
-
-
-    IEnumerator AttackCooltime_CountDownCo()
-    {
-        monsterStats.eMONSTER_STATE = MONSTER_STATE.ATTACK;
-        monsterStats.IsAttacking = true;
-        float percent = 0;
-        while (percent < monsterStats.attackCoolTime)
-        {
-            percent += Time.deltaTime;
-            yield return null;
-        }
-        monsterStats.IsAttacking = false;
-        monsterStats.eMONSTER_STATE = MONSTER_STATE.IDLE;
-
-    }
 
     public void CreateProjectil()
     {

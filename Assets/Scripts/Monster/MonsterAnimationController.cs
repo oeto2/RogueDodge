@@ -8,6 +8,8 @@ public class MonsterAnimationController : MonoBehaviour
     Animator animator;
 
     static readonly int IsAttack = Animator.StringToHash("attack");
+    static readonly int IsMoving = Animator.StringToHash("isMoving");
+    static readonly int IsDeath = Animator.StringToHash("death");
 
 
     private void Awake()
@@ -15,6 +17,9 @@ public class MonsterAnimationController : MonoBehaviour
         animator = GetComponent<Animator>();
         monsterController = GetComponent<MonsterController>();
         monsterController.OnAttackEvent += AnimationAttack;
+        monsterController.OnDeathEvent += AnimationDeath;
+        monsterController.OnMoveEvent += AnimationMoving;
+
     }
 
 
@@ -23,5 +28,21 @@ public class MonsterAnimationController : MonoBehaviour
     {
         animator.SetTrigger(IsAttack);
     }
-    
+
+    void AnimationDeath()
+    {
+        animator.SetBool(IsDeath,true);
+    }
+
+    void AnimationMoving(Vector2 dir)
+    {
+        if(dir != Vector2.zero)
+        {
+            animator.SetBool(IsMoving,true);
+        }
+        else
+        {
+            animator.SetBool(IsMoving, false);
+        }
+    }
 }

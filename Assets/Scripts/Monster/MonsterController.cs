@@ -38,6 +38,10 @@ public class MonsterController : MonoBehaviour
     void Update()
     {
         distance = Vector3.Distance(player.position, transform.position);
+        if(monsterStats.hp <= 0)
+        {
+            monsterStats.eMONSTER_STATE = MONSTER_STATE.DIE;
+        }
     }
 
 

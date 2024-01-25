@@ -218,6 +218,8 @@ GameObject:
   - component: {fileID: 3146452285583847902}
   - component: {fileID: 6839012220609141656}
   - component: {fileID: 4430062701856396212}
+  - component: {fileID: 6785606645541711289}
+  - component: {fileID: 8548607334089269788}
   m_Layer: 0
   m_Name: RANGE_Monster_1
   m_TagString: Monster
@@ -240,7 +242,7 @@ Transform:
   - {fileID: 5092364969804725504}
   - {fileID: 8361168205324427695}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5552222673280322648
 Animator:
@@ -364,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterName: 
-  hp: 50
+  hp: 10
   atk: 5
   speed: 1
   followRange: 10
@@ -403,6 +405,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad8b3d96d313f48c7be65029ab624c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6785606645541711289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5912869272207407543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf856fb975b04e3a9dcf2acd4988a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8548607334089269788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5912869272207407543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a3c46a8eb2094fe0914e214b5b6d0ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6373072414550422969

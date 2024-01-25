@@ -26,7 +26,8 @@ public class MonsterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(monsterController.monsterStats.eMONSTER_STATE != MONSTER_STATE.ATTACK)
+        if(monsterController.monsterStats.eMONSTER_STATE != MONSTER_STATE.ATTACK
+            && monsterController.monsterStats.eMONSTER_STATE != MONSTER_STATE.DIE)
         {
             MoveAction();
         }

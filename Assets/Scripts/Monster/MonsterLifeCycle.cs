@@ -14,22 +14,19 @@ public class MonsterLifeCycle : MonoBehaviour
         monsterController = GetComponent<MonsterController>();
         collider = GetComponent<BoxCollider2D>();
         monsterController.OnHitEvent += Hit;
-        monsterController.OnDeathEvent += Death;
     }
 
     private void Start()
     {
         monsterStats = GetComponent<MonsterStats>();
-        player = monsterController.player.GetComponent<Player>(); //todo
+        //player = monsterController.player.GetComponent<Player>(); //todo
     }
 
     void Hit(float damage)
     {
         monsterStats.hp -= (int)damage;
-        monsterController.CallOnDeathEvent();
+        Death();
     }
-
-
 
     void Death()
     {
@@ -37,7 +34,20 @@ public class MonsterLifeCycle : MonoBehaviour
         {
             monsterStats.eMONSTER_STATE = MONSTER_STATE.DIE;
             collider.enabled = false;
+            monsterController.CallOnDeathEvent();
         }
     }
+
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            monsterController.CallOnHitEvent(5);
+        }
+    }
+
+
 
 }
