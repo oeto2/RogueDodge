@@ -2,23 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterRangeAttack : MonsterController
+public class MonsterRangeAttack : MonoBehaviour
 {
+    MonsterController monsterController;
+    MonsterStats monsterStats;
 
-
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
-        
+        monsterController = GetComponent<MonsterController>();
     }
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
+        monsterStats = monsterController.monsterStats;
     }
 
-    protected override void Update()
+    void Update()
     {
-        base.Update();
         Check_PlayerInAttackBounder();
     }
 
@@ -26,14 +25,14 @@ public class MonsterRangeAttack : MonsterController
     void Check_PlayerInAttackBounder()
     {
         
-        if (distance <= monsterStats.attackRange && !monsterStats.IsAttacking)
+        if (monsterController.distance <= monsterController.monsterStats.attackRange && !monsterController.monsterStats.IsAttacking)
         {
             CreateProjectil();
             StartCoroutine(AttackCooltime_CountDownCo());
         }
         else
         {
-            monsterStats.eMONSTER_STATE = MONSTER_STATE.IDLE;
+            monsterController.monsterStats.eMONSTER_STATE = MONSTER_STATE.IDLE;
         }
     }
 
@@ -54,5 +53,24 @@ public class MonsterRangeAttack : MonsterController
 
     }
 
+    public void CreateProjectil()
+    {
+        Vector2 lookDir = (monsterController.player.position - monsterStats.projectileSpawner.position).normalized;
+        GameObject projectile = Instantiate(monsterStats.projectile, monsterStats.projectileSpawner.position, Quaternion.identity);
+        projectile.GetComponent<MonsterProjectile>().SetDir(lookDir);
+        projectile.GetComponent<MonsterProjectile>().SetMonsterStats(monsterStats);
 
+    }
+
+
+    public void RoundShot()
+    {
+        float angleStep = 360f / 10;
+        for (int i = 0; i < 10; i++)
+        {
+            GameObject projectile = Instantiate(monsterStats.projectile, monsterStats.projectileSpawner.position, Quaternion.identity);
+            float angle = i * angleStep;
+            projectile.transform.Rotate(Vector3.forward, angle);
+        }
+    }
 }

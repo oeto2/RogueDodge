@@ -212,14 +212,15 @@ GameObject:
   m_Component:
   - component: {fileID: 51517309470944125}
   - component: {fileID: 5552222673280322648}
-  - component: {fileID: 3146452285583847902}
-  - component: {fileID: 6839012220609141656}
   - component: {fileID: 3110003442659622074}
   - component: {fileID: 380208400712484086}
+  - component: {fileID: 8858287580624869150}
+  - component: {fileID: 3146452285583847902}
+  - component: {fileID: 6839012220609141656}
   - component: {fileID: 4430062701856396212}
   m_Layer: 0
   m_Name: RANGE_Monster_1
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,7 +240,7 @@ Transform:
   - {fileID: 5092364969804725504}
   - {fileID: 8361168205324427695}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5552222673280322648
 Animator:
@@ -262,54 +263,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3146452285583847902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5912869272207407543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9aa8bd5396d82e4fa05677df39acc30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterName: 
-  hp: 50
-  atk: 5
-  speed: 1
-  followRange: 10
-  attackRange: 7
-  attackCoolTime: 3
-  IsAttacking: 0
-  projectileSpawner: {fileID: 8361168205324427695}
-  target:
-    serializedVersion: 2
-    m_Bits: 0
-  eMONSTER_TYPE: 1
-  eMONSTER_STATE: 0
-  spriteRendererss:
-  - {fileID: 2832031811832996927}
-  projectile: {fileID: 3377916364384926863, guid: 5787f8e5ded6540938b2dd129d66e1a4,
-    type: 3}
---- !u!114 &6839012220609141656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5912869272207407543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf64b94eda6ec8840a03638b919b4a1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 0}
-  monsterStats: {fileID: 0}
-  player: {fileID: 0}
-  distance: 0
-  dir: {x: 0, y: 0}
-  lookDir: {x: 0, y: 0}
 --- !u!50 &3110003442659622074
 Rigidbody2D:
   serializedVersion: 4
@@ -382,6 +335,64 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9155148, y: 0.76766604}
   m_EdgeRadius: 0
+--- !u!114 &8858287580624869150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5912869272207407543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d01d5b868e4b24db9a966b8c89f9e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 0}
+  monsterStats: {fileID: 0}
+  player: {fileID: 0}
+  distance: 0
+--- !u!114 &3146452285583847902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5912869272207407543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9aa8bd5396d82e4fa05677df39acc30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterName: 
+  hp: 50
+  atk: 5
+  speed: 1
+  followRange: 10
+  attackRange: 7
+  attackCoolTime: 5
+  IsAttacking: 0
+  projectileSpawner: {fileID: 8361168205324427695}
+  target:
+    serializedVersion: 2
+    m_Bits: 0
+  eMONSTER_TYPE: 1
+  eMONSTER_STATE: 0
+  spriteRendererss:
+  - {fileID: 2832031811832996927}
+  projectile: {fileID: 3377916364384926863, guid: 5787f8e5ded6540938b2dd129d66e1a4,
+    type: 3}
+--- !u!114 &6839012220609141656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5912869272207407543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf64b94eda6ec8840a03638b919b4a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4430062701856396212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,12 +405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8b3d96d313f48c7be65029ab624c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 0}
-  monsterStats: {fileID: 0}
-  player: {fileID: 0}
-  distance: 0
-  dir: {x: 0, y: 0}
-  lookDir: {x: 0, y: 0}
 --- !u!1 &6373072414550422969
 GameObject:
   m_ObjectHideFlags: 0

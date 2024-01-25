@@ -5,6 +5,8 @@ using System;
 
 public class MonsterController : MonoBehaviour
 {
+
+    //todo 상속 시키지말고 사용하기, 상속시키니까 개벼 이벤트로 처리됌
     public Rigidbody2D _rigidbody;
     public MonsterStats monsterStats;
     public Transform player;
@@ -14,24 +16,21 @@ public class MonsterController : MonoBehaviour
 
     
     public float distance;
-    public Vector2 dir = Vector2.zero;
     
-
-    protected virtual void Awake()
+    void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    protected virtual void Start()
+    void Start()
     {
         monsterStats = GetComponent<MonsterStats>();
         player = GameManager.Instance.PlayerTransform;
     }
 
-    protected virtual void Update()
+    void Update()
     {
         distance = Vector3.Distance(player.position, transform.position);
-        
     }
 
 
@@ -45,11 +44,5 @@ public class MonsterController : MonoBehaviour
     }
  
 
-    public void CreateProjectil()
-    {
-        Vector2 lookDir = (player.position - monsterStats.projectileSpawner.position).normalized;
-        GameObject projectile= Instantiate(monsterStats.projectile, monsterStats.projectileSpawner.position, Quaternion.identity);
-        projectile.GetComponent<MonsterProjectile>().SetDir(lookDir);
-        projectile.GetComponent<MonsterProjectile>().SetMonsterStats(monsterStats);
-    }
+   
 }

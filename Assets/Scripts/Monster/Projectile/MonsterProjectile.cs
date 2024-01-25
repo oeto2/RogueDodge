@@ -6,12 +6,11 @@ public class MonsterProjectile : MonoBehaviour
 {
     public Vector2 dir = Vector2.right;
     Rigidbody2D _rigidbody;
-
+   
     public float projectileSpeed;
 
-
     public MonsterStats monsterStats;
-
+    public GameObject particle_Spark;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -20,13 +19,15 @@ public class MonsterProjectile : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidbody.position += dir * projectileSpeed * Time.deltaTime;
+        _rigidbody.AddForce(transform.right * projectileSpeed * Time.deltaTime,ForceMode2D.Impulse);
     }
 
 
     public void SetDir(Vector2 _dir)
     {
         dir = _dir;
+        float z = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.Rotate(Vector3.forward, z);
     }
     public void SetMonsterStats(MonsterStats _monsterStats)
     {

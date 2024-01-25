@@ -2,29 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterMovement : MonsterController
+public class MonsterMovement : MonoBehaviour
 {
-    
-    protected override void Awake()
-    {
-        base.Awake();
-    }
-    protected override void Start()
-    {
-        base.Start(); 
+    MonsterController monsterController;
+    Rigidbody2D _rigidbody;
+    Vector2 dir = Vector2.zero;
 
-        OnMoveEvent += Move;
+    private void Awake()
+    {
+        monsterController = GetComponent<MonsterController>();
+        _rigidbody = GetComponent<Rigidbody2D>();
+    }
+    void Start()
+    {
+        monsterController.OnMoveEvent += Move;
     }
 
-    protected override void Update()
+    void Update()
     {
-        base.Update();
+        
         CheckPlayerDistance();
     }
 
     private void FixedUpdate()
     {
-        if(monsterStats.eMONSTER_STATE != MONSTER_STATE.ATTACK)
+        if(monsterController.monsterStats.eMONSTER_STATE != MONSTER_STATE.ATTACK)
         {
             MoveAction();
         }
@@ -32,10 +34,10 @@ public class MonsterMovement : MonsterController
 
     void Move(Vector2 _dir)
     {
-        _rigidbody.position += _dir * Time.deltaTime * monsterStats.speed;
-        for (int i = 0; i < monsterStats.spriteRendererss.Length; i++)
+        _rigidbody.position += _dir * Time.deltaTime * monsterController.monsterStats.speed;
+        for (int i = 0; i < monsterController.monsterStats.spriteRendererss.Length; i++)
         {
-            monsterStats.spriteRendererss[i].flipX = _dir.x > 0;
+            monsterController.monsterStats.spriteRendererss[i].flipX = _dir.x > 0;
         }
     }
 
@@ -43,7 +45,7 @@ public class MonsterMovement : MonsterController
 
     void MoveAction()
     {
-        CallOnMoveEvent(dir);
+        monsterController.CallOnMoveEvent(dir);
         //Todo
         //Todo
     }
@@ -51,9 +53,9 @@ public class MonsterMovement : MonsterController
 
     void CheckPlayerDistance() // 
     {
-        if( monsterStats.attackRange < distance && distance < monsterStats.followRange)
+        if(monsterController.monsterStats.attackRange < monsterController.distance && monsterController.distance < monsterController.monsterStats.followRange)
         {
-            dir = (player.position - transform.position).normalized;
+            dir = (monsterController.player.position - transform.position).normalized;
         }
         else
         {
