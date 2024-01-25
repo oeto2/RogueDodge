@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ItemManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class ItemManager : MonoBehaviour
     public List<BuffItemDataBaseEntity> BuffItems;
     public List<UseItemDataBaseEntity> UseItems;
 
+    //Evnet called when an Get item
+    private event Action GetItemEvent;
 
     private void Awake()
     {
@@ -29,5 +32,11 @@ public class ItemManager : MonoBehaviour
         BattleItmes = ItemDatas.BattleItem;
         BuffItems = ItemDatas.BuffItem;
         UseItems = ItemDatas.UseItem;
+    }
+
+    //Call Event
+    public void CallGetItemEvnet()
+    {
+        GetItemEvent?.Invoke();
     }
 }
