@@ -5,8 +5,10 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     Rigidbody2D ProjectileRigid;
+    PlayerStats Stats;
     [SerializeField] float speed;
     [SerializeField] float range;
+    public float atk = 0;
     bool onMove;
     Vector2 StartPos;
     private void Start()
@@ -30,6 +32,18 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D _collision)
     {
         //Command to "false" your "Active" if you currently collide with any collider other than the player. Modified since then
-        if (_collision.gameObject.tag != "Player" && _collision.gameObject.tag != "Projectile") gameObject.SetActive(false);
+        if (_collision.gameObject.tag != "Player" && _collision.gameObject.tag != "Projectile")
+        {
+            switch (_collision.tag)
+            {
+                case "Monster":
+                    //Monster Damaged
+                    _collision.GetComponent<MonsterStats>().hp -= (int)atk;
+                    break;
+                default:
+                    break;
+            }
+            gameObject.SetActive(false);
+        }
     }
 }
