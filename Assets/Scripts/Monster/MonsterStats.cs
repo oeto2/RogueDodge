@@ -12,7 +12,7 @@ public enum MONSTER_TYPE
 {
     MELLE,
     RANGE,
-    Stationary
+    STATIONARY
 }
 
 public class MonsterStats : MonoBehaviour
@@ -25,11 +25,9 @@ public class MonsterStats : MonoBehaviour
     public float followRange;
     public float attackRange;
     public float attackCoolTime;
-    public float runawayRange;
-    //public float runawayDuration;
+    //public float runawayRange;
 
     public bool IsAttacking;
-   
 
     public Transform projectileSpawner;
     public LayerMask target;

@@ -26,7 +26,7 @@ public class MonsterMovement : MonsterController
     {
         if(monsterStats.eMONSTER_STATE != MONSTER_STATE.ATTACK)
         {
-          MoveAction();
+            MoveAction();
         }
     }
 
@@ -43,7 +43,6 @@ public class MonsterMovement : MonsterController
 
     void MoveAction()
     {
-        dir = (player.position - transform.position).normalized;
         CallOnMoveEvent(dir);
         //Todo
         //Todo
@@ -52,11 +51,13 @@ public class MonsterMovement : MonsterController
 
     void CheckPlayerDistance() // 
     {
-        float distance = Vector3.Distance(player.position, transform.position);
-
-        if( distance < monsterStats.followRange)
+        if( monsterStats.attackRange < distance && distance < monsterStats.followRange)
         {
-            CallOnMoveEvent(dir);
+            dir = (player.position - transform.position).normalized;
+        }
+        else
+        {
+            dir = Vector2.zero;
         }
        
     }

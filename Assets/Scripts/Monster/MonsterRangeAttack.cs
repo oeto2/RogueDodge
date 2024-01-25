@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterAttack : MonsterController
+public class MonsterRangeAttack : MonsterController
 {
 
-   
+
+    protected override void Awake()
+    {
+        base.Awake();
+        
+    }
     protected override void Start()
     {
         base.Start();
@@ -20,28 +25,23 @@ public class MonsterAttack : MonsterController
 
     void Check_PlayerInAttackBounder()
     {
-        float distance = Vector3.Distance(player.position, transform.position);
-
-        if (distance < monsterStats.attackRange)
+        
+        if (distance <= monsterStats.attackRange && !monsterStats.IsAttacking)
         {
-            monsterStats.eMONSTER_STATE = MONSTER_STATE.ATTACK;
-            //Todo
-            //Todo
-            //Todo
+            CreateProjectil();
             StartCoroutine(AttackCooltime_CountDownCo());
-
         }
         else
         {
-            //Todo
-            //Todo
-            //Todo
             monsterStats.eMONSTER_STATE = MONSTER_STATE.IDLE;
         }
     }
 
+
+
     IEnumerator AttackCooltime_CountDownCo()
     {
+        monsterStats.eMONSTER_STATE = MONSTER_STATE.ATTACK;
         monsterStats.IsAttacking = true;
         float percent = 0;
         while (percent < monsterStats.attackCoolTime)
@@ -50,6 +50,7 @@ public class MonsterAttack : MonsterController
             yield return null;
         }
         monsterStats.IsAttacking = false;
+        monsterStats.eMONSTER_STATE = MONSTER_STATE.IDLE;
 
     }
 

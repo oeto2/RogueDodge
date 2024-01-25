@@ -5,14 +5,17 @@ using System;
 
 public class MonsterController : MonoBehaviour
 {
+    public Rigidbody2D _rigidbody;
+    public MonsterStats monsterStats;
+    public Transform player;
+
     public event Action<Vector2> OnMoveEvent;
     public event Action<Vector2> OnAttackEvent;
-    public MonsterStats monsterStats;
-    public float distance;
-    public Transform player;
-    public Vector2 dir = Vector2.zero;
 
-    public Rigidbody2D _rigidbody;
+    
+    public float distance;
+    public Vector2 dir = Vector2.zero;
+    
 
     protected virtual void Awake()
     {
@@ -27,14 +30,8 @@ public class MonsterController : MonoBehaviour
 
     protected virtual void Update()
     {
-        //if(monsterStats.eMONSTER_STATE == MONSTER_STATE.ATTACK && !monsterStats.IsAttacking)
-        //{
-        //    //발사체 생성
-        //    //Todo
-        //    //Todo
-        //    //Todo
-        //    CreateProjectil();
-        //}
+        distance = Vector3.Distance(player.position, transform.position);
+        
     }
 
 
@@ -46,11 +43,13 @@ public class MonsterController : MonoBehaviour
     {
         OnAttackEvent?.Invoke(_dir);
     }
+ 
 
     public void CreateProjectil()
     {
-        Debug.Log("aa");
+        Vector2 lookDir = (player.position - monsterStats.projectileSpawner.position).normalized;
         GameObject projectile= Instantiate(monsterStats.projectile, monsterStats.projectileSpawner.position, Quaternion.identity);
-        projectile.GetComponent<MonsterProjectile>().SetDir(dir);
+        projectile.GetComponent<MonsterProjectile>().SetDir(lookDir);
+        projectile.GetComponent<MonsterProjectile>().SetMonsterStats(monsterStats);
     }
 }
