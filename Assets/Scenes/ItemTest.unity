@@ -792,6 +792,81 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
         type: 3}
+      propertyPath: UseItemSprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: UseItemSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 52abb6465d2da654e9ef546178fae51a,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: UseItemSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9e00f02827ab6d445a26bc608e329089,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: UseItemSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 1361307353, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: -1277095367, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: -1425509953, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 732818421, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 931979973, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 190405726, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: -1604626818, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 1381808760, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
       propertyPath: ItemSpawnTransform.Array.data[0]
       value: 
       objectReference: {fileID: 246699889}
