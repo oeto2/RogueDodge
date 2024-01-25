@@ -24,14 +24,17 @@ public class CurItemData : MonoBehaviour
         {
             case ITEMTYPE.BATTLE:
                 ItemSPirteRenderer.sprite = BattleItemSprites[_index];
+                ItemIndexNum = _index;
                 break;
 
             case ITEMTYPE.BUFF:
                 ItemSPirteRenderer.sprite = BuffItemSprites[_index];
+                ItemIndexNum = _index;
                 break;
 
             case ITEMTYPE.Use:
                 ItemSPirteRenderer.sprite = UseItemSprites[_index];
+                ItemIndexNum = _index;
                 break;
         }
     }
