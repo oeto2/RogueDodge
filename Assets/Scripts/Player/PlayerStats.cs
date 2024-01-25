@@ -22,6 +22,8 @@ public class PlayerStats : MonoBehaviour
         hp = maxHp;
         AttackComponent = GetComponent<PlayerAttack>();
         MoveComponent = GetComponent<PlayerMovement>();
+        if (!AttackComponent) Debug.Log("PlayerStats.cs : AttackComponent is Null!");
+        if (!MoveComponent) Debug.Log("PlayerStats.cs : MoveComponent is Null!");
     }
 
     public void PlayerDamaged(int _damage)

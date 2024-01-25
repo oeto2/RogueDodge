@@ -14,6 +14,7 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
         ProjectileRigid = GetComponent<Rigidbody2D>();
+        if (!ProjectileRigid) Debug.Log("Projectile.cs : ProjectileRigid is Null!");
         onMove = true;
     }
 
