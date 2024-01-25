@@ -28,6 +28,7 @@ public class MonsterRangeAttack : MonoBehaviour
         if (monsterController.distance <= monsterController.monsterStats.attackRange && !monsterController.monsterStats.IsAttacking)
         {
             CreateProjectil();
+            monsterController.CallOnAttackEvent();
             StartCoroutine(AttackCooltime_CountDownCo());
         }
         else
