@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -9,16 +10,30 @@ public class PlayerAttack : MonoBehaviour
 
     //Component
     PlayerStats Stats;
+
     [SerializeField] GameObject PlayerAttack_Projectile;
-    [SerializeField] float atkCoolTime;
+    GameObject Projectile_Img;
+    //public BattleItem Default_BattleItem = new BattleItem();
+    public BattleItemData Equip_BattleItem
+    {
+        get { return Equip_BattleItem; }
+        private set
+        {
+            //Equip_BattleItem = value;
+            PlayerAttack_Projectile = value.Projectile;
+            Projectile_Img = PlayerAttack_Projectile.transform.Find("Image").gameObject;
+            Stats.Player_SetDefaultAtkStat(value.atkValue, value.atkCoolTimeValue);
+        }
+    }
     //PoolingList
     List<GameObject> PlayerObjectList;
-
+    
     void Start()
     {
         Stats = GetComponent<PlayerStats>();
         PlayerObjectList = new List<GameObject>();
-        if(!Stats) Debug.Log("PlayerAttack.cs : Stats is Null!");
+        Projectile_Img = PlayerAttack_Projectile.transform.Find("Image").gameObject;
+        if (!Stats) Debug.Log("PlayerAttack.cs : Stats is Null!");
         onAttack = true;
     }
 
@@ -46,7 +61,7 @@ public class PlayerAttack : MonoBehaviour
         //How to create an attack projectile, not an attack. Generation is also created using object pooling.
         ObjectPooling(PlayerAttack_Projectile, mousePos);
 
-        yield return new WaitForSeconds(atkCoolTime);
+        yield return new WaitForSeconds(Stats.getAtkCoolTime);
 
         AttackCourt = null;
     }
@@ -63,6 +78,7 @@ public class PlayerAttack : MonoBehaviour
         {
             obj.transform.position = transform.position;
             obj.transform.rotation = objAngle;
+            obj.transform.Find("Image").GetComponent<SpriteRenderer>().sprite = _obj.transform.Find("Image").GetComponent<SpriteRenderer>().sprite;
             obj.SetActive(true);
         }
         else
@@ -76,6 +92,15 @@ public class PlayerAttack : MonoBehaviour
         if (p)
         {
             p.atk = Stats.getAtk;
+        }
+    }
+    public void newBattleItem(BattleItem _battleItem)
+    {
+        Equip_BattleItem = _battleItem.Data;
+        foreach (GameObject obj in PlayerObjectList.FindAll(item => item.CompareTag("Projectile")))
+        {
+            PlayerObjectList.Remove(obj);
+            Destroy(obj);
         }
     }
 }

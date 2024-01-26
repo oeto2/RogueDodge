@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 5703311513253379203}
   - component: {fileID: 1217651841798164360}
   - component: {fileID: 269241185819136365}
-  m_Layer: 0
+  - component: {fileID: -3055346297821907193}
+  m_Layer: 19
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -154,6 +155,18 @@ MonoBehaviour:
   PlayerAttack_Projectile: {fileID: 5979131315597062299, guid: 551c303d05e4aec48a7ceed4cae04672,
     type: 3}
   atkCoolTime: 0.1
+--- !u!114 &-3055346297821907193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169481980837021727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d01c8d67f8b7b943b5d6935e7c7637d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5944227688969470768
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6200521207940800436}
   - component: {fileID: 5748555439408697626}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
