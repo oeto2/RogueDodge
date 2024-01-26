@@ -5,9 +5,9 @@ public class BuffItemDataBaseEntity
     public string name;
     public string info;
     public float atkValue;
-    public float atkCoolTime;
+    public float atkCoolTimeValue;
     public float speedValue;
-    public float hpValue;
+    public int hpValue;
     public bool isGet;
     public SCARCITY eScarcity;
     public VALUETYPE eValueType;

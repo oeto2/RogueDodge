@@ -17,7 +17,7 @@ MonoBehaviour:
     name: "\uB0A1\uC740 \uAC80"
     info: "\uB204\uAD70\uAC00 \uC0AC\uC6A9\uD558\uB358 \uB0A1\uC740 \uAC80\uC774\uB2E4."
     atkValue: 10
-    atkCoolTimeValue: 10
+    atkCoolTimeValue: 0.8
     isGet: 0
     eScarcity: 0
     eWeaponType: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
     name: "\uB0A1\uC740 \uD65C"
     info: "\uB204\uAD70\uAC00 \uC0AC\uC6A9\uD558\uB358 \uB0A1\uC740 \uD65C\uC774\uB2E4."
     atkValue: 15
-    atkCoolTimeValue: 10
+    atkCoolTimeValue: 1
     isGet: 0
     eScarcity: 0
     eWeaponType: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
     name: "\uB0A1\uC9C0\uD321\uC774"
     info: "\uB204\uAD70\uAC00 \uC0AC\uC6A9\uD558\uB358 \uB0A1\uC740 \uC9C0\uD321\uC774\uB2E4."
     atkValue: 20
-    atkCoolTimeValue: 10
+    atkCoolTimeValue: 1.2
     isGet: 0
     eScarcity: 0
     eWeaponType: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
     name: "\uB0A1\uC740 \uC2E0\uBC1C"
     info: "\uB204\uAD70\uAC00 \uC2E0\uC5C8\uB358 \uB0A1\uC740 \uC2E0\uBC1C\uC774\uB2E4."
     atkValue: 0
-    atkCoolTime: 0
+    atkCoolTimeValue: 0
     speedValue: 10
     hpValue: 0
     isGet: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
     name: "\uB0A1\uC740 \uC7A5\uAC11"
     info: "\uB204\uAD70\uAC00 \uCC29\uC6A9\uD588\uB358 \uB0A1\uC740 \uC7A5\uAC11\uC774\uB2E4."
     atkValue: 10
-    atkCoolTime: 0
+    atkCoolTimeValue: 0
     speedValue: 0
     hpValue: 0
     isGet: 0
@@ -87,9 +87,9 @@ MonoBehaviour:
     name: "\uB0A1\uC740 \uCC45"
     info: "\uC624\uB798\uB41C \uCC45\uC774\uB2E4"
     atkValue: 0
-    atkCoolTime: 0
+    atkCoolTimeValue: 0.2
     speedValue: 0
-    hpValue: 0
+    hpValue: 10
     isGet: 0
     eScarcity: 0
     eValueType: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
     name: "\uB0A1\uC740 \uAC11\uC637"
     info: "\uB204\uAD70\uAC00 \uCC29\uC6A9\uD588\uB358 \uB0A1\uC740 \uAC11\uC637\uC774\uB2E4."
     atkValue: 0
-    atkCoolTime: 0
+    atkCoolTimeValue: 0
     speedValue: 0
     hpValue: 20
     isGet: 0

@@ -16,7 +16,7 @@ public class ItemManager : MonoBehaviour
     public Sprite[] BuffItemSprites;
     public Sprite[] UseItemSprites;
 
-    public Transform[] ItemSpawnTransform;
+    public List<Vector3> ItemSpawnPosition;
 
     //Evnet called when player Get item
     public event Action<GameObject> GetItemEvent;
@@ -46,7 +46,23 @@ public class ItemManager : MonoBehaviour
 
     private void Start()
     {
-        InstantiateItem();
+       
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Z))
+        {
+            //Find ItemSpawn Position 
+            Map mapScript = GameManager.Instance.curMap.GetComponent<Map>();
+
+            foreach (Vector3 vec3 in mapScript.itemSpawn)
+            {
+                ItemSpawnPosition.Add(vec3);
+            }
+
+            InstantiateItem();
+        }
     }
 
     //Call Event
@@ -55,17 +71,17 @@ public class ItemManager : MonoBehaviour
     //Instantiate GameItem
     public void InstantiateItem()
     {
-        if (ItemSpawnTransform != null)
+        if (ItemSpawnPosition != null)
         {
             GameObject instantiate_Item;
 
-            for (int i = 0; i < ItemSpawnTransform.Length; i++)
+            for (int i = 0; i < ItemSpawnPosition.Count; i++)
             {
                 int randomIndexNum = 0;
 
                 //Random Game Item Type
                 int randomItemType = UnityEngine.Random.Range(0, 3);
-                instantiate_Item = Instantiate(ItemObject, ItemSpawnTransform[i].position, Quaternion.identity);
+                instantiate_Item = Instantiate(ItemObject, ItemSpawnPosition[i], Quaternion.identity);
 
                 switch ((ITEMTYPE)randomItemType)
                 {
@@ -117,7 +133,7 @@ public class ItemManager : MonoBehaviour
                 }
 
                 //Set transform parent of this Item
-                instantiate_Item.transform.parent = ItemSpawnTransform[i];
+                instantiate_Item.transform.parent = GameManager.Instance.curMap.transform;
             }
         }
     }
