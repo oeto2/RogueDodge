@@ -12,7 +12,7 @@ public class BuffItemData
     public float atkValue;
     public float atkCoolTimeValue;
     public float speedValue;
-    public float hpValue;
+    public int hpValue;
     public bool isGet;
     public SCARCITY eScarcity;
     public VALUETYPE eValueType;
@@ -23,7 +23,7 @@ public class BuffItemData
         name = _buffItemEntity.name;
         info = _buffItemEntity.info;
         atkValue = _buffItemEntity.atkValue;
-        atkCoolTimeValue = _buffItemEntity.atkCoolTime;
+        atkCoolTimeValue = _buffItemEntity.atkCoolTimeValue;
         speedValue = _buffItemEntity.speedValue;
         hpValue = _buffItemEntity.hpValue;
         isGet = _buffItemEntity.isGet;
