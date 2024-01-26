@@ -4859,7 +4859,7 @@ Transform:
   - {fileID: 4997977444651980333}
   - {fileID: 134369611797159153}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1426749989776423773
 GameObject:
@@ -5510,6 +5510,7 @@ MonoBehaviour:
     m_Bits: 0
   eMONSTER_TYPE: 2
   eMONSTER_STATE: 0
+  eMONSTER_WD: 2
   projectile: {fileID: 0}
 --- !u!114 &1761856983204201907
 MonoBehaviour:

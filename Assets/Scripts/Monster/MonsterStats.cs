@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum MONSTER_WD
+{
+    WILD,
+    DOME,
+    BOSS
+}
 public enum MONSTER_STATE
 {
     IDLE,
@@ -34,6 +40,7 @@ public class MonsterStats : MonoBehaviour
     public LayerMask target;
     public MONSTER_TYPE eMONSTER_TYPE;
     public MONSTER_STATE eMONSTER_STATE = MONSTER_STATE.IDLE;
+    public MONSTER_WD eMONSTER_WD = MONSTER_WD.WILD;
  
     //Range
     public GameObject projectile;

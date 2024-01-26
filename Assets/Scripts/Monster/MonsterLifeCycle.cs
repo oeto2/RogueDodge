@@ -34,6 +34,17 @@ public class MonsterLifeCycle : MonoBehaviour
             monsterStats.hp = 0;
             monsterStats.eMONSTER_STATE = MONSTER_STATE.DIE;
             _collider.enabled = false;
+
+            switch (monsterStats.eMONSTER_WD)//todo
+            {
+                case MONSTER_WD.BOSS: Debug.Log("BOSS"); break;
+                case MONSTER_WD.WILD: Debug.Log("WILD"); break;
+                default: break;
+
+            }
+
+
+
             monsterController.CallOnDeathEvent();
             GameManager.Instance.AddDeadMonsterNum();
             Destroy(gameObject, 1f);

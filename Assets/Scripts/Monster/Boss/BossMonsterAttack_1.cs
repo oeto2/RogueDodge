@@ -122,7 +122,8 @@ public class BossMonsterAttack_1 : MonoBehaviour
             float y = center.y + 0.5f * randomRadian;
             Destroy(Instantiate(spawn, new Vector2(x, y), Quaternion.identity),.5f);
             yield return new WaitForSeconds(0.4f);
-            Instantiate(monster, new Vector2(x, y), Quaternion.identity);
+            GameObject _monster = Instantiate(monster, new Vector2(x, y), Quaternion.identity);
+            _monster.GetComponent<MonsterStats>().eMONSTER_WD = MONSTER_WD.DOME;
             yield return new WaitForSeconds(0.1f);
         }
     }
