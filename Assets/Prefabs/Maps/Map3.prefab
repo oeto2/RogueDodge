@@ -514,7 +514,6 @@ GameObject:
   - component: {fileID: 1622779763192728089}
   - component: {fileID: 33082100529896720}
   - component: {fileID: -7273787168792592691}
-  - component: {fileID: 2376951637844034064}
   m_Layer: 0
   m_Name: Map3
   m_TagString: Respawn
@@ -572,33 +571,6 @@ MonoBehaviour:
   - {x: -3, y: 9.6, z: 0}
   - {x: 0.5, y: 9.6, z: 0}
   - {x: 4, y: 9.6, z: 0}
---- !u!50 &2376951637844034064
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532552995481111157}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &2234057992679774395
 GameObject:
   m_ObjectHideFlags: 0
@@ -10635,7 +10607,8 @@ GameObject:
   - component: {fileID: 5682546888953504025}
   - component: {fileID: 3146603385620880132}
   - component: {fileID: 3835404885122575419}
-  - component: {fileID: 6590056578364811421}
+  - component: {fileID: 9166356266960985671}
+  - component: {fileID: 7690934501216385393}
   m_Layer: 0
   m_Name: PortalPoint
   m_TagString: Portal
@@ -10891,7 +10864,7 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!19719996 &6590056578364811421
+--- !u!19719996 &9166356266960985671
 TilemapCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10927,3 +10900,15 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &7690934501216385393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9164086440115383743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9c46179a25ebc49a994b6e9592ec8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
