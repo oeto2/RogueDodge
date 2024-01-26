@@ -24,12 +24,14 @@ public class ToastMessage : MonoBehaviour
     public void ShowToastMessage(GameObject _gameObject)
     {
         GetItemObjcet = _gameObject;
-        SetToastMessage();
+
+        if (_gameObject != null)
+            SetToastMessage();
     }
 
     public void SetToastMessage()
     {
-        switch(GetItemObjcet.tag)
+        switch (GetItemObjcet.tag)
         {
             case "BattleItem":
                 BattleItemData battleItemData = GetItemObjcet.GetComponent<BattleItem>().Data;
