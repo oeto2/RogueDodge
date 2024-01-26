@@ -46,21 +46,14 @@ public class ItemManager : MonoBehaviour
 
     private void Start()
     {
-       
+        //Subscription Event
+        GameManager.Instance.WaveClearEvent += InstantiateItem;
     }
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Z))
         {
-            //Find ItemSpawn Position 
-            Map mapScript = GameManager.Instance.curMap.GetComponent<Map>();
-
-            foreach (Vector3 vec3 in mapScript.itemSpawn)
-            {
-                ItemSpawnPosition.Add(vec3);
-            }
-
             InstantiateItem();
         }
     }
@@ -71,6 +64,9 @@ public class ItemManager : MonoBehaviour
     //Instantiate GameItem
     public void InstantiateItem()
     {
+        //Setting ItemSpawn Position
+        SetItemSpawnPosition();
+
         if (ItemSpawnPosition != null)
         {
             GameObject instantiate_Item;
@@ -134,6 +130,22 @@ public class ItemManager : MonoBehaviour
 
                 //Set transform parent of this Item
                 instantiate_Item.transform.parent = GameManager.Instance.curMap.transform;
+            }
+        }
+    }
+
+    public void SetItemSpawnPosition()
+    {
+        //Find ItemSpawn Position 
+        Map mapScript = GameManager.Instance.curMap.GetComponent<Map>();
+        Transform curMapTranstorm = GameManager.Instance.curMap.transform;
+
+        if(mapScript != null)
+        {
+            foreach (Vector3 vec3 in mapScript.itemSpawn)
+            {
+                ItemSpawnPosition.Add(new Vector3(vec3.x + curMapTranstorm.position.x, vec3.y + curMapTranstorm.position.y, 
+                    vec3.z));
             }
         }
     }
