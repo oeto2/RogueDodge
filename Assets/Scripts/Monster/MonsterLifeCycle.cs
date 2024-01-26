@@ -35,6 +35,7 @@ public class MonsterLifeCycle : MonoBehaviour
             monsterStats.eMONSTER_STATE = MONSTER_STATE.DIE;
             _collider.enabled = false;
             monsterController.CallOnDeathEvent();
+            GameManager.Instance.deadMonsterNum++;
             Destroy(gameObject, 1f);
         }
     }
