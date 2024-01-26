@@ -36,9 +36,12 @@ public class MonsterMovement : MonoBehaviour
     void Move(Vector2 _dir)
     {
         _rigidbody.position += _dir * Time.deltaTime * monsterController.monsterStats.speed;
-        for (int i = 0; i < monsterController.monsterStats.spriteRendererss.Length; i++)
+        if(_dir.x > 0)
         {
-            monsterController.monsterStats.spriteRendererss[i].flipX = _dir.x > 0;
+            transform.localScale = new Vector3(-1, 1, 1);
+        }else if(_dir.x< 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
         }
     }
 
@@ -47,8 +50,7 @@ public class MonsterMovement : MonoBehaviour
     void MoveAction()
     {
         monsterController.CallOnMoveEvent(dir);
-        //Todo
-        //Todo
+     
     }
 
 
