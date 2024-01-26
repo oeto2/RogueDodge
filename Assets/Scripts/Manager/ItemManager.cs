@@ -68,6 +68,9 @@ public class ItemManager : MonoBehaviour
                 switch ((ITEMTYPE)randomItemType)
                 {
                     case ITEMTYPE.BATTLE:
+                        //Set ItemTag
+                        instantiate_Item.tag = "BattleItem";
+
                         //Random Game ItemIdex Number
                         randomIndexNum = UnityEngine.Random.Range(0, ItemManager.Instance.BattleItmes.Count);
 
@@ -75,12 +78,15 @@ public class ItemManager : MonoBehaviour
                         BattleItem battleItemScript = instantiate_Item.AddComponent<BattleItem>();
                         battleItemScript.Data = new BattleItemData(BattleItmes[randomIndexNum]);
 
-                        //Chage Item Image
+                        //Change Item Image
                         ChangeItemSpriteIamge(instantiate_Item.GetComponentInChildren<SpriteRenderer>(), battleItemScript.Data);
 
                         break;
 
                     case ITEMTYPE.BUFF:
+                        //Set ItemTag
+                        instantiate_Item.tag = "BuffItem";
+
                         //Random Game ItemIdex Number
                         randomIndexNum = UnityEngine.Random.Range(0, ItemManager.Instance.BuffItems.Count);
 
@@ -93,6 +99,9 @@ public class ItemManager : MonoBehaviour
                         break;
 
                     case ITEMTYPE.Use:
+                        //Set ItemTag
+                        instantiate_Item.tag = "UseItem";
+
                         //Random Game ItemIdex Number
                         randomIndexNum = UnityEngine.Random.Range(0, ItemManager.Instance.UseItems.Count);
 
@@ -100,7 +109,7 @@ public class ItemManager : MonoBehaviour
                         UseItem useItemScript = instantiate_Item.AddComponent<UseItem>();
                         useItemScript.Data = new UseItemData(UseItems[randomIndexNum]);
 
-                        //Chage Item Image
+                        //Change Item Image
                         ChangeItemSpriteIamge(instantiate_Item.GetComponentInChildren<SpriteRenderer>(), useItemScript.Data);
                         break;
                 }
