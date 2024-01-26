@@ -152,11 +152,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e20fd0ebc5df04e83d20fc549d08d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eGameState: 0
+  eWaveType: 0
   PlayerTransform: {fileID: 0}
   curMap: {fileID: 0}
   player: {fileID: 0}
   curMonsterNum: 4
   deadMonsterNum: 0
+  curWaveNum: 1
+  targetWaveNum: 3
+  stageNum: 1
 --- !u!4 &148337494
 Transform:
   m_ObjectHideFlags: 0
@@ -277,6 +282,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1169481980837021727, guid: 9a18ffa00c329ef4b93acca2cc98b10e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5049843496740639949, guid: 9a18ffa00c329ef4b93acca2cc98b10e,
         type: 3}
       propertyPath: m_RootOrder
@@ -331,6 +341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944227688969470768, guid: 9a18ffa00c329ef4b93acca2cc98b10e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
