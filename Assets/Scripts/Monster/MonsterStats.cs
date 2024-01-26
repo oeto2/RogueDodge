@@ -21,7 +21,7 @@ public class MonsterStats : MonoBehaviour
     public string monsterName = "";
     public int hp;
     public float atk;
-    float collisionDamage = 5;
+    public int collisionDamage = 5;
     public float speed;
     public float followRange;
     public float attackRange;
