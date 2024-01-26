@@ -11,7 +11,7 @@ public class ItemManager : MonoBehaviour
     public List<BattleItemDataBaseEntity> BattleItmes;
     public List<BuffItemDataBaseEntity> BuffItems;
     public List<UseItemDataBaseEntity> UseItems;
-
+    
     public Sprite[] BattleItemSprites;
     public Sprite[] BuffItemSprites;
     public Sprite[] UseItemSprites;
@@ -22,6 +22,8 @@ public class ItemManager : MonoBehaviour
     public event Action<GameObject> GetItemEvent;
 
     public GameObject ItemObject;
+
+    public GameObject[] BattleProjectile;
 
     private void Awake()
     {

@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7461224472842425042
 MonoBehaviour:
@@ -48,6 +48,19 @@ MonoBehaviour:
   BattleItmes: []
   BuffItems: []
   UseItems: []
+  BattleItemSprites:
+  - {fileID: 190405726, guid: 60a8902da38914646a6af99b93f14af5, type: 3}
+  - {fileID: -1604626818, guid: 60a8902da38914646a6af99b93f14af5, type: 3}
+  - {fileID: 1381808760, guid: 60a8902da38914646a6af99b93f14af5, type: 3}
+  BuffItemSprites:
+  - {fileID: -1277095367, guid: 60a8902da38914646a6af99b93f14af5, type: 3}
+  - {fileID: -1425509953, guid: 60a8902da38914646a6af99b93f14af5, type: 3}
+  - {fileID: 732818421, guid: 60a8902da38914646a6af99b93f14af5, type: 3}
+  - {fileID: 931979973, guid: 60a8902da38914646a6af99b93f14af5, type: 3}
+  UseItemSprites:
+  - {fileID: 21300000, guid: 52abb6465d2da654e9ef546178fae51a, type: 3}
+  - {fileID: 21300000, guid: 9e00f02827ab6d445a26bc608e329089, type: 3}
+  - {fileID: 1361307353, guid: 60a8902da38914646a6af99b93f14af5, type: 3}
   ItemSpawnTransform:
   - {fileID: 0}
   - {fileID: 0}
