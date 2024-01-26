@@ -16,6 +16,7 @@ public class Map : MonoBehaviour
     {
         if(other.tag == "Player" && !isUsed)
         {
+            //TODO: Change to ButtonClicked
             MapCreator.instance.CreateNextMap(gameObject);
             isUsed = true;
         }
