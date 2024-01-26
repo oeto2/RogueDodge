@@ -61,7 +61,11 @@ public class ItemManager : MonoBehaviour
     }
 
     //Call Event
-    public void CallGetItemEvnet(GameObject _gameObject) => GetItemEvent?.Invoke(_gameObject);
+    public void CallGetItemEvnet(GameObject _gameObject)
+    {
+        GetItemEvent?.Invoke(_gameObject);
+        GameManager.Instance.StartNextWave();
+    }
 
     //Instantiate GameItem
     public void InstantiateItem()
