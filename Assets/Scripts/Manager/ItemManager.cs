@@ -11,17 +11,19 @@ public class ItemManager : MonoBehaviour
     public List<BattleItemDataBaseEntity> BattleItmes;
     public List<BuffItemDataBaseEntity> BuffItems;
     public List<UseItemDataBaseEntity> UseItems;
-
+    
     public Sprite[] BattleItemSprites;
     public Sprite[] BuffItemSprites;
     public Sprite[] UseItemSprites;
 
     public Transform[] ItemSpawnTransform;
 
-    //Evnet called when an Get item
+    //Evnet called when player Get item
     public event Action<GameObject> GetItemEvent;
 
     public GameObject ItemObject;
+
+    public GameObject[] BattleProjectile;
 
     private void Awake()
     {

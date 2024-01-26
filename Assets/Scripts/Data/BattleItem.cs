@@ -6,6 +6,7 @@ using System;
 [System.Serializable]
 public class BattleItemData
 {
+    public GameObject Projectile;
     public int index;
     public string name;
     public string info;
@@ -25,6 +26,7 @@ public class BattleItemData
         isGet = _battleItemEntity.isGet;
         eScarcity = _battleItemEntity.eScarcity;
         eWeaponType = _battleItemEntity.eWeaponType;
+        Projectile = ItemManager.Instance.BattleProjectile[index]; ;
     }
 }
 

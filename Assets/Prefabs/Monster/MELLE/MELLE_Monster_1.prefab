@@ -75,10 +75,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterName: Pig
-  hp: 50
+  hp: 20
   atk: 0
+  collisionDamage: 5
   speed: 1
-  followRange: 5
+  followRange: 10
   attackRange: 1
   attackCoolTime: 2
   IsAttacking: 0
@@ -88,8 +89,6 @@ MonoBehaviour:
     m_Bits: 0
   eMONSTER_TYPE: 0
   eMONSTER_STATE: 0
-  spriteRendererss:
-  - {fileID: 7908033896264832447}
   projectile: {fileID: 0}
 --- !u!114 &4825167211006943093
 MonoBehaviour:
@@ -119,6 +118,7 @@ MonoBehaviour:
   monsterStats: {fileID: 0}
   player: {fileID: 0}
   distance: 0
+  dir: {x: 0, y: 0}
 --- !u!50 &1122052447432755191
 Rigidbody2D:
   serializedVersion: 4
@@ -331,7 +331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7703142900915580059
 Transform:
   m_ObjectHideFlags: 0
@@ -379,7 +379,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08336687, y: -0.04413542}
+  m_Offset: {x: 0.013934016, y: -0.020761907}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -390,7 +390,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.18594742, y: 0.22517863}
+  m_Size: {x: 0.32481313, y: 0.4589138}
   m_EdgeRadius: 0
 --- !u!114 &2087518628129535436
 MonoBehaviour:

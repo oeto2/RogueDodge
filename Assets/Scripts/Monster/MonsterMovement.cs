@@ -6,7 +6,7 @@ public class MonsterMovement : MonoBehaviour
 {
     MonsterController monsterController;
     Rigidbody2D _rigidbody;
-    Vector2 dir = Vector2.zero;
+   // Vector2 dir = Vector2.zero;
 
     private void Awake()
     {
@@ -20,14 +20,22 @@ public class MonsterMovement : MonoBehaviour
 
     void Update()
     {
-        
-        CheckPlayerDistance();
+        if (monsterController.dir.x > 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (monsterController.dir.x < 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        //  CheckPlayerDistance();
     }
 
     private void FixedUpdate()
     {
         if(monsterController.monsterStats.eMONSTER_STATE != MONSTER_STATE.ATTACK
-            && monsterController.monsterStats.eMONSTER_STATE != MONSTER_STATE.DIE)
+            && monsterController.monsterStats.eMONSTER_STATE != MONSTER_STATE.DIE
+            && monsterController.monsterStats.eMONSTER_TYPE != MONSTER_TYPE.STATIONARY)
         {
             MoveAction();
         }
@@ -36,33 +44,44 @@ public class MonsterMovement : MonoBehaviour
     void Move(Vector2 _dir)
     {
         _rigidbody.position += _dir * Time.deltaTime * monsterController.monsterStats.speed;
-        for (int i = 0; i < monsterController.monsterStats.spriteRendererss.Length; i++)
-        {
-            monsterController.monsterStats.spriteRendererss[i].flipX = _dir.x > 0;
-        }
+       
     }
 
 
 
     void MoveAction()
     {
-        monsterController.CallOnMoveEvent(dir);
-        //Todo
-        //Todo
-    }
-
-
-    void CheckPlayerDistance() // 
-    {
-        if(monsterController.monsterStats.attackRange < monsterController.distance && monsterController.distance < monsterController.monsterStats.followRange)
+       
+        if (monsterController.monsterStats.eMONSTER_TYPE == MONSTER_TYPE.RANGE)
         {
-            dir = (monsterController.player.position - transform.position).normalized;
+           if(monsterController.monsterStats.attackRange > monsterController.distance)
+            {
+                monsterController.CallOnMoveEvent(Vector2.zero);
+            }
+            else
+            {
+                monsterController.CallOnMoveEvent(monsterController.dir);
+            }
         }
         else
         {
-            dir = Vector2.zero;
+            monsterController.CallOnMoveEvent(monsterController.dir);
         }
-       
+
     }
+
+
+    //void CheckPlayerDistance() // 
+    //{
+    //    if (monsterController.monsterStats.attackRange < monsterController.distance && monsterController.distance < monsterController.monsterStats.followRange)
+    //    {
+    //        dir = (monsterController.player.position - transform.position).normalized;
+    //    }
+    //    else
+    //    {
+    //        dir = Vector2.zero;
+    //    }
+
+    //} //주석 컨트롤kc, ku
 
 }

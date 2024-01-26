@@ -31,6 +31,7 @@ public class MonsterLifeCycle : MonoBehaviour
     {
         if(monsterStats.hp <= 0)
         {
+            monsterStats.hp = 0;
             monsterStats.eMONSTER_STATE = MONSTER_STATE.DIE;
             _collider.enabled = false;
             monsterController.CallOnDeathEvent();
