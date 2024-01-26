@@ -241,8 +241,9 @@ MonoBehaviour:
   monsterName: 
   hp: 20
   atk: 0
+  collisionDamage: 5
   speed: 3
-  followRange: 7
+  followRange: 10
   attackRange: 1
   attackCoolTime: 2
   IsAttacking: 0
@@ -304,6 +305,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   monsterStats: {fileID: 0}
   player: {fileID: 0}
+  curMap: {fileID: 0}
   distance: 0
 --- !u!114 &3543316178131184974
 MonoBehaviour:

@@ -6,7 +6,7 @@ public class MonsterAnimationController : MonoBehaviour
 {
     MonsterController monsterController;
     Animator animator;
-
+    Rigidbody2D _rigidbody;
     static readonly int IsAttack = Animator.StringToHash("attack");
     static readonly int IsMoving = Animator.StringToHash("isMoving");
     static readonly int IsDeath = Animator.StringToHash("death");
@@ -17,6 +17,7 @@ public class MonsterAnimationController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         monsterController = GetComponent<MonsterController>();
+        _rigidbody = GetComponent<Rigidbody2D>();
         monsterController.OnAttackEvent += AnimationAttack;
         monsterController.OnDeathEvent += AnimationDeath;
         monsterController.OnMoveEvent += AnimationMoving;
@@ -37,9 +38,10 @@ public class MonsterAnimationController : MonoBehaviour
 
     void AnimationMoving(Vector2 dir)
     {
-        if(dir != Vector2.zero)
+
+        if (dir != Vector2.zero)
         {
-            animator.SetBool(IsMoving,true);
+            animator.SetBool(IsMoving, true);
         }
         else
         {

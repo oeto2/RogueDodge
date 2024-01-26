@@ -31,7 +31,7 @@ Transform:
   - {fileID: 4997977444651980333}
   - {fileID: 134369611797159153}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1426749989776423773
 GameObject:
@@ -674,8 +674,8 @@ MonoBehaviour:
   projectileSpawner: {fileID: 0}
   target:
     serializedVersion: 2
-    m_Bits: 0
-  eMONSTER_TYPE: 0
+    m_Bits: 524288
+  eMONSTER_TYPE: 2
   eMONSTER_STATE: 0
   projectile: {fileID: 0}
 --- !u!114 &1761856983204201907
@@ -718,6 +718,7 @@ MonoBehaviour:
   monsterStats: {fileID: 0}
   player: {fileID: 0}
   distance: 0
+  dir: {x: 0, y: 0}
 --- !u!114 &8501121303820093914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,6 +759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 8745653287913192281}
   hpBarSlider: {fileID: 8607366811437818385}
+  parentObj: {fileID: 951520339779875461}
 --- !u!1 &4289756644936687496
 GameObject:
   m_ObjectHideFlags: 0
