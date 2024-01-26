@@ -11,20 +11,20 @@ public class PlayerStats : MonoBehaviour
     PlayerMovement MoveComponent;
     //HP
     [SerializeField] int defaultMaxHp = 100;
-    int buffedMaxHp = 0;
+    [SerializeField] int buffedMaxHp = 0;
     [SerializeField] int currentMaxHp { get { return defaultMaxHp + buffedMaxHp; } }
     public int getMaxHp { get { return currentMaxHp; } }
     [SerializeField] int hp = 0;
     
     //Speed
     [SerializeField] float defaultSpeed = 10f;
-    float buffedSpeed = 0f;
+    [SerializeField] float buffedSpeed = 0f;
     [SerializeField] float currentSpeed { get { return defaultSpeed + buffedSpeed; } }
     public float getSpeed{ get { return currentSpeed; } }
     
     //Atk
     [SerializeField] float defaultAtk = 10f;
-    float buffedAtk = 0f;
+    [SerializeField] float buffedAtk = 0f;
     [SerializeField] float currentAtk
     {
         get { return defaultAtk + buffedAtk; }
@@ -35,7 +35,7 @@ public class PlayerStats : MonoBehaviour
     float minAtkCoolTime = 0.1f;
     float maxAtkCoolTime = 10.0f;
     [SerializeField] float defaultAtkCoolTime = 1f;
-    float buffedAtkCoolTime = 0;
+    [SerializeField] float buffedAtkCoolTime = 0;
     [SerializeField]
     float currentAtkCoolTime
     {
@@ -72,7 +72,7 @@ public class PlayerStats : MonoBehaviour
         buffedMaxHp += (int)_buffItem.Data.hpValue;
         hp += (int)_buffItem.Data.hpValue;
         buffedSpeed += _buffItem.Data.speedValue;
-        buffedAtkCoolTime += _buffItem.Data.speedValue;
+        buffedAtkCoolTime += _buffItem.Data.atkCoolTimeValue;
     }
     public void PlayerHeal(int _healPoint)
     {
