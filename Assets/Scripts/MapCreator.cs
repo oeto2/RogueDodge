@@ -38,15 +38,15 @@ public class MapCreator : MonoBehaviour
         return newMap;
     }
 
-    public void CreateNextMap(GameObject curMap)
+    public void CreateNextMap(GameObject _curMap)
     {
         GameObject newMap = CreateNewMap();
 
         Map nMap = newMap.GetComponent<Map>();
         int newX = nMap.mapX;
 
-        int curX = curMap.GetComponent<Map>().mapX;
+        int curX = _curMap.GetComponent<Map>().mapX;
 
-        newMap.transform.position = new Vector3(curMap.transform.position.x + (curX + newX) / 2 + 5, 0, 0);
+        newMap.transform.position = new Vector3(_curMap.transform.position.x + (curX + newX) / 2 + 5, 0, 0);
     }
 }
