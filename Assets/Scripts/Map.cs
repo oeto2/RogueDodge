@@ -11,14 +11,4 @@ public class Map : MonoBehaviour
     //map1 (-3, 3.6) (0.5, 3.6) (4, 3.6)
     //map2 (-5, 3.6) (-0.5, 3.6)(4, 3.6)
     //map3 (-3, 9.6) (0.5 10.6) (4, 9.6) 
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "Player" && !isUsed)
-        {
-            //TODO: Change to ButtonClicked
-            MapCreator.instance.CreateNextMap(gameObject);
-            isUsed = true;
-        }
-    }
 }
