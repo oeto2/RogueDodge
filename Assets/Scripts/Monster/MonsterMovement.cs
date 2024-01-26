@@ -20,8 +20,15 @@ public class MonsterMovement : MonoBehaviour
 
     void Update()
     {
-        
-      //  CheckPlayerDistance();
+        if (monsterController.dir.x > 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (monsterController.dir.x < 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        //  CheckPlayerDistance();
     }
 
     private void FixedUpdate()
@@ -44,15 +51,7 @@ public class MonsterMovement : MonoBehaviour
 
     void MoveAction()
     {
-        if (monsterController.dir.x > 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else if (monsterController.dir.x < 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-
+       
         if (monsterController.monsterStats.eMONSTER_TYPE == MONSTER_TYPE.RANGE)
         {
            if(monsterController.monsterStats.attackRange > monsterController.distance)
