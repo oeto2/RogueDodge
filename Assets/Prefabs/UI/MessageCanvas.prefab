@@ -65,7 +65,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294923214
   CloseMessageTime: 3
-  ToastMessageAnimator: {fileID: 0}
+  ToastMessageAnimator: {fileID: 1448418707614124254}
 --- !u!1 &3289900800804231722
 GameObject:
   m_ObjectHideFlags: 0
