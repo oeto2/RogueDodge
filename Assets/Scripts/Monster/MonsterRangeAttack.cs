@@ -18,6 +18,7 @@ public class MonsterRangeAttack : MonoBehaviour
         monsterController = GetComponent<MonsterController>();
         attackList[0] = CreateProjectil;
         attackList[1] = RoundShot;
+        attackList[2] = SpiralShot;
     }
     private void Start()
     {
@@ -32,7 +33,8 @@ public class MonsterRangeAttack : MonoBehaviour
         {
             if(attackCooltime > monsterStats.attackCoolTime)
             {
-             Check_PlayerInAttackBounder();
+                monsterController.monsterStats.IsAttacking = false;
+                Check_PlayerInAttackBounder();
             }
             else
             {
@@ -44,9 +46,9 @@ public class MonsterRangeAttack : MonoBehaviour
 
     void Check_PlayerInAttackBounder()
     {
-        if (monsterController.distance <= monsterController.monsterStats.attackRange )
+        if (monsterController.distance <= monsterController.monsterStats.attackRange && !monsterController.monsterStats.IsAttacking)
         {
-            
+            monsterController.monsterStats.IsAttacking = true;
             attackCooltime = 0;
             attackList[attackListIdx]();
             monsterController.CallOnAttackEvent();
@@ -79,6 +81,26 @@ public class MonsterRangeAttack : MonoBehaviour
             projectile.GetComponent<MonsterProjectile>().SetMonsterStats(monsterStats);
             float angle = (i+currentZ) * angleStep;
             projectile.transform.Rotate(Vector3.forward, angle);
+        }
+    }
+
+    public void SpiralShot()
+    {
+        StartCoroutine(SpiralShotCo(2));
+    }
+   IEnumerator SpiralShotCo(float duration)
+    {
+        float percent = 0;
+        float angle = Mathf.Atan2(monsterController.dir.y, monsterController.dir.x)*Mathf.Rad2Deg - 50;
+        while(percent < duration)
+        {
+            angle += 10;
+            percent += 0.1f;
+            GameObject projectile = Instantiate(monsterStats.projectile, monsterStats.projectileSpawner.position, Quaternion.identity);
+            projectile.GetComponent<MonsterProjectile>().SetMonsterStats(monsterStats);
+            projectile.transform.Rotate(Vector3.forward, angle);
+
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }

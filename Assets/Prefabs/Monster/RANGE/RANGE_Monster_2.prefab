@@ -149,12 +149,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: 
   hp: 20
-  atk: 5
+  atk: 12
   collisionDamage: 5
   speed: 1
   followRange: 0
   attackRange: 10
-  attackCoolTime: 1.5
+  attackCoolTime: 5
   IsAttacking: 0
   projectileSpawner: {fileID: 7592075187725078703}
   target:
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooltime: 3
-  attackListIdx: 1
+  attackListIdx: 2
 --- !u!1 &1930217117401470149
 GameObject:
   m_ObjectHideFlags: 0
