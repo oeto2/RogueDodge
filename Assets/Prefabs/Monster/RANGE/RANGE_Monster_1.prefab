@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8361168205324427695}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: ProjectileSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5713341573721936476}
   - component: {fileID: 780651847831939757}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5092364969804725504}
   - component: {fileID: 1012342691429893274}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 4430062701856396212}
   - component: {fileID: 6785606645541711289}
   - component: {fileID: 8548607334089269788}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: RANGE_Monster_1
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -368,12 +368,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Wi
   hp: 30
-  atk: 5
+  atk: 15
   collisionDamage: 5
   speed: 1
   followRange: 10
   attackRange: 7
-  attackCoolTime: 5
+  attackCoolTime: 2
   IsAttacking: 0
   projectileSpawner: {fileID: 8361168205324427695}
   target:
@@ -443,7 +443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2410035005136568944}
   - component: {fileID: 2832031811832996927}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7454498074284057210}
   - component: {fileID: 7862821336037527746}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Arm Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
