@@ -43,7 +43,10 @@ public class MonsterMovement : MonoBehaviour
 
     void Move(Vector2 _dir)
     {
+     if(monsterController.distance >= 1)
+        {
         _rigidbody.position += _dir * Time.deltaTime * monsterController.monsterStats.speed;
+        }
        
     }
 

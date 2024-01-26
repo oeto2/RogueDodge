@@ -39,7 +39,7 @@ Transform:
   m_Children:
   - {fileID: 7214082131157640357}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3479115861999183076
 Animator:
@@ -89,6 +89,7 @@ MonoBehaviour:
     m_Bits: 0
   eMONSTER_TYPE: 0
   eMONSTER_STATE: 0
+  eMONSTER_WD: 0
   projectile: {fileID: 0}
 --- !u!114 &4825167211006943093
 MonoBehaviour:
@@ -379,7 +380,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.062384248, y: -0.047189295}
+  m_Offset: {x: 0.062384248, y: 0.0136909485}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -390,7 +391,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2807672, y: 0.35320425}
+  m_Size: {x: 0.2807672, y: 0.47496474}
   m_EdgeRadius: 0
 --- !u!114 &2087518628129535436
 MonoBehaviour:

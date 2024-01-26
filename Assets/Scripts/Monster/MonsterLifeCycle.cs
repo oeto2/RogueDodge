@@ -37,7 +37,9 @@ public class MonsterLifeCycle : MonoBehaviour
 
             switch (monsterStats.eMONSTER_WD)//todo
             {
-                case MONSTER_WD.BOSS: Debug.Log("BOSS"); break;
+                case MONSTER_WD.BOSS: Debug.Log("BOSS");
+                    // gameManager gameClear;
+                    break;
                 case MONSTER_WD.WILD: Debug.Log("WILD"); break;
                 default: break;
 
