@@ -8,14 +8,15 @@ public class Map : MonoBehaviour
     private bool isUsed = false;
 
     public Vector3[] itemSpawn;
-    //map1 (-8, -2.4) (-3, 4.6), (3.-2.4), (5, 7.6) (10, 2.5)
-    //map2 (-9.6, 15.5) (8, 15.5) (-9, 5.5) (8, 5.5) (14, -2.5)
-    //map3 (-12,9.6), (13,9.6) (1, 3.6) (-12, -2.4), (13, -2.4)
+    //map1 (-3, 3.6) (0.5, 3.6) (4, 3.6)
+    //map2 (-5, 3.6) (-0.5, 3.6)(4, 3.6)
+    //map3 (-3, 9.6) (0.5 10.6) (4, 9.6) 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player" && !isUsed)
         {
+            //TODO: Change to ButtonClicked
             MapCreator.instance.CreateNextMap(gameObject);
             isUsed = true;
         }
