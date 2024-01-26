@@ -18,7 +18,7 @@ public class ItemManager : MonoBehaviour
 
     public Transform[] ItemSpawnTransform;
 
-    //Evnet called when an Get item
+    //Evnet called when player Get item
     public event Action<GameObject> GetItemEvent;
 
     public GameObject ItemObject;

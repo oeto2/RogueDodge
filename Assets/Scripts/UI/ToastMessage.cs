@@ -6,9 +6,13 @@ using UnityEngine.UI;
 public class ToastMessage : MonoBehaviour
 {
     public ToastMessage Instance;
-    public Text InfoText;
-    public Image ShowItemImage;
-    public GameObject GetItemObjcet;
+    public Text ToastMessageItemName;
+    public Text ToastMessageInfo;
+    public Image ToastMessageItemImage;
+
+    public Color32 NormalColor;
+    public Color32 RareColor;
+    public Color32 UniqueColor;
 
     public void Awake()
     {
@@ -23,35 +27,62 @@ public class ToastMessage : MonoBehaviour
 
     public void ShowToastMessage(GameObject _gameObject)
     {
-        GetItemObjcet = _gameObject;
-
         if (_gameObject != null)
-            SetToastMessage();
+            SetToastMessage(_gameObject);
     }
 
-    public void SetToastMessage()
+    //Setting ToastMessage
+    public void SetToastMessage(GameObject _gameObject)
     {
-        switch (GetItemObjcet.tag)
+        switch (_gameObject.tag)
         {
             case "BattleItem":
-                BattleItemData battleItemData = GetItemObjcet.GetComponent<BattleItem>().Data;
+                BattleItemData battleItemData = _gameObject.GetComponent<BattleItem>().Data;
 
-                InfoText.text = battleItemData.info;
-                ShowItemImage.sprite = ItemManager.Instance.BattleItemSprites[battleItemData.index];
+                //Setting ToastMessage 
+                ToastMessageInfo.text = battleItemData.info;
+                ToastMessageItemName.text = battleItemData.name;
+                ChangeTextColor(ToastMessageItemName, battleItemData.eScarcity);
+                ToastMessageItemImage.sprite = ItemManager.Instance.BattleItemSprites[battleItemData.index];
                 break;
 
             case "UseItem":
-                UseItemData useItemData = GetItemObjcet.GetComponent<UseItem>().Data;
+                UseItemData useItemData = _gameObject.GetComponent<UseItem>().Data;
 
-                InfoText.text = useItemData.info;
-                ShowItemImage.sprite = ItemManager.Instance.UseItemSprites[useItemData.index];
+                //Setting ToastMessage 
+                ToastMessageInfo.text = useItemData.info;
+                ToastMessageItemName.text = useItemData.name;
+                ChangeTextColor(ToastMessageItemName, useItemData.eScarcity);
+                ToastMessageItemImage.sprite = ItemManager.Instance.UseItemSprites[useItemData.index];
                 break;
 
             case "BuffItem":
-                BuffItemData buffItemData = GetItemObjcet.GetComponent<BuffItem>().Data;
+                BuffItemData buffItemData = _gameObject.GetComponent<BuffItem>().Data;
 
-                InfoText.text = buffItemData.info;
-                ShowItemImage.sprite = ItemManager.Instance.BuffItemSprites[buffItemData.index];
+                //Setting ToastMessage 
+                ToastMessageInfo.text = buffItemData.info;
+                ToastMessageItemName.text = buffItemData.name;
+                ChangeTextColor(ToastMessageItemName, buffItemData.eScarcity);
+                ToastMessageItemImage.sprite = ItemManager.Instance.BuffItemSprites[buffItemData.index];
+                break;
+        }
+    }
+
+    //Change Text color according to scarcity
+    public void ChangeTextColor(Text _text, SCARCITY _scarcity)
+    {
+        switch(_scarcity)
+        {
+            case SCARCITY.NORMAL:
+                _text.color = NormalColor;
+                break;
+
+            case SCARCITY.RARE:
+                _text.color = RareColor;
+                break;
+
+            case SCARCITY.UNIQUE:
+                _text.color = UniqueColor;
                 break;
         }
     }
