@@ -353,6 +353,7 @@ MonoBehaviour:
   monsterStats: {fileID: 0}
   player: {fileID: 0}
   distance: 0
+  dir: {x: 0, y: 0}
 --- !u!114 &3146452285583847902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +369,7 @@ MonoBehaviour:
   monsterName: Wi
   hp: 30
   atk: 5
+  collisionDamage: 5
   speed: 1
   followRange: 10
   attackRange: 7
@@ -405,7 +407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8b3d96d313f48c7be65029ab624c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooltime: 0
+  attackCooltime: 5
+  attackListIdx: 0
 --- !u!114 &6785606645541711289
 MonoBehaviour:
   m_ObjectHideFlags: 0

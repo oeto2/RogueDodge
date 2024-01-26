@@ -32,15 +32,15 @@ TagManager:
   - 
   - 
   - 
+  - MonsterProjectile
+  - Projectile
   - 
-  - 
-  - Player
   - Layer 1
   - Layer 2
   - Layer 3
   - 
-  - 
-  - 
+  - Monster
+  - Player
   - 
   - 
   - 
