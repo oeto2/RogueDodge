@@ -19,7 +19,7 @@ public class ItemManager : MonoBehaviour
     public Transform[] ItemSpawnTransform;
 
     //Evnet called when an Get item
-    public event Action GetItemEvent;
+    public event Action<GameObject> GetItemEvent;
 
     public GameObject ItemObject;
 
@@ -48,7 +48,7 @@ public class ItemManager : MonoBehaviour
     }
 
     //Call Event
-    public void CallGetItemEvnet() => GetItemEvent?.Invoke();
+    public void CallGetItemEvnet(GameObject _gameObject) => GetItemEvent?.Invoke(_gameObject);
 
     //Instantiate GameItem
     public void InstantiateItem()

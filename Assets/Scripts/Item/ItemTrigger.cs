@@ -11,7 +11,8 @@ public class ItemTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("æ∆¿Ã≈€ »πµÊ");
-            ItemManager.Instance.CallGetItemEvnet();
+
+            ItemManager.Instance.CallGetItemEvnet(this.gameObject);
             this.gameObject.SetActive(false);
         }
     }
