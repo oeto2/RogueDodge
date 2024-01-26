@@ -12,7 +12,8 @@ public enum GAMESTATE
 public enum WAVETYPE
 {
     NORMAL,
-    BOSS
+    BOSS,
+    SHOP
 }
 
 public class GameManager : MonoBehaviour
