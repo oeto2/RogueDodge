@@ -12,22 +12,26 @@ public class ItemManager : MonoBehaviour
     public List<BuffItemDataBaseEntity> BuffItems;
     public List<UseItemDataBaseEntity> UseItems;
 
+    public Sprite[] BattleItemSprites;
+    public Sprite[] BuffItemSprites;
+    public Sprite[] UseItemSprites;
+
     public Transform[] ItemSpawnTransform;
 
     //Evnet called when an Get item
-    private event Action GetItemEvent;
+    public event Action<GameObject> GetItemEvent;
 
     public GameObject ItemObject;
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
         else
         {
-            if(Instance != this)
+            if (Instance != this)
             {
                 Destroy(this.gameObject);
             }
@@ -44,18 +48,19 @@ public class ItemManager : MonoBehaviour
     }
 
     //Call Event
-    public void CallGetItemEvnet() => GetItemEvent?.Invoke();
+    public void CallGetItemEvnet(GameObject _gameObject) => GetItemEvent?.Invoke(_gameObject);
 
     //Instantiate GameItem
     public void InstantiateItem()
     {
-        if(ItemSpawnTransform != null)
+        if (ItemSpawnTransform != null)
         {
             GameObject instantiate_Item;
 
             for (int i = 0; i < ItemSpawnTransform.Length; i++)
             {
                 int randomIndexNum = 0;
+
                 //Random Game Item Type
                 int randomItemType = UnityEngine.Random.Range(0, 3);
                 instantiate_Item = Instantiate(ItemObject, ItemSpawnTransform[i].position, Quaternion.identity);
@@ -63,65 +68,57 @@ public class ItemManager : MonoBehaviour
                 switch ((ITEMTYPE)randomItemType)
                 {
                     case ITEMTYPE.BATTLE:
-                        instantiate_Item.GetComponent<CurItemData>().eItemType = ITEMTYPE.BATTLE;
                         //Random Game ItemIdex Number
                         randomIndexNum = UnityEngine.Random.Range(0, ItemManager.Instance.BattleItmes.Count);
-                        
-                        instantiate_Item.GetComponent<CurItemData>().ChangeItem(randomIndexNum);
-                        //BattleItem battleItem = new BattleItem(BattleItmes[randomIndexNum]);
-                        //instantiate_Item.GetComponent<BattleItem>().Data = battleItem;
 
-                        instantiate_Item.AddComponent<BattleItem>();
-                        instantiate_Item.GetComponent<BattleItem>().index = randomIndexNum;
-                        instantiate_Item.GetComponent<BattleItem>().name = BattleItmes[randomIndexNum].name;
-                        instantiate_Item.GetComponent<BattleItem>().info = BattleItmes[randomIndexNum].info;
-                        instantiate_Item.GetComponent<BattleItem>().atkValue = BattleItmes[randomIndexNum].atkValue;
-                        instantiate_Item.GetComponent<BattleItem>().atkCoolTimeValue = BattleItmes[randomIndexNum].atkCoolTimeValue;
-                        instantiate_Item.GetComponent<BattleItem>().isGet = BattleItmes[randomIndexNum].isGet;
-                        instantiate_Item.GetComponent<BattleItem>().eScarcity = BattleItmes[randomIndexNum].eScarcity;
-                        instantiate_Item.GetComponent<BattleItem>().eWeaponType = BattleItmes[randomIndexNum].eWeaponType;
+                        //Add BattleItem Script to ItemObject
+                        BattleItem battleItemScript = instantiate_Item.AddComponent<BattleItem>();
+                        battleItemScript.Data = new BattleItemData(BattleItmes[randomIndexNum]);
+
+                        //Chage Item Image
+                        ChangeItemSpriteIamge(instantiate_Item.GetComponentInChildren<SpriteRenderer>(), battleItemScript.Data);
+
                         break;
 
                     case ITEMTYPE.BUFF:
-                        instantiate_Item.GetComponent<CurItemData>().eItemType = ITEMTYPE.BUFF;
                         //Random Game ItemIdex Number
                         randomIndexNum = UnityEngine.Random.Range(0, ItemManager.Instance.BuffItems.Count);
 
-                        instantiate_Item.GetComponent<CurItemData>().ChangeItem(randomIndexNum);
+                        //Add UseItem Script to Item
+                        BuffItem buffItemScript = instantiate_Item.AddComponent<BuffItem>();
+                        buffItemScript.Data = new BuffItemData(BuffItems[randomIndexNum]);
 
-                        instantiate_Item.AddComponent<BuffItem>();
-                        instantiate_Item.GetComponent<BuffItem>().index = randomIndexNum;
-                        instantiate_Item.GetComponent<BuffItem>().name = BuffItems[randomIndexNum].name;
-                        instantiate_Item.GetComponent<BuffItem>().info = BuffItems[randomIndexNum].info;
-                        instantiate_Item.GetComponent<BuffItem>().atkValue = BuffItems[randomIndexNum].atkValue;
-                        instantiate_Item.GetComponent<BuffItem>().atkCoolTimeValue = BuffItems[randomIndexNum].atkCoolTime;
-                        instantiate_Item.GetComponent<BuffItem>().speedValue = BuffItems[randomIndexNum].speedValue;
-                        instantiate_Item.GetComponent<BuffItem>().hpValue = BuffItems[randomIndexNum].hpValue;
-                        instantiate_Item.GetComponent<BuffItem>().isGet = BuffItems[randomIndexNum].isGet;
-                        instantiate_Item.GetComponent<BuffItem>().eScarcity = BuffItems[randomIndexNum].eScarcity;
-                        instantiate_Item.GetComponent<BuffItem>().eValueType = BuffItems[randomIndexNum].eValueType;
+                        //Chage Item Image
+                        ChangeItemSpriteIamge(instantiate_Item.GetComponentInChildren<SpriteRenderer>(), buffItemScript.Data);
                         break;
 
                     case ITEMTYPE.Use:
-                        instantiate_Item.GetComponent<CurItemData>().eItemType = ITEMTYPE.Use;
                         //Random Game ItemIdex Number
                         randomIndexNum = UnityEngine.Random.Range(0, ItemManager.Instance.UseItems.Count);
 
-                        instantiate_Item.GetComponent<CurItemData>().ChangeItem(randomIndexNum);
+                        //Add UseItem Script to Item
+                        UseItem useItemScript = instantiate_Item.AddComponent<UseItem>();
+                        useItemScript.Data = new UseItemData(UseItems[randomIndexNum]);
 
-                        instantiate_Item.AddComponent<UseItem>();
-                        instantiate_Item.GetComponent<UseItem>().index = randomIndexNum;
-                        instantiate_Item.GetComponent<UseItem>().name = UseItems[randomIndexNum].name;
-                        instantiate_Item.GetComponent<UseItem>().info = UseItems[randomIndexNum].info;
-                        instantiate_Item.GetComponent<UseItem>().recoveryHpValue = UseItems[randomIndexNum].recoveryHpValue;
-                        instantiate_Item.GetComponent<UseItem>().isGet = UseItems[randomIndexNum].isGet;
-                        instantiate_Item.GetComponent<UseItem>().eUseType = UseItems[randomIndexNum].eUseType;
-                        instantiate_Item.GetComponent<UseItem>().eScarcity = UseItems[randomIndexNum].eScarcity;
+                        //Chage Item Image
+                        ChangeItemSpriteIamge(instantiate_Item.GetComponentInChildren<SpriteRenderer>(), useItemScript.Data);
                         break;
                 }
 
+                //Set transform parent of this Item
                 instantiate_Item.transform.parent = ItemSpawnTransform[i];
             }
         }
     }
+
+    #region ChageItemFunctions
+    public void ChangeItemSpriteIamge(SpriteRenderer _spriteRenderer, BattleItemData _battleItemData)
+    { _spriteRenderer.sprite = BattleItemSprites[_battleItemData.index];}
+
+    public void ChangeItemSpriteIamge(SpriteRenderer _spriteRenderer, UseItemData _useItemData)
+    { _spriteRenderer.sprite = UseItemSprites[_useItemData.index]; }
+
+    public void ChangeItemSpriteIamge(SpriteRenderer _spriteRenderer, BuffItemData _buffItemData)
+    { _spriteRenderer.sprite = BuffItemSprites[_buffItemData.index]; }
+    #endregion
 }
