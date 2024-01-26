@@ -69,3 +69,7 @@ MonoBehaviour:
   - {fileID: 0}
   ItemObject: {fileID: 5466194319727110611, guid: 03d85f798cc027f4cb3063df3a0fd7ac,
     type: 3}
+  BattleProjectile:
+  - {fileID: 4250830004192672875, guid: 1d4a4a739943be14f941b623d590f933, type: 3}
+  - {fileID: 352661393788512837, guid: 165b12a331b2ba94f93b78ee52b55b44, type: 3}
+  - {fileID: 3692578646136967664, guid: 23eba78126e06514ca0e02dffedbc8a4, type: 3}
