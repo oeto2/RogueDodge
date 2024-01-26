@@ -7,16 +7,22 @@ public class MonsterRangeAttack : MonoBehaviour
     MonsterController monsterController;
     MonsterStats monsterStats;
 
-    public float attackCooltime = 100;
+    public float attackCooltime;
+    public int attackListIdx = 0;
+    delegate void RangeAttacks();
 
+    RangeAttacks[] attackList = new RangeAttacks[5];
 
     private void Awake()
     {
         monsterController = GetComponent<MonsterController>();
+        attackList[0] = CreateProjectil;
+        attackList[1] = RoundShot;
     }
     private void Start()
     {
         monsterStats = monsterController.monsterStats;        
+
     }
    
 
@@ -42,7 +48,7 @@ public class MonsterRangeAttack : MonoBehaviour
         {
             
             attackCooltime = 0;
-            CreateProjectil();
+            attackList[attackListIdx]();
             monsterController.CallOnAttackEvent();
             
         }
@@ -65,11 +71,13 @@ public class MonsterRangeAttack : MonoBehaviour
 
     public void RoundShot()
     {
+        float currentZ = transform.rotation.z;
         float angleStep = 360f / 10;
         for (int i = 0; i < 10; i++)
         {
             GameObject projectile = Instantiate(monsterStats.projectile, monsterStats.projectileSpawner.position, Quaternion.identity);
-            float angle = i * angleStep;
+            projectile.GetComponent<MonsterProjectile>().SetMonsterStats(monsterStats);
+            float angle = (i+currentZ) * angleStep;
             projectile.transform.Rotate(Vector3.forward, angle);
         }
     }

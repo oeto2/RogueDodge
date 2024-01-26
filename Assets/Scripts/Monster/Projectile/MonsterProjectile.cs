@@ -18,7 +18,7 @@ public class MonsterProjectile : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-
+   
     private void FixedUpdate()
     {
         _rigidbody.AddForce(transform.right * projectileSpeed * Time.deltaTime,ForceMode2D.Impulse);
@@ -47,6 +47,10 @@ public class MonsterProjectile : MonoBehaviour
             Destroy(gameObject);
             //todo -Create ObjectPool, Recycling projectile 
         }
-
+        else
+        {
+           Destroy(gameObject);
+        }
+     
     }
 }

@@ -35,6 +35,8 @@ public class MonsterController : MonoBehaviour
     void Start()
     {
         player = GameManager.Instance.PlayerTransform;
+        distance = Vector3.Distance(player.position, transform.position);
+        dir = (player.position - transform.position).normalized;
     }
 
     void Update()
