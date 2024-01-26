@@ -9,10 +9,16 @@ public class ToastMessage : MonoBehaviour
     public Text ToastMessageItemName;
     public Text ToastMessageInfo;
     public Image ToastMessageItemImage;
+    public GameObject ToastMessageObject;
 
     public Color32 NormalColor;
     public Color32 RareColor;
     public Color32 UniqueColor;
+
+    [SerializeField]
+    [Range(0, 10f)] private float CloseMessageTime = 3f;
+
+    public Animator ToastMessageAnimator;
 
     public void Awake()
     {
@@ -34,6 +40,9 @@ public class ToastMessage : MonoBehaviour
     //Setting ToastMessage
     public void SetToastMessage(GameObject _gameObject)
     {
+        //Start ToastMessage Animation
+        StartCoroutine(StartToastMessageAnimation());
+
         switch (_gameObject.tag)
         {
             case "BattleItem":
@@ -85,5 +94,16 @@ public class ToastMessage : MonoBehaviour
                 _text.color = UniqueColor;
                 break;
         }
+    }
+
+    IEnumerator StartToastMessageAnimation()
+    {
+        ToastMessageObject.SetActive(true);
+
+        yield return new WaitForSeconds(CloseMessageTime);
+        ToastMessageAnimator.SetTrigger("CloseMessage");
+        yield return new WaitForSeconds(1f);
+
+        ToastMessageObject.SetActive(false);
     }
 }
