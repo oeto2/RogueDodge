@@ -19,12 +19,6 @@ public class MapCreator : MonoBehaviour
         CreateNewMap();
     }
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
-
     GameObject CreateNewMap()
     {
         int rand = Random.Range(0, maps.Count);
@@ -38,14 +32,14 @@ public class MapCreator : MonoBehaviour
         return newMap;
     }
 
-    public void CreateNextMap(GameObject curMap)
+    public void CreateNextMap()
     {
+        GameObject curMap = GameManager.Instance.curMap;
+        int curX = curMap.GetComponent<Map>().mapX;
         GameObject newMap = CreateNewMap();
 
         Map nMap = newMap.GetComponent<Map>();
         int newX = nMap.mapX;
-
-        int curX = curMap.GetComponent<Map>().mapX;
 
         newMap.transform.position = new Vector3(curMap.transform.position.x + (curX + newX) / 2 + 5, 0, 0);
     }
