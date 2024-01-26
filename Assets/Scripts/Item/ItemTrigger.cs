@@ -13,7 +13,8 @@ public class ItemTrigger : MonoBehaviour
             Debug.Log("æ∆¿Ã≈€ »πµÊ");
 
             ItemManager.Instance.CallGetItemEvnet(this.gameObject);
-            this.gameObject.SetActive(false);
+            //Destroy Spawn items
+            StartCoroutine(ItemManager.Instance.DestroyAllItem());
         }
     }
 }

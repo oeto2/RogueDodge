@@ -14,8 +14,10 @@ public class GameManager : MonoBehaviour
     public GameObject curMap;
     public GameObject player;
 
-    public int curMonsterNum = 0;
-    public int deadMonsterNum = 0;
+    [SerializeField]
+    private int curMonsterNum = 0;
+    [SerializeField]
+    private int deadMonsterNum = 0;
 
     //Call event When Clear Wave 
     public event Action WaveClearEvent;

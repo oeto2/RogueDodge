@@ -25,6 +25,8 @@ public class ItemManager : MonoBehaviour
 
     public GameObject[] BattleProjectile;
 
+    public List<GameObject> SpawnItemes;
+
     private void Awake()
     {
         if (Instance == null)
@@ -78,6 +80,7 @@ public class ItemManager : MonoBehaviour
                 //Random Game Item Type
                 int randomItemType = UnityEngine.Random.Range(0, 3);
                 instantiate_Item = Instantiate(ItemObject, ItemSpawnPosition[i], Quaternion.identity);
+                SpawnItemes.Add(instantiate_Item);
 
                 switch ((ITEMTYPE)randomItemType)
                 {
@@ -140,13 +143,23 @@ public class ItemManager : MonoBehaviour
         Map mapScript = GameManager.Instance.curMap.GetComponent<Map>();
         Transform curMapTranstorm = GameManager.Instance.curMap.transform;
 
-        if(mapScript != null)
+        if (mapScript != null)
         {
             foreach (Vector3 vec3 in mapScript.itemSpawn)
             {
-                ItemSpawnPosition.Add(new Vector3(vec3.x + curMapTranstorm.position.x, vec3.y + curMapTranstorm.position.y, 
+                ItemSpawnPosition.Add(new Vector3(vec3.x + curMapTranstorm.position.x, vec3.y + curMapTranstorm.position.y,
                     vec3.z));
             }
+        }
+    }
+
+    //Destroy Spawn Items
+    public IEnumerator DestroyAllItem()
+    {
+        yield return new WaitForSeconds(0.1f);
+        foreach(GameObject item in SpawnItemes)
+        {
+            DestroyObject(item);
         }
     }
 

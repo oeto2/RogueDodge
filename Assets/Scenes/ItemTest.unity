@@ -649,54 +649,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: BattleProjectile.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: BattleProjectile.Array.data[0]
-      value: 
-      objectReference: {fileID: 4250830004192672875, guid: 1d4a4a739943be14f941b623d590f933,
-        type: 3}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: BattleProjectile.Array.data[1]
-      value: 
-      objectReference: {fileID: 352661393788512837, guid: 165b12a331b2ba94f93b78ee52b55b44,
-        type: 3}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: BattleProjectile.Array.data[2]
-      value: 
-      objectReference: {fileID: 3692578646136967664, guid: 23eba78126e06514ca0e02dffedbc8a4,
-        type: 3}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: ItemSpawnTransform.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: ItemSpawnTransform.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: ItemSpawnTransform.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: ItemSpawnTransform.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: ItemSpawnTransform.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8828702626972122375, guid: 38b8649d02f4ba1459fa132227703dce,
         type: 3}
       propertyPath: m_Name
