@@ -6,13 +6,13 @@ public class MonsterLifeCycle : MonoBehaviour
 {
     MonsterController monsterController;
     MonsterStats monsterStats;
-    BoxCollider2D collider;
+    BoxCollider2D _collider;
     //Player player;
 
     private void Awake()
     {
         monsterController = GetComponent<MonsterController>();
-        collider = GetComponent<BoxCollider2D>();
+        _collider = GetComponent<BoxCollider2D>();
         monsterController.OnHitEvent += Hit;
     }
 
@@ -32,7 +32,7 @@ public class MonsterLifeCycle : MonoBehaviour
         if(monsterStats.hp <= 0)
         {
             monsterStats.eMONSTER_STATE = MONSTER_STATE.DIE;
-            collider.enabled = false;
+            _collider.enabled = false;
             monsterController.CallOnDeathEvent();
             Destroy(gameObject, 1f);
         }
