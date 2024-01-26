@@ -54,6 +54,7 @@ MonoBehaviour:
   ToastMessageItemName: {fileID: 1773494012107006139}
   ToastMessageInfo: {fileID: 6696701368743389384}
   ToastMessageItemImage: {fileID: 3786452393333001781}
+  ToastMessageObject: {fileID: 3505327059143281514}
   NormalColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -63,6 +64,8 @@ MonoBehaviour:
   UniqueColor:
     serializedVersion: 2
     rgba: 4294923214
+  CloseMessageTime: 3
+  ToastMessageAnimator: {fileID: 0}
 --- !u!1 &3289900800804231722
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8431709583806567796
 RectTransform:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7461224472842425042
 MonoBehaviour:
@@ -61,15 +61,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 52abb6465d2da654e9ef546178fae51a, type: 3}
   - {fileID: 21300000, guid: 9e00f02827ab6d445a26bc608e329089, type: 3}
   - {fileID: 1361307353, guid: 60a8902da38914646a6af99b93f14af5, type: 3}
-  ItemSpawnTransform:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  ItemSpawnPosition: []
   ItemObject: {fileID: 5466194319727110611, guid: 03d85f798cc027f4cb3063df3a0fd7ac,
     type: 3}
   BattleProjectile:
   - {fileID: 4250830004192672875, guid: 1d4a4a739943be14f941b623d590f933, type: 3}
   - {fileID: 352661393788512837, guid: 165b12a331b2ba94f93b78ee52b55b44, type: 3}
   - {fileID: 3692578646136967664, guid: 23eba78126e06514ca0e02dffedbc8a4, type: 3}
+  SpawnItemes: []

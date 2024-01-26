@@ -209,11 +209,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1082281267}
-    - target: {fileID: -1492829425155034770, guid: 66b69b9d9f65b23479acaae1f1744ae8,
-        type: 3}
-      propertyPath: curMonsterNum
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4551828443901298892, guid: 66b69b9d9f65b23479acaae1f1744ae8,
         type: 3}
       propertyPath: m_Name
@@ -654,54 +649,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: BattleProjectile.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: BattleProjectile.Array.data[0]
-      value: 
-      objectReference: {fileID: 4250830004192672875, guid: 1d4a4a739943be14f941b623d590f933,
-        type: 3}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: BattleProjectile.Array.data[1]
-      value: 
-      objectReference: {fileID: 352661393788512837, guid: 165b12a331b2ba94f93b78ee52b55b44,
-        type: 3}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: BattleProjectile.Array.data[2]
-      value: 
-      objectReference: {fileID: 3692578646136967664, guid: 23eba78126e06514ca0e02dffedbc8a4,
-        type: 3}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: ItemSpawnTransform.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: ItemSpawnTransform.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: ItemSpawnTransform.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: ItemSpawnTransform.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
-        type: 3}
-      propertyPath: ItemSpawnTransform.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8828702626972122375, guid: 38b8649d02f4ba1459fa132227703dce,
         type: 3}
       propertyPath: m_Name
@@ -725,21 +672,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1772113794}
-    - target: {fileID: 1759515491496949413, guid: 3081052191a593b44bec6f3db5c0ab09,
-        type: 3}
-      propertyPath: ToastMessageObject
-      value: 
-      objectReference: {fileID: 9208796372180088240}
-    - target: {fileID: 1759515491496949413, guid: 3081052191a593b44bec6f3db5c0ab09,
-        type: 3}
-      propertyPath: ToastMessageAnimator
-      value: 
-      objectReference: {fileID: 9208796372180088241}
-    - target: {fileID: 3505327059143281514, guid: 3081052191a593b44bec6f3db5c0ab09,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6252337979708182191, guid: 3081052191a593b44bec6f3db5c0ab09,
         type: 3}
       propertyPath: m_Name
@@ -855,15 +787,3 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3081052191a593b44bec6f3db5c0ab09, type: 3}
---- !u!1 &9208796372180088240 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3505327059143281514, guid: 3081052191a593b44bec6f3db5c0ab09,
-    type: 3}
-  m_PrefabInstance: {fileID: 9208796372180088239}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &9208796372180088241 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1448418707614124254, guid: 3081052191a593b44bec6f3db5c0ab09,
-    type: 3}
-  m_PrefabInstance: {fileID: 9208796372180088239}
-  m_PrefabAsset: {fileID: 0}
