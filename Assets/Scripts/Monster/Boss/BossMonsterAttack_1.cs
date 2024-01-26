@@ -78,7 +78,7 @@ public class BossMonsterAttack_1 : MonoBehaviour
         attackEffect[0].Play();
         ParticleSystem.VelocityOverLifetimeModule velocity;
         velocity = attackEffect[0].velocityOverLifetime;
-        velocity.x = dir.x;
+        velocity.x = dir.x*5;
         attackCooltime = 2;
         
         //int defaultCollisionDamge = monsterStats.collisionDamage;
