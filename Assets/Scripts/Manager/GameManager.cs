@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance = null;
 
     private int gold { get; set; }
-
     public Transform PlayerTransform;
+
+    public GameObject curMap;
+    public GameObject player;
 
     private void Awake()
     {
@@ -23,6 +25,8 @@ public class GameManager : MonoBehaviour
                 Destroy(this.gameObject);
         }
 
+        //TODO: if GameObject player is available -> delete
         PlayerTransform = GameObject.FindWithTag("Player").transform;
+
     }
 }

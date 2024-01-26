@@ -7,11 +7,11 @@ public class MapCreator : MonoBehaviour
     //TODO: Check basic map's size and make new map's location vector
     [SerializeField] List<GameObject> maps;
 
-    public static MapCreator I;
+    public static MapCreator instance;
 
     private void Awake()
     {
-        I = this;
+        instance = this;
     }
     // Start is called before the first frame update
     void Start()
@@ -19,16 +19,21 @@ public class MapCreator : MonoBehaviour
         CreateNewMap();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //// Update is called once per frame
+    //void Update()
+    //{
+
+    //}
 
     GameObject CreateNewMap()
     {
         int rand = Random.Range(0, maps.Count);
         GameObject newMap = Instantiate(maps[rand]);
+        GameManager.Instance.curMap = newMap;
+        
+        //TODO: if stage clear is implemented, create new method and write these code
+        GameManager.Instance.player.transform.SetParent(GameManager.Instance.curMap.transform);
+        GameManager.Instance.player.transform.position = new Vector3(0, 0, 0);
 
         return newMap;
     }

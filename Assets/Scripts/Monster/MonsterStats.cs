@@ -21,7 +21,7 @@ public class MonsterStats : MonoBehaviour
     public string monsterName = "";
     public int hp;
     public float atk;
-    float collisionDamage = 5;
+    public int collisionDamage = 5;
     public float speed;
     public float followRange;
     public float attackRange;
@@ -34,8 +34,7 @@ public class MonsterStats : MonoBehaviour
     public LayerMask target;
     public MONSTER_TYPE eMONSTER_TYPE;
     public MONSTER_STATE eMONSTER_STATE = MONSTER_STATE.IDLE;
-    public SpriteRenderer[] spriteRendererss;
-
+ 
     //Range
     public GameObject projectile;
 

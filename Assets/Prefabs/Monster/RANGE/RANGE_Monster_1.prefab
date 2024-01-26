@@ -242,7 +242,7 @@ Transform:
   - {fileID: 5092364969804725504}
   - {fileID: 8361168205324427695}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5552222673280322648
 Animator:
@@ -365,8 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9aa8bd5396d82e4fa05677df39acc30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterName: 
-  hp: 10
+  monsterName: Wi
+  hp: 30
   atk: 5
   speed: 1
   followRange: 10
@@ -379,8 +379,6 @@ MonoBehaviour:
     m_Bits: 0
   eMONSTER_TYPE: 1
   eMONSTER_STATE: 0
-  spriteRendererss:
-  - {fileID: 2832031811832996927}
   projectile: {fileID: 3377916364384926863, guid: 5787f8e5ded6540938b2dd129d66e1a4,
     type: 3}
 --- !u!114 &6839012220609141656
