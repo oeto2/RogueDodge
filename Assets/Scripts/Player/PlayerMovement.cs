@@ -21,7 +21,11 @@ public class PlayerMovement : MonoBehaviour
         if (!PlayerRigid) Debug.Log("PlayerMovement.cs : Rigidbody is Null!");
         if (!PlayerRenderer) Debug.Log("PlayerMovement.cs : SpriteRenderer is Null!");
         if (!PlayerCam) Debug.Log("PlayerMovement.cs : PlayerCam is Null");
-
+        else
+        {
+            //Main camera attribution to the player.
+            PlayerCam.transform.parent = transform;
+        }
         onMove = true;
     }
 

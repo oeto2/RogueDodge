@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     public float atk = 0;
     bool onMove;
     Vector2 StartPos;
+
     private void Start()
     {
         ProjectileRigid = GetComponent<Rigidbody2D>();
