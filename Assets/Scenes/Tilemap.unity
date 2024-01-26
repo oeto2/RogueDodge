@@ -219,7 +219,7 @@ MonoBehaviour:
   soundEffectVolume: 0
   soundEffectPitchVariance: 0
   musicVolume: 0
-  musicClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: a6ab4a7563bd86f47a6fdb005527a8dc, type: 3}
 --- !u!1001 &360209151
 PrefabInstance:
   m_ObjectHideFlags: 0
