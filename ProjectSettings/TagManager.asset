@@ -9,6 +9,11 @@ TagManager:
   - MonsterProjectile
   - MonsterHitBox
   - Portal
+  - ItemSpawn
+  - Item
+  - BattleItem
+  - UseItem
+  - BuffItem
   layers:
   - Default
   - TransparentFX

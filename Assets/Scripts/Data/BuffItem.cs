@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class BuffItem : MonoBehaviour
+[System.Serializable]
+public class BuffItemData
 {
     public int index;
     public string name;
@@ -16,18 +17,23 @@ public class BuffItem : MonoBehaviour
     public SCARCITY eScarcity;
     public VALUETYPE eValueType;
 
-    public BuffItem(int _index, string _name, string _info, float _atkValue,
-        float _atkCoolTimeValue, float _speedValue, float _hpValue, bool _isGet, SCARCITY _eScarcity, VALUETYPE _eValueType)
+    public BuffItemData(BuffItemDataBaseEntity _buffItemEntity)
     {
-        index = _index;
-        name = _name;
-        info = _info;
-        atkValue = _atkValue;
-        atkCoolTimeValue = _atkCoolTimeValue;
-        speedValue = _speedValue;
-        hpValue = _hpValue;
-        isGet = _isGet;
-        eScarcity = _eScarcity;
-        eValueType = _eValueType;
+        index = _buffItemEntity.index;
+        name = _buffItemEntity.name;
+        info = _buffItemEntity.info;
+        atkValue = _buffItemEntity.atkValue;
+        atkCoolTimeValue = _buffItemEntity.atkCoolTime;
+        speedValue = _buffItemEntity.speedValue;
+        hpValue = _buffItemEntity.hpValue;
+        isGet = _buffItemEntity.isGet;
+        eScarcity = _buffItemEntity.eScarcity;
+        eValueType = _buffItemEntity.eValueType;
     }
+}
+
+
+public class BuffItem : MonoBehaviour
+{
+    public BuffItemData Data;
 }
