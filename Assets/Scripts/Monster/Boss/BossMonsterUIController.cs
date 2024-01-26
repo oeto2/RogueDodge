@@ -11,12 +11,14 @@ public class BossMonsterUIController : MonoBehaviour
     MonsterStats monsterStats;
     MonsterController monsterController;
 
+    public GameObject parentObj;
 
     private void Awake()
     {
         monsterController = GetComponent<MonsterController>();
         monsterController.OnHitEvent += Hit;
-        monsterController.OnDeathEvent += SetActiveUi;
+        monsterController.OnDeathEvent += DestroyObj;
+        ui.GetComponent<Canvas>().worldCamera = Camera.main;
        
     }
     private void Start()
@@ -47,6 +49,11 @@ public class BossMonsterUIController : MonoBehaviour
         {
             ui.SetActive(true);
         }
+    }
+
+    public void DestroyObj()
+    {
+        Destroy(parentObj,1.5f);
     }
 
 }
