@@ -86,6 +86,7 @@ public class BossMonsterAttack_2 : MonoBehaviour
 
     void AttackPattern_2() // 연사
     {
+        animator.SetTrigger(IsAttack_2);
         StartCoroutine(AttackPattern_2Co());
     }
     IEnumerator AttackPattern_2Co() //1.2 second
