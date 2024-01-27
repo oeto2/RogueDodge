@@ -40,7 +40,7 @@ public class BossMonsterAttack_2 : MonoBehaviour
     {
         monsterStats = GetComponent<MonsterStats>();
         attackPatterns.Add(AttackPattern_1);
-        
+        attackPatterns.Add(AttackPattern_2);
         player = GameManager.Instance.PlayerTransform.gameObject;
 
         StartCoroutine(OnAttackCo());
@@ -65,9 +65,10 @@ public class BossMonsterAttack_2 : MonoBehaviour
 
     void AttackPattern_1() // 나선형
     {
-        StartCoroutine(SpiralShotCo(3));
+        animator.SetTrigger(IsAttack_1);
+        StartCoroutine(SpiralShotCo(4));
     }
-    IEnumerator SpiralShotCo(float duration)
+    IEnumerator SpiralShotCo(float duration) //4 second
     {
         float percent = 0;
         float angle = Mathf.Atan2(monsterController.dir.y, monsterController.dir.x) * Mathf.Rad2Deg - 50;
@@ -85,7 +86,19 @@ public class BossMonsterAttack_2 : MonoBehaviour
 
     void AttackPattern_2() // 연사
     {
-
+        StartCoroutine(AttackPattern_2Co());
+    }
+    IEnumerator AttackPattern_2Co() //1.2 second
+    {
+        for (int i = 0; i< 4; i++)
+        {
+            float ranY = random.Next(-1, 1);
+            Vector2 spawnPoint = monsterStats.projectileSpawner.position;
+            spawnPoint.y += ranY;
+            GameObject projectile = Instantiate(projectils[0],spawnPoint, Quaternion.identity);
+            projectile.GetComponent<FireBallProjectile>().SetTargetPosition(monsterController.player.position, false);
+            yield return new WaitForSeconds(0.3f);
+        }
     }
 
     void AttackPattern_3() // 메테오

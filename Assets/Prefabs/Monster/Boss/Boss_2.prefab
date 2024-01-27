@@ -24,11 +24,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4203068005644557745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.49, y: 1.05, z: 0}
+  m_LocalPosition: {x: -1.19, y: 1.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7839078082065426945}
+  m_Father: {fileID: 6752578397010039756}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7959043554018312054
@@ -60,7 +60,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6752578397010039756}
-  - {fileID: 1890789916772710595}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -72,6 +71,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7839078082065426945}
     m_Modifications:
+    - target: {fileID: 2042727662658490167, guid: 5f5faae7cc322914d8efc12de3d191ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042727663881050148, guid: 5f5faae7cc322914d8efc12de3d191ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042727663931459246, guid: 5f5faae7cc322914d8efc12de3d191ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042727663951125404, guid: 5f5faae7cc322914d8efc12de3d191ef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.01446031
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042727663951125405, guid: 5f5faae7cc322914d8efc12de3d191ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 2042727663985396516, guid: 5f5faae7cc322914d8efc12de3d191ef,
         type: 3}
       propertyPath: m_RootOrder
@@ -134,6 +158,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2042727663985396517, guid: 5f5faae7cc322914d8efc12de3d191ef,
         type: 3}
+      propertyPath: m_Layer
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042727663985396517, guid: 5f5faae7cc322914d8efc12de3d191ef,
+        type: 3}
       propertyPath: m_TagString
       value: Monster
       objectReference: {fileID: 0}
@@ -141,10 +170,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: fa1e8ce65036a48389520c2de0fc5697, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2042727663985396516, guid: 5f5faae7cc322914d8efc12de3d191ef,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1890789916772710595}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2042727663985396517, guid: 5f5faae7cc322914d8efc12de3d191ef,
         type: 3}
@@ -362,6 +395,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2ebb23416d7448f8b11a0264532132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackEffect: []
+  projectils:
+  - {fileID: 4781309311697082291, guid: 276e222d38f784c32b11f1857c2a78c7, type: 3}
 --- !u!114 &2698868821274260088
 MonoBehaviour:
   m_ObjectHideFlags: 0
