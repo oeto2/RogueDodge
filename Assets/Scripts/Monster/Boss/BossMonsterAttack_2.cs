@@ -15,7 +15,7 @@ public class BossMonsterAttack_2 : MonoBehaviour
     readonly int IsAttack_1 = Animator.StringToHash("attack_1");
     readonly int IsAttack_2 = Animator.StringToHash("attack_2");
     delegate void AttackPattern();
-    public List<ParticleSystem> attackEffect = new List<ParticleSystem>();
+    public List<GameObject> attackEffects = new List<GameObject>();
     List<AttackPattern> attackPatterns = new List<AttackPattern>();
 
     public List<GameObject> projectils = new List<GameObject>();
@@ -66,6 +66,7 @@ public class BossMonsterAttack_2 : MonoBehaviour
     void AttackPattern_1() // 나선형
     {
         animator.SetTrigger(IsAttack_1);
+        attackEffects[0].SetActive(true);
         StartCoroutine(SpiralShotCo(4));
     }
     IEnumerator SpiralShotCo(float duration) //4 second
@@ -82,11 +83,13 @@ public class BossMonsterAttack_2 : MonoBehaviour
 
             yield return new WaitForSeconds(0.1f);
         }
+        attackEffects[0].SetActive(false);
     }
 
     void AttackPattern_2() // 연사
     {
         animator.SetTrigger(IsAttack_2);
+        attackEffects[1].SetActive(true);
         StartCoroutine(AttackPattern_2Co());
     }
     IEnumerator AttackPattern_2Co() //1.2 second
@@ -100,6 +103,7 @@ public class BossMonsterAttack_2 : MonoBehaviour
             projectile.GetComponent<FireBallProjectile>().SetTargetPosition(monsterController.player.position, false);
             yield return new WaitForSeconds(0.3f);
         }
+        attackEffects[1].SetActive(false);
     }
 
     void AttackPattern_3() // 메테오
