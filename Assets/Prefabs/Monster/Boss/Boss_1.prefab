@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
+      scalar: 0.7
       minScalar: 0.5
       maxCurve:
         serializedVersion: 2
@@ -4828,6 +4828,37 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &609435762326279980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2443240894110654743}
+  m_Layer: 0
+  m_Name: SpanwMonsterHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2443240894110654743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609435762326279980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2502977032910777968}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &951520339779875461
 GameObject:
   m_ObjectHideFlags: 0
@@ -4858,6 +4889,7 @@ Transform:
   m_Children:
   - {fileID: 4997977444651980333}
   - {fileID: 134369611797159153}
+  - {fileID: 2443240894110654743}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5483,6 +5515,7 @@ MonoBehaviour:
   - {fileID: 7560480041550322406}
   monster: {fileID: 2528998357883673142, guid: 83413250eaeae451d9a20e3e9388d73c, type: 3}
   spawn: {fileID: 5497065422418802994, guid: 07906130003a50441805ac6dda04d6ae, type: 3}
+  SpanwMonsterHolder: {fileID: 2443240894110654743}
 --- !u!114 &9201842945111710721
 MonoBehaviour:
   m_ObjectHideFlags: 0

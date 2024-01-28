@@ -28,6 +28,7 @@ public class BossMonsterAttack_1 : MonoBehaviour
 
     public GameObject monster;
     public GameObject spawn;
+    public Transform SpanwMonsterHolder;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -35,6 +36,8 @@ public class BossMonsterAttack_1 : MonoBehaviour
         bossUi = GetComponent<BossMonsterUIController>();
         monsterController= GetComponent<MonsterController>(); 
         random = new System.Random();
+        monsterController.OnDeathEvent += DomeMonsterAllDie;
+
         EffectOff();
     }
     private void Start()
@@ -89,7 +92,7 @@ public class BossMonsterAttack_1 : MonoBehaviour
         //monsterStats.collisionDamage = defaultCollisionDamge;
         
     }
-    IEnumerator AttackPattern_1Co(Vector2 playerPosition)
+    IEnumerator AttackPattern_1Co(Vector2 playerPosition) //1 second
     {
         float parcent = 0;
         animator.SetTrigger(IsAttack_1);
@@ -110,7 +113,7 @@ public class BossMonsterAttack_1 : MonoBehaviour
         StartCoroutine(AttackPatern_2_SpawnMonsterCo(center));
 
     }
-    IEnumerator AttackPatern_2_SpawnMonsterCo(Vector2 center)
+    IEnumerator AttackPatern_2_SpawnMonsterCo(Vector2 center) //2.5 second
     {
         
         float parcent = 0;
@@ -118,17 +121,31 @@ public class BossMonsterAttack_1 : MonoBehaviour
         {
             parcent += 0.2f;
             float randomRadian = Random.Range(0f, 2f * Mathf.PI);
-            float x = center.x + 0.5f * Mathf.Cos(randomRadian);
-            float y = center.y + 0.5f * Mathf.Sin(randomRadian);
+            float x = center.x + 1f * Mathf.Cos(randomRadian);
+            float y = center.y + 1f * Mathf.Sin(randomRadian);
             Destroy(Instantiate(spawn, new Vector2(x, y), Quaternion.identity),.5f);
             yield return new WaitForSeconds(0.4f);
             GameObject _monster = Instantiate(monster, new Vector2(x, y), Quaternion.identity);
             _monster.GetComponent<MonsterStats>().eMONSTER_WD = MONSTER_WD.DOME;
+            _monster.transform.SetParent(SpanwMonsterHolder);
             yield return new WaitForSeconds(0.1f);
         }
     }
 
-    
+    void DomeMonsterAllDie()
+    {
+        GameObject[] objs = new GameObject[SpanwMonsterHolder.childCount];
+        for (int i = 0; i < objs.Length; i++)
+        {
+            objs[i] = SpanwMonsterHolder.GetChild(i).gameObject;
+        }
+
+        foreach(GameObject obj in objs)
+        {
+            obj.GetComponent<MonsterStats>().hp = 0;
+            obj.GetComponent<MonsterController>().CallOnHitEvent();
+        }
+    }
 
  
 
