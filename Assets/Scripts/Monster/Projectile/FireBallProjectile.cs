@@ -19,7 +19,6 @@ public class FireBallProjectile : MonoBehaviour
 
     float zAngle;
 
-
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -31,11 +30,11 @@ public class FireBallProjectile : MonoBehaviour
         _rigidbody.position += dir * Time.deltaTime * projectileSpeed;
 
 
-        if(IsOnTarget && targetPosition == (Vector2)transform.position)
+        if(IsOnTarget && Vector2.Distance(targetPosition,(Vector2)transform.position) < 0.1f)
         {
             MainEffectOff();
             GameObject _crashEffect = Instantiate(crashEffect, targetPosition, Quaternion.identity);
-            _crashEffect.transform.Rotate(Vector3.forward, zAngle);
+            _crashEffect.transform.Rotate(Vector3.forward, 90);
             Destroy(gameObject, 2f);
         }
     }

@@ -72,7 +72,7 @@ public class BossMonsterAttack_1 : MonoBehaviour
     }
 
 
-    void AttackPattern_1() // µ¹Áø±â
+    void AttackPattern_1() // ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         Vector2 dir = monsterController.dir;
         attackEffect[0].Play();
@@ -118,8 +118,8 @@ public class BossMonsterAttack_1 : MonoBehaviour
         {
             parcent += 0.2f;
             float randomRadian = Random.Range(0f, 2f * Mathf.PI);
-            float x = center.x + 0.5f * randomRadian;
-            float y = center.y + 0.5f * randomRadian;
+            float x = center.x + 0.5f * Mathf.Cos(randomRadian);
+            float y = center.y + 0.5f * Mathf.Sin(randomRadian);
             Destroy(Instantiate(spawn, new Vector2(x, y), Quaternion.identity),.5f);
             yield return new WaitForSeconds(0.4f);
             GameObject _monster = Instantiate(monster, new Vector2(x, y), Quaternion.identity);
