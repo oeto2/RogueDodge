@@ -48856,7 +48856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterName: 
-  hp: 10
+  hp: 500
   atk: 10
   collisionDamage: 5
   speed: 1

@@ -7,6 +7,7 @@ public class FireBallProjectile : MonoBehaviour
     Vector2 targetPosition; //타겟 포지션을 받으
     Vector2 dir;
     bool IsOnTarget;
+    bool hitTarget;
     Rigidbody2D _rigidbody;
     CircleCollider2D _collider;
 
@@ -27,11 +28,19 @@ public class FireBallProjectile : MonoBehaviour
 
     private void Update()
     {
+        if (!hitTarget)
+        {
         _rigidbody.position += dir * Time.deltaTime * projectileSpeed;
+        }
+        else
+        {
+            transform.position = GameManager.Instance.PlayerTransform.position;
+        }
 
 
         if(IsOnTarget && Vector2.Distance(targetPosition,(Vector2)transform.position) < 0.1f)
         {
+           
             MainEffectOff();
             GameObject _crashEffect = Instantiate(crashEffect, targetPosition, Quaternion.identity);
             _crashEffect.transform.Rotate(Vector3.forward, 90);
@@ -53,12 +62,13 @@ public class FireBallProjectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-        {
+        { 
+            hitTarget = true;
             MainEffectOff();
             GameObject _crashEffect = Instantiate(crashEffect, targetPosition, Quaternion.identity);
             _crashEffect.transform.Rotate(Vector3.forward, zAngle);
             collision.gameObject.GetComponent<PlayerStats>().PlayerDamaged(damage);
-            Destroy(gameObject);
+            Destroy(gameObject, 2f);
 
         }
     }

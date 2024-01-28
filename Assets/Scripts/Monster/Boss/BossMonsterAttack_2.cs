@@ -143,7 +143,7 @@ public class BossMonsterAttack_2 : MonoBehaviour
     }
     IEnumerator MatorActiveCo(Coord[] coords) 
     {
-        Vector3 matorSpawnPoint = (Vector2)monsterController.player.position + new Vector2(5, 5);
+        Vector3 matorSpawnPoint = (Vector2)monsterController.player.position + new Vector2(5, 10);
         foreach(Coord coord in coords)
         {
             GameObject projectile = Instantiate(projectils[0],matorSpawnPoint, Quaternion.identity);
