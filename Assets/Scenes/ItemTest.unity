@@ -649,6 +649,242 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: UseItemSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleProjectile.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: UseItemSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: -2093172066, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 1806173588, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[5]
+      value: 
+      objectReference: {fileID: -1654336047, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[6]
+      value: 
+      objectReference: {fileID: -2040196492, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[7]
+      value: 
+      objectReference: {fileID: 482024379, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[8]
+      value: 
+      objectReference: {fileID: -1763754871, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[9]
+      value: 
+      objectReference: {fileID: -1530340891, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleProjectile.Array.data[3]
+      value: 
+      objectReference: {fileID: 4250830004192672875, guid: 1d4a4a739943be14f941b623d590f933,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleProjectile.Array.data[4]
+      value: 
+      objectReference: {fileID: 4250830004192672875, guid: 1d4a4a739943be14f941b623d590f933,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleProjectile.Array.data[5]
+      value: 
+      objectReference: {fileID: 4274846417452969546, guid: ed0196c03cda88d46a3746a64c398379,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleProjectile.Array.data[6]
+      value: 
+      objectReference: {fileID: 7525601703729768825, guid: 302096c4d8cbb6d4d80b217130886109,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleProjectile.Array.data[7]
+      value: 
+      objectReference: {fileID: 4338574343314074720, guid: b790be7359748cb46bcfeb8cff031efc,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleProjectile.Array.data[8]
+      value: 
+      objectReference: {fileID: 4250830004192672875, guid: 1d4a4a739943be14f941b623d590f933,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleProjectile.Array.data[9]
+      value: 
+      objectReference: {fileID: 2880452692289624771, guid: 13f09095099b5f8409216d3cce7dd037,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[10]
+      value: 
+      objectReference: {fileID: 1873478059, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[11]
+      value: 
+      objectReference: {fileID: -1493587063, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[12]
+      value: 
+      objectReference: {fileID: -1555606178, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[13]
+      value: 
+      objectReference: {fileID: 1522686956, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[14]
+      value: 
+      objectReference: {fileID: 1070939412, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[15]
+      value: 
+      objectReference: {fileID: -1231264059, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BuffItemSprites.Array.data[16]
+      value: 
+      objectReference: {fileID: -2077970579, guid: 60a8902da38914646a6af99b93f14af5,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: -267587109, guid: 6eb16e372762d6b4cb708c44ebfab931,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: -1041754904, guid: 6eb16e372762d6b4cb708c44ebfab931,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.data[5]
+      value: 
+      objectReference: {fileID: -1259760662, guid: 6eb16e372762d6b4cb708c44ebfab931,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.data[6]
+      value: 
+      objectReference: {fileID: -460413151, guid: 6eb16e372762d6b4cb708c44ebfab931,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.data[7]
+      value: 
+      objectReference: {fileID: 1008709038, guid: 6eb16e372762d6b4cb708c44ebfab931,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.data[8]
+      value: 
+      objectReference: {fileID: 131449278, guid: 6eb16e372762d6b4cb708c44ebfab931,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.data[9]
+      value: 
+      objectReference: {fileID: -122684805, guid: 4b67d8f0b0ad94a49b2021e34d5d74e2,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleProjectile.Array.data[10]
+      value: 
+      objectReference: {fileID: 8350080554276182770, guid: 9e7a4a89c31a514459c4b3f3634fb35c,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleProjectile.Array.data[11]
+      value: 
+      objectReference: {fileID: 895123430616554668, guid: 49ea8842849abdc49af5fb436f73a24d,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleProjectile.Array.data[12]
+      value: 
+      objectReference: {fileID: 3038333127654605058, guid: 3d7e8a50eefa7634baafe76cdb45450a,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleProjectile.Array.data[13]
+      value: 
+      objectReference: {fileID: 7969749140057287356, guid: baba1345c5ed7de43a75c6fa5c78d657,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.data[10]
+      value: 
+      objectReference: {fileID: 480359912, guid: 4b67d8f0b0ad94a49b2021e34d5d74e2,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.data[11]
+      value: 
+      objectReference: {fileID: -1296338721, guid: 4b67d8f0b0ad94a49b2021e34d5d74e2,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.data[12]
+      value: 
+      objectReference: {fileID: 2138656311, guid: 4b67d8f0b0ad94a49b2021e34d5d74e2,
+        type: 3}
+    - target: {fileID: 7461224472842425042, guid: 38b8649d02f4ba1459fa132227703dce,
+        type: 3}
+      propertyPath: BattleItemSprites.Array.data[13]
+      value: 
+      objectReference: {fileID: 2032489589, guid: 4b67d8f0b0ad94a49b2021e34d5d74e2,
+        type: 3}
     - target: {fileID: 8828702626972122375, guid: 38b8649d02f4ba1459fa132227703dce,
         type: 3}
       propertyPath: m_Name
@@ -672,6 +908,16 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1772113794}
+    - target: {fileID: 1759515491496949413, guid: 3081052191a593b44bec6f3db5c0ab09,
+        type: 3}
+      propertyPath: RareColor.rgba
+      value: 4294915279
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759515491496949413, guid: 3081052191a593b44bec6f3db5c0ab09,
+        type: 3}
+      propertyPath: UniqueColor.rgba
+      value: 4279886079
+      objectReference: {fileID: 0}
     - target: {fileID: 6252337979708182191, guid: 3081052191a593b44bec6f3db5c0ab09,
         type: 3}
       propertyPath: m_Name

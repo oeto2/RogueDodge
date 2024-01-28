@@ -28,15 +28,107 @@ MonoBehaviour:
     atkCoolTimeValue: 1
     isGet: 0
     eScarcity: 0
-    eWeaponType: 0
+    eWeaponType: 1
   - index: 2
-    name: "\uB0A1\uC9C0\uD321\uC774"
+    name: "\uB0A1\uC740 \uC9C0\uD321\uC774"
     info: "\uB204\uAD70\uAC00 \uC0AC\uC6A9\uD558\uB358 \uB0A1\uC740 \uC9C0\uD321\uC774\uB2E4."
     atkValue: 20
     atkCoolTimeValue: 1.2
     isGet: 0
     eScarcity: 0
+    eWeaponType: 2
+  - index: 3
+    name: "\uB098\uBB34 \uAC80"
+    info: "\uCD08\uBCF4\uC790\uAC00 \uC0AC\uC6A9\uD558\uAE30 \uC88B\uC740 \uB098\uBB34\uB85C\uB41C
+      \uAC80\uC774\uB2E4."
+    atkValue: 5
+    atkCoolTimeValue: 0.8
+    isGet: 0
+    eScarcity: 0
     eWeaponType: 0
+  - index: 4
+    name: "\uC57D\uD0C8\uC790\uC758 \uAC80"
+    info: "\uC57D\uD0C8\uC790\uB4E4\uC774 \uC0AC\uC6A9\uD558\uB294 \uAC80\uC774\uB2E4."
+    atkValue: 12
+    atkCoolTimeValue: 0.8
+    isGet: 0
+    eScarcity: 1
+    eWeaponType: 0
+  - index: 5
+    name: "\uC5D1\uC2A4\uCE7C\uB9AC\uBC84"
+    info: "\uC544\uC11C\uC655\uC774 \uC0AC\uC6A9\uD588\uB358 \uC804\uC124\uC758 \uC131\uAC80\uC774\uB2E4."
+    atkValue: 30
+    atkCoolTimeValue: 0.8
+    isGet: 0
+    eScarcity: 2
+    eWeaponType: 0
+  - index: 6
+    name: "\uC800\uC8FC\uBC1B\uC740 \uAC80"
+    info: "\uC5B4\uB450\uC6B4 \uAE30\uC6B4\uC744 \uB0B4\uBFDC\uB294 \uC800\uC8FC\uBC1B\uC740
+      \uAC80\uC774\uB2E4."
+    atkValue: 30
+    atkCoolTimeValue: 0.8
+    isGet: 0
+    eScarcity: 2
+    eWeaponType: 0
+  - index: 7
+    name: "\uC0D0\uB7EC\uB9E8\uB354"
+    info: "\uBD88\uC758 \uC815\uB839\uC758 \uD798\uC774 \uB2F4\uACA8\uC788\uB294
+      \uAC80\uC774\uB2E4."
+    atkValue: 30
+    atkCoolTimeValue: 0.8
+    isGet: 0
+    eScarcity: 2
+    eWeaponType: 0
+  - index: 8
+    name: "\uAE30\uC0AC\uC758 \uAC80"
+    info: "\uC911\uC138\uC2DC\uB300 \uAE30\uC0AC\uB4E4\uC774 \uC790\uC8FC \uC0AC\uC6A9\uD558\uB358
+      \uAC80\uC774\uB2E4."
+    atkValue: 12
+    atkCoolTimeValue: 0.8
+    isGet: 0
+    eScarcity: 1
+    eWeaponType: 0
+  - index: 9
+    name: "\uADF8\uB9B0 \uBCF4\uC6B0"
+    info: "\uC232\uC18D\uC758 \uC694\uC815\uB4E4\uC774 \uC0AC\uC6A9\uD558\uB294 \uD65C\uC774\uB2E4."
+    atkValue: 25
+    atkCoolTimeValue: 1
+    isGet: 0
+    eScarcity: 1
+    eWeaponType: 1
+  - index: 10
+    name: "\uC288\uD305\uC2A4\uD0C0"
+    info: "\uC6B0\uC8FC\uC758 \uD798\uC744 \uB2F4\uC740 \uC804\uC124\uC758 \uD65C\uC774\uB2E4."
+    atkValue: 35
+    atkCoolTimeValue: 1
+    isGet: 0
+    eScarcity: 2
+    eWeaponType: 1
+  - index: 11
+    name: "\uC544\uC774\uC2A4 \uC2A4\uD0DC\uD504"
+    info: "\uCC28\uAC00\uC6B4 \uAE30\uC6B4\uC744 \uB0B4\uBFDC\uB294 \uC9C0\uD321\uC774\uC774\uB2E4."
+    atkValue: 40
+    atkCoolTimeValue: 1.2
+    isGet: 0
+    eScarcity: 2
+    eWeaponType: 2
+  - index: 12
+    name: "\uD640\uB9AC \uC2A4\uD0DC\uD504"
+    info: "\uC131\uC2A4\uB7EC\uC6B4 \uAE30\uC6B4\uC744 \uB0B4\uBFDC\uB294 \uC9C0\uD321\uC774\uC774\uB2E4."
+    atkValue: 40
+    atkCoolTimeValue: 1.2
+    isGet: 0
+    eScarcity: 2
+    eWeaponType: 2
+  - index: 12
+    name: "\uC694\uC815\uC758 \uC9C0\uD321\uC774"
+    info: "\uC232\uC18D \uC694\uC815\uB4E4\uC774 \uC0AC\uC6A9\uD558\uB294 \uC9C0\uD321\uC774\uC774\uB2E4."
+    atkValue: 30
+    atkCoolTimeValue: 1.2
+    isGet: 0
+    eScarcity: 1
+    eWeaponType: 2
   UseItem:
   - index: 0
     name: "\uC18C\uD615 \uD3EC\uC158"
@@ -62,13 +154,21 @@ MonoBehaviour:
     eUseType: 0
     eScarcity: 0
     eValueType: 0
+  - index: 3
+    name: "\uBE48\uBCD1"
+    info: "\uC544\uBB34\uB7F0 \uD6A8\uACFC\uAC00 \uC5C6\uB294 \uBE48\uBCD1\uC774\uB2E4."
+    recoveryHpValue: 0
+    isGet: 0
+    eUseType: 0
+    eScarcity: 0
+    eValueType: 0
   BuffItem:
   - index: 0
     name: "\uB0A1\uC740 \uC2E0\uBC1C"
     info: "\uB204\uAD70\uAC00 \uC2E0\uC5C8\uB358 \uB0A1\uC740 \uC2E0\uBC1C\uC774\uB2E4."
     atkValue: 0
     atkCoolTimeValue: 0
-    speedValue: 10
+    speedValue: 2
     hpValue: 0
     isGet: 0
     eScarcity: 0
@@ -89,7 +189,7 @@ MonoBehaviour:
     atkValue: 0
     atkCoolTimeValue: 0.2
     speedValue: 0
-    hpValue: 10
+    hpValue: 0
     isGet: 0
     eScarcity: 0
     eValueType: 0
@@ -99,7 +199,138 @@ MonoBehaviour:
     atkValue: 0
     atkCoolTimeValue: 0
     speedValue: 0
-    hpValue: 20
+    hpValue: 15
     isGet: 0
     eScarcity: 0
+    eValueType: 0
+  - index: 4
+    name: TIL
+    info: "\uC544 \uB9DE\uB2E4 TIL!"
+    atkValue: 5
+    atkCoolTimeValue: 0.2
+    speedValue: 5
+    hpValue: 10
+    isGet: 0
+    eScarcity: 2
+    eValueType: 0
+  - index: 5
+    name: "\uB098\uBB34 \uBC18\uC9C0"
+    info: "\uB098\uBB34\uB85C \uB41C \uD3C9\uBC94\uD55C \uBC18\uC9C0\uC774\uB2E4."
+    atkValue: 5
+    atkCoolTimeValue: 0
+    speedValue: 0
+    hpValue: 0
+    isGet: 0
+    eScarcity: 0
+    eValueType: 0
+  - index: 6
+    name: "\uC740 \uBC18\uC9C0"
+    info: "\uC740\uC73C\uB85C \uB41C \uD3C9\uBC94\uD55C \uBC18\uC9C0\uC774\uB2E4."
+    atkValue: 8
+    atkCoolTimeValue: 0
+    speedValue: 0
+    hpValue: 0
+    isGet: 0
+    eScarcity: 1
+    eValueType: 0
+  - index: 7
+    name: "\uAE08 \uBC18\uC9C0"
+    info: "\uBE44\uC2F8\uBCF4\uC774\uB294 \uAE08\uC73C\uB85C \uB41C \uBC18\uC9C0\uC774\uB2E4."
+    atkValue: 15
+    atkCoolTimeValue: 0
+    speedValue: 0
+    hpValue: 0
+    isGet: 0
+    eScarcity: 1
+    eValueType: 0
+  - index: 8
+    name: "\uD06CX\uD558\uCE20"
+    info: "\uC0AC\uACE0\uC2F6\uC740 \uB514\uC790\uC778\uC758 \uBC18\uC9C0\uC774\uB2E4."
+    atkValue: 25
+    atkCoolTimeValue: 0
+    speedValue: 0
+    hpValue: 0
+    isGet: 0
+    eScarcity: 2
+    eValueType: 0
+  - index: 9
+    name: "\uC804\uD22C\uD654"
+    info: "\uBD88\uAD11\uC774 \uC798 \uB098\uC788\uB294 \uC721\uBA74 \uC804\uD22C\uD654\uC774\uB2E4."
+    atkValue: 5
+    atkCoolTimeValue: 0
+    speedValue: 3.5
+    hpValue: 0
+    isGet: 0
+    eScarcity: 1
+    eValueType: 0
+  - index: 10
+    name: "\uC0AC\uB9C9\uD654"
+    info: "\uC721\uBA74 \uC804\uD22C\uD654\uC758 \uC0AC\uB9C9 \uC5D0\uB514\uC158\uC774\uB2E4."
+    atkValue: 0
+    atkCoolTimeValue: 0
+    speedValue: 3.5
+    hpValue: 10
+    isGet: 0
+    eScarcity: 1
+    eValueType: 0
+  - index: 11
+    name: "\uAE30\uC0AC\uB2E8\uC758 \uC7A5\uAC11"
+    info: "\uAE30\uC0AC\uB2E8\uC774 \uC0AC\uC6A9\uD558\uB294 \uC7A5\uAC11\uC774\uB2E4."
+    atkValue: 15
+    atkCoolTimeValue: 0.2
+    speedValue: 0
+    hpValue: 0
+    isGet: 0
+    eScarcity: 2
+    eValueType: 0
+  - index: 12
+    name: "\uAE30\uC0AC\uB2E8\uC758 \uC2E0\uBC1C"
+    info: "\uAE30\uC0AC\uB2E8\uC774 \uC2E0\uB294 \uC2E0\uBC1C\uC774\uB2E4."
+    atkValue: 10
+    atkCoolTimeValue: 0
+    speedValue: 3.5
+    hpValue: 0
+    isGet: 0
+    eScarcity: 2
+    eValueType: 0
+  - index: 13
+    name: "\uBD09\uC778\uB41C \uACE0\uC11C"
+    info: "\uAE08\uC9C0\uB41C \uAE30\uC220\uB85C \uC778\uD574 \uBD09\uC778\uB41C
+      \uACE0\uC11C\uC774\uB2E4."
+    atkValue: 0
+    atkCoolTimeValue: 0.5
+    speedValue: 0
+    hpValue: 0
+    isGet: 0
+    eScarcity: 2
+    eValueType: 0
+  - index: 14
+    name: "\uB098\uBB34\uBC29\uD328"
+    info: "\uB098\uBB34\uB85C\uB41C \uBC29\uD328\uC774\uB2E4."
+    atkValue: 0
+    atkCoolTimeValue: 0
+    speedValue: 0
+    hpValue: 10
+    isGet: 0
+    eScarcity: 0
+    eValueType: 0
+  - index: 15
+    name: "\uC4F8\uB9CC\uD55C \uBC29\uD328"
+    info: "\uC4F8\uB9CC\uD574\uBCF4\uC774\uB294  \uBC29\uD328\uC774\uB2E4."
+    atkValue: 0
+    atkCoolTimeValue: 0
+    speedValue: 0
+    hpValue: 20
+    isGet: 0
+    eScarcity: 1
+    eValueType: 0
+  - index: 16
+    name: "\uC131\uAE30\uC0AC\uC758 \uBC29\uD328"
+    info: "\uC2E0\uC559\uC2EC\uC774 \uB192\uC544\uC9C0\uB294 \uBC29\uD328\uC774\uB2E4."
+    atkValue: 0
+    atkCoolTimeValue: 0
+    speedValue: 0
+    hpValue: 30
+    isGet: 0
+    eScarcity: 2
     eValueType: 0
