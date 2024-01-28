@@ -39,10 +39,10 @@ public class GameManager : MonoBehaviour
     public int targetWaveNum = 3;
     public int stageNum = 1;
 
-    //Call event When Clear Wave 
+    //Call event When dead all monsters
     public event Action WaveClearEvent;
 
-    //Call event When Clear Stage 
+    //Call event When dead boss monster
     public event Action StageClearEvent;
 
     private void Awake()
@@ -113,7 +113,6 @@ public class GameManager : MonoBehaviour
 
         //TODO: Set CurrentMonsterNum to Map Obj
         curMonsterNum = 1;
-
 
         if (curWaveNum < targetWaveNum)
             curWaveNum++;
