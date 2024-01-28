@@ -11,7 +11,7 @@ public class ItemManager : MonoBehaviour
     public List<BattleItemDataBaseEntity> BattleItmes;
     public List<BuffItemDataBaseEntity> BuffItems;
     public List<UseItemDataBaseEntity> UseItems;
-    
+
     public Sprite[] BattleItemSprites;
     public Sprite[] BuffItemSprites;
     public Sprite[] UseItemSprites;
@@ -54,7 +54,7 @@ public class ItemManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             InstantiateItem();
         }
@@ -76,6 +76,9 @@ public class ItemManager : MonoBehaviour
         if (ItemSpawnPosition != null)
         {
             GameObject instantiate_Item;
+            List<int> randomBattleItemIndexNumList = new List<int>();
+            List<int> randomBuffItemIndexNumList = new List<int>();
+            List<int> randomUesItemIndexNumList = new List<int>();
 
             for (int i = 0; i < ItemSpawnPosition.Count; i++)
             {
@@ -83,6 +86,7 @@ public class ItemManager : MonoBehaviour
 
                 //Random Game Item Type
                 int randomItemType = UnityEngine.Random.Range(0, 3);
+
                 instantiate_Item = Instantiate(ItemObject, ItemSpawnPosition[i], Quaternion.identity);
                 SpawnItemes.Add(instantiate_Item);
 
@@ -93,7 +97,10 @@ public class ItemManager : MonoBehaviour
                         instantiate_Item.tag = "BattleItem";
 
                         //Random Game ItemIdex Number
-                        randomIndexNum = UnityEngine.Random.Range(0, ItemManager.Instance.BattleItmes.Count);
+                        //randomIndexNum = UnityEngine.Random.Range(0, ItemManager.Instance.BattleItmes.Count);
+                        randomIndexNum = CheckDuplicateRnadomNumber(randomBattleItemIndexNumList, ItemManager.Instance.BattleItmes.Count);
+                        randomBattleItemIndexNumList.Add(randomIndexNum);
+
 
                         //Add BattleItem Script to ItemObject
                         BattleItem battleItemScript = instantiate_Item.AddComponent<BattleItem>();
@@ -109,7 +116,9 @@ public class ItemManager : MonoBehaviour
                         instantiate_Item.tag = "BuffItem";
 
                         //Random Game ItemIdex Number
-                        randomIndexNum = UnityEngine.Random.Range(0, ItemManager.Instance.BuffItems.Count);
+                        //randomIndexNum = UnityEngine.Random.Range(0, ItemManager.Instance.BuffItems.Count);
+                        randomIndexNum = CheckDuplicateRnadomNumber(randomBuffItemIndexNumList, ItemManager.Instance.BuffItems.Count);
+                        randomBuffItemIndexNumList.Add(randomIndexNum);
 
                         //Add UseItem Script to Item
                         BuffItem buffItemScript = instantiate_Item.AddComponent<BuffItem>();
@@ -124,7 +133,9 @@ public class ItemManager : MonoBehaviour
                         instantiate_Item.tag = "UseItem";
 
                         //Random Game ItemIdex Number
-                        randomIndexNum = UnityEngine.Random.Range(0, ItemManager.Instance.UseItems.Count);
+                        //randomIndexNum = UnityEngine.Random.Range(0, ItemManager.Instance.UseItems.Count);
+                        randomIndexNum = CheckDuplicateRnadomNumber(randomUesItemIndexNumList, ItemManager.Instance.UseItems.Count);
+                        randomUesItemIndexNumList.Add(randomIndexNum);
 
                         //Add UseItem Script to Item
                         UseItem useItemScript = instantiate_Item.AddComponent<UseItem>();
@@ -143,6 +154,9 @@ public class ItemManager : MonoBehaviour
 
     public void SetItemSpawnPosition()
     {
+        //Reset ItemSpawn Postion
+        ItemSpawnPosition.Clear();
+
         //Find ItemSpawn Position 
         Map mapScript = GameManager.Instance.curMap.GetComponent<Map>();
         Transform curMapTranstorm = GameManager.Instance.curMap.transform;
@@ -161,15 +175,44 @@ public class ItemManager : MonoBehaviour
     public IEnumerator DestroyAllItem()
     {
         yield return new WaitForSeconds(0.1f);
-        foreach(GameObject item in SpawnItemes)
+
+        for (int i = 0; i < SpawnItemes.Count; i++)
         {
-            DestroyObject(item);
+            DestroyObject(SpawnItemes[i]);
         }
+
+        SpawnItemes.Clear();
+    }
+
+    //Check the Rndom number of duplicates
+    public int CheckDuplicateRnadomNumber(List<int> _duplicateNumberList, int _MaxRandomValue)
+    {
+        int randomNum = 0;
+
+        while (true)
+        {
+            randomNum = UnityEngine.Random.Range(0, _MaxRandomValue);
+            bool isDuplicate = false;
+
+            if (_duplicateNumberList != null)
+            {
+                foreach (int number in _duplicateNumberList)
+                {
+                    if (number == randomNum)
+                        isDuplicate = true;
+                }
+
+                if (!isDuplicate) break;
+            }
+            else break;
+        }
+
+        return randomNum;
     }
 
     #region ChageItemFunctions
     public void ChangeItemSpriteIamge(SpriteRenderer _spriteRenderer, BattleItemData _battleItemData)
-    { _spriteRenderer.sprite = BattleItemSprites[_battleItemData.index];}
+    { _spriteRenderer.sprite = BattleItemSprites[_battleItemData.index]; }
 
     public void ChangeItemSpriteIamge(SpriteRenderer _spriteRenderer, UseItemData _useItemData)
     { _spriteRenderer.sprite = UseItemSprites[_useItemData.index]; }
