@@ -45,8 +45,10 @@ public class CoinItem : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            GameManager.Instance.PlayerTransform.gameObject.GetComponent<PlayerItemLoot>().getCoin=1;
+            Debug.Log(GameManager.Instance.PlayerTransform.gameObject.GetComponent<PlayerItemLoot>().getCoin);
             Destroy(gameObject);
-            Debug.Log("Coin Get");
+           
         }
     }
 

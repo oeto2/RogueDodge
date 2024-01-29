@@ -8,7 +8,7 @@ public class PlayerItemLoot : MonoBehaviour
     //What to drag to the player using "Physics2D.Overlap".
     //int layerMask = 1 << LayerMask.NameToLayer("Gold");
     bool onMagnet;
-    int coin = 0;
+    public int coin = 0;
     public int getCoin
     {
         get { return coin; }

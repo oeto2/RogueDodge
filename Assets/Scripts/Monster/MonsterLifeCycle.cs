@@ -37,14 +37,14 @@ public class MonsterLifeCycle : MonoBehaviour
 
             switch (monsterStats.eMONSTER_WD)//todo
             {
-                case MONSTER_WD.BOSS: Debug.Log("BOSS");
+                case MONSTER_WD.BOSS:
                     // gameManager gameClear;
                     SpawnCoin(100, 10, 30);
                     GameManager.Instance.WaveClear();
                     break;
-                case MONSTER_WD.WILD: Debug.Log("WILD");
+                case MONSTER_WD.WILD:
                     GameManager.Instance.AddDeadMonsterNum();
-                    SpawnCoin(20,1,5);
+                    SpawnCoin(100,1,5);
                     break;
                 default: break;
 
