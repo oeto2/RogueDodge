@@ -24,7 +24,8 @@ public class Shop : MonoBehaviour
                 Button obj_Button = obj.GetComponent<Button>();
 
                 obj_Component.SetItemInfo(idx, new UseItemData(ItemManager.Instance.UseItems[idx]), ItemManager.Instance.UseItemSprites[item.index], item.name, item.info, 50);
-                obj_Button.onClick.AddListener( delegate { BuyItem(idx); } );
+                int temp = idx;
+                obj_Button.onClick.AddListener( delegate { BuyItem(temp); } );
                 idx++;
 
                 ShopItems.Add(obj_Component);
@@ -49,18 +50,25 @@ public class Shop : MonoBehaviour
                 Debug.Log("Shop.cs : playerInventory is Null!");
             }
         }
+        playerInventory.onShop(false);
+    }
+    private void OnDisable()
+    {
+        playerInventory.onShop(true);
     }
 
     public void BuyItem(int _index)
     {
         ShopItem shopItem = ShopItems.Find(item => item.itemIndex == _index);
 
-        if (playerInventory.getCoin > shopItem.price)
+        if (playerInventory.getCoin >= shopItem.price)
         {
             UseItem shopUseItem = new UseItem();
             shopUseItem.Data = shopItem.useItemData;
             playerInventory.ItemUse(shopUseItem);
             playerInventory.lostCoin = shopItem.price;
+
+            PlayerCoinUI.text = playerInventory.getCoin.ToString();
         }
         else
         {

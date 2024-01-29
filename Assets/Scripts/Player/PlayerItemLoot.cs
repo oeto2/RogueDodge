@@ -65,19 +65,23 @@ public class PlayerItemLoot : MonoBehaviour
     //Overloading using items
     public void ItemUse(BattleItem _battleItem)
     {
-        Debug.Log(_battleItem.name);
+        Debug.Log(_battleItem.Data.name);
         AttackComponent.newBattleItem(_battleItem);
         BattleItems.Add(_battleItem);
     }
     public void ItemUse(BuffItem _buffItem)
     {
-        Debug.Log(_buffItem.name);
+        Debug.Log(_buffItem.Data.name);
         Stats.ItemBuff(_buffItem);
         BuffItems.Add(_buffItem);
     }
     public void ItemUse(UseItem _useItem)
     {
-        Debug.Log(_useItem.name);
+        Debug.Log(_useItem.Data.name);
         if (_useItem.Data.recoveryHpValue > 0) Stats.PlayerHeal((int)_useItem.Data.recoveryHpValue);
+    }
+    public void onShop(bool _setbool)
+    {
+        AttackComponent.onAttack = _setbool;
     }
 }
