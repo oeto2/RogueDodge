@@ -8,19 +8,18 @@ public class MapPortal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(gameObject.CompareTag("MapPortal"))
+        if(gameObject.CompareTag("MapPortal") && !isUsed)
         {
             if(other.CompareTag("Player"))
             {
-                
                 GameManager.Instance.Teleport(false);
+                isUsed = true;
             }
         } else if(gameObject.CompareTag("ShopPortal"))
         {
-            if (other.CompareTag("Player") && !isUsed)
+            if (other.CompareTag("Player"))
             {
                 MapCreator.instance.CreateNextMap();
-                isUsed = true;
             }
         }
         
