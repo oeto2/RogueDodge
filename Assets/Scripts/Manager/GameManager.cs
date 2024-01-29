@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject curMap;
     public GameObject player;
+    public GameObject shop;
 
     [SerializeField]
     private int curMonsterNum = 0;
@@ -137,4 +138,19 @@ public class GameManager : MonoBehaviour
     }
 
     public void StartNextWave() => eGameState = GAMESTATE.BATTLE;
+
+    public void Teleport(bool isMap)
+    {
+        //TODO: need Teleport Animation 
+        if (isMap)
+        {
+            player.transform.SetParent(curMap.transform);
+            player.transform.position = new Vector3(0, 0, 0);
+        }
+        else
+        {
+            player.transform.SetParent(shop.transform);
+            player.transform.position = new Vector3(0, 28, 0);
+        }
+    }
 }

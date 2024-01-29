@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animation/NPC.meta
+guid: d406a54008dd5d240a7a7d0342cac4a0
+========
 guid: b6cc016cff5994afea0cea81dcb178ac
+>>>>>>>> Dev:Assets/DataBase/Excel 2.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
