@@ -5529,7 +5529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterName: Boss_1
-  hp: 500
+  hp: 10
   atk: 0
   collisionDamage: 5
   speed: 0

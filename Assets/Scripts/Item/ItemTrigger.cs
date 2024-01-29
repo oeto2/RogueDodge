@@ -15,6 +15,15 @@ public class ItemTrigger : MonoBehaviour
             ItemManager.Instance.CallGetItemEvnet(this.gameObject);
             //Destroy Spawn items
             StartCoroutine(ItemManager.Instance.DestroyAllItem());
+
+            //StartGetItemAfterEvent
+            StartCoroutine(StartGetItemAfterEvent());
         }
+    }
+
+    IEnumerator StartGetItemAfterEvent()
+    {
+        yield return new WaitForSeconds(0.1f);
+        ItemManager.Instance.CallGetItemAfterEvnet();
     }
 }

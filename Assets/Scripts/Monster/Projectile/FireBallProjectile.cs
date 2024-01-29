@@ -25,7 +25,10 @@ public class FireBallProjectile : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<CircleCollider2D>();
     }
-
+    private void Start()
+    {
+        Destroy(gameObject, 10);
+    }
     private void Update()
     {
         if (!hitTarget)
@@ -42,6 +45,7 @@ public class FireBallProjectile : MonoBehaviour
         {
            
             MainEffectOff();
+            dir = Vector2.zero;
             GameObject _crashEffect = Instantiate(crashEffect, targetPosition, Quaternion.identity);
             _crashEffect.transform.Rotate(Vector3.forward, 90);
             Destroy(gameObject, 2f);

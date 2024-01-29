@@ -4,34 +4,28 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public int spawnCount;
+    int spawnAmount;
     public GameObject spawnEffect;
-    public List<GameObject> gameObjects = new List<GameObject>();
+  
 
-
-
-    private void Start()
+    public void RunSpawn(int amount,List<GameObject> spawnMonster)
     {
-        StartCoroutine(Spawning());
+        spawnAmount = amount;
+        StartCoroutine(Spawning(spawnMonster));
     }
 
-    //spawnManager,
-    //function Start, Spawn condition is GameState Battle.
-    //if GameState is Battle, List<Spawner> foreach, run coroutine function
-    //
-
-    IEnumerator Spawning()
+    IEnumerator Spawning(List<GameObject> spawnMonster)
     {
         Vector2 center = transform.position;
         
-        while(spawnCount > 0)
+        while(spawnAmount > 0)
         {
-            spawnCount--;
-            int randomIdx = Random.Range(0, gameObjects.Count);
+            spawnAmount--;
+            int randomIdx = Random.Range(0, spawnMonster.Count);
             Vector2 randomPosition = Random.insideUnitCircle.normalized * 1;
             Destroy(Instantiate(spawnEffect,center+randomPosition,Quaternion.identity),0.3f);
             yield return new WaitForSeconds(0.4f);
-            Instantiate(gameObjects[randomIdx], center + randomPosition, Quaternion.identity);
+            Instantiate(spawnMonster[randomIdx], center + randomPosition, Quaternion.identity);
         }
 
     }
