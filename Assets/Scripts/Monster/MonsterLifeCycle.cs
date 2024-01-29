@@ -44,7 +44,7 @@ public class MonsterLifeCycle : MonoBehaviour
                     break;
                 case MONSTER_WD.WILD: Debug.Log("WILD");
                     GameManager.Instance.AddDeadMonsterNum();
-                    SpawnCoin(20,1,5);
+                    SpawnCoin(100,1,5);
                     break;
                 default: break;
 
