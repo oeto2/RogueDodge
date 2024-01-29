@@ -57,6 +57,7 @@ public class PlayerStats : MonoBehaviour
 
     public void PlayerDamaged(int _damage)
     {
+        UIManager.Instance.playerHpUIScript.ApplyDamageToPlayerHpUI(getMaxHp, hp, _damage);
         hp -= _damage;
         if (isDead) PlayerDead();
     }
@@ -76,6 +77,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void PlayerHeal(int _healPoint)
     {
+        UIManager.Instance.playerHpUIScript.ApplyHealToPlayerHpUI(getMaxHp, hp, _healPoint);
         hp = Mathf.Clamp(hp + _healPoint, 0, currentMaxHp);
     }
     public void Player_SetDefaultAtkStat(float _atk, float _atkCoolTime)

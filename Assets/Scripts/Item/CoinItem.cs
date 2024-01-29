@@ -17,6 +17,8 @@ public class CoinItem : MonoBehaviour
     bool IsChase;
     bool IsSpawning =true;
 
+    [SerializeReference] PlayerStatusUI PlayerStatusUIScript;
+
 
     private void Awake()
     {
@@ -48,7 +50,7 @@ public class CoinItem : MonoBehaviour
             GameManager.Instance.PlayerTransform.gameObject.GetComponent<PlayerItemLoot>().getCoin=1;
             Debug.Log(GameManager.Instance.PlayerTransform.gameObject.GetComponent<PlayerItemLoot>().getCoin);
             Destroy(gameObject);
-           
+            UIManager.Instance.playerStatusUIScript.RefreshPlayerGoldText();
         }
     }
 

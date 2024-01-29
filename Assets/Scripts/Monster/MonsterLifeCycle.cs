@@ -40,7 +40,8 @@ public class MonsterLifeCycle : MonoBehaviour
                 case MONSTER_WD.BOSS:
                     // gameManager gameClear;
                     SpawnCoin(100, 10, 30);
-                    GameManager.Instance.WaveClear();
+                    Debug.Log("º¸½º Death");
+                    GameManager.Instance.StageClear();
                     break;
                 case MONSTER_WD.WILD:
                     GameManager.Instance.AddDeadMonsterNum();

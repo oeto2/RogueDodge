@@ -36,7 +36,7 @@ public class BossMonsterAttack_1 : MonoBehaviour
         bossUi = GetComponent<BossMonsterUIController>();
         monsterController= GetComponent<MonsterController>(); 
         random = new System.Random();
-        monsterController.OnDeathEvent += DomeMonsterAllDie;
+        //monsterController.OnDeathEvent += DomeMonsterAllDie;
 
         EffectOff();
     }

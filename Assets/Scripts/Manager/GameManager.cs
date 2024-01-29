@@ -65,7 +65,6 @@ public class GameManager : MonoBehaviour
     {
         WaveClearEvent += ResetMonsterData;
         WaveClearEvent += WaveClear;
-        StageClearEvent += StageClear;
     }
 
     public void CallWaveClearEvent()
@@ -76,6 +75,7 @@ public class GameManager : MonoBehaviour
 
     public void CallStageClearEvent()
     {
+        Debug.Log("스테이지 클리어 이벤트 호출");
         StageClearEvent?.Invoke();
         eGameState = GAMESTATE.CLEAR;
     }
