@@ -12,6 +12,11 @@ public class SpawnManager : MonoBehaviour
     public List<GameObject> spawnerList;
     public List<GameObject> spawnMonsters;
 
+    private void Start()
+    {
+        ItemManager.Instance.GetItemAfterEvent += RunSpawn;
+        RunSpawn();
+    }
 
     public void RunSpawn()
     {
