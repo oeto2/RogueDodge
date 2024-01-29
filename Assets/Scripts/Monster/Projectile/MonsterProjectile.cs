@@ -19,7 +19,10 @@ public class MonsterProjectile : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-   
+    private void Start()
+    {
+        Destroy(gameObject,10);
+    }
     private void FixedUpdate()
     {
         _rigidbody.AddForce(transform.right * projectileSpeed * Time.deltaTime,ForceMode2D.Impulse);
