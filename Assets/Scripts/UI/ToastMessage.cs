@@ -40,6 +40,8 @@ public class ToastMessage : MonoBehaviour
     //Setting ToastMessage
     public void SetToastMessage(GameObject _gameObject)
     {
+        ResetStartToastMessageAnimation();
+
         //Start ToastMessage Animation
         StartCoroutine(StartToastMessageAnimation());
 
@@ -105,5 +107,11 @@ public class ToastMessage : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         ToastMessageObject.SetActive(false);
+    }
+
+    public void ResetStartToastMessageAnimation()
+    {
+        ToastMessageObject.SetActive(false);
+        StopAllCoroutines();
     }
 }
