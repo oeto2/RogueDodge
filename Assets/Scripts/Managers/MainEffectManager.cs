@@ -32,9 +32,15 @@ public class MainEffectManager : MonoBehaviour
 
     private void Start()
     {
+        SetVolumeFromTitleInfo();
         ItemManager.Instance.GetItemAfterEvent += PlayGetItemSound;
     }
 
+    public void SetVolumeFromTitleInfo()
+    {
+        if (TitleInfoManager.Instance != null)
+            EffectAudioSource.volume = TitleInfoManager.Instance.effectVolume;
+    }
 
     #region Player Effect Sounds
     public void PlayPlayerAtkSound()
