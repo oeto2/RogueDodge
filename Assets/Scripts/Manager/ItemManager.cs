@@ -21,6 +21,10 @@ public class ItemManager : MonoBehaviour
     //Evnet called when player Get item
     public event Action<GameObject> GetItemEvent;
 
+    //Evnet called when player Get item After
+    public event Action GetItemAfterEvent;
+
+
     public GameObject ItemObject;
 
     public GameObject[] BattleProjectile;
@@ -60,12 +64,14 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    //Call Event
+    //Call Events
     public void CallGetItemEvnet(GameObject _gameObject)
     {
         GetItemEvent?.Invoke(_gameObject);
         GameManager.Instance.StartNextWave();
     }
+    public void CallGetItemAfterEvnet() => GetItemAfterEvent?.Invoke();
+
 
     //Instantiate GameItem
     public void InstantiateItem()
