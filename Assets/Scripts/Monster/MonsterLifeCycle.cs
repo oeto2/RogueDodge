@@ -48,10 +48,7 @@ public class MonsterLifeCycle : MonoBehaviour
 
             }
 
-
-
             monsterController.CallOnDeathEvent();
-            GameManager.Instance.AddDeadMonsterNum();
             Destroy(gameObject, 1f);
         }
     }

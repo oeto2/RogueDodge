@@ -25,6 +25,7 @@ public class CoinItem : MonoBehaviour
     private void Start()
     {
         player = GameManager.Instance.PlayerTransform;
+        StartCoroutine(SpawnCoinCo());
     }
 
     private void Update()
@@ -47,5 +48,15 @@ public class CoinItem : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("Coin Get");
         }
+    }
+
+
+    IEnumerator SpawnCoinCo()
+    {
+        _rigidbody.gravityScale = 1;
+        _rigidbody.AddForce(Vector2.up*300*Time.deltaTime, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(1.5f);
+        _rigidbody.gravityScale = 0;
+        _rigidbody.velocity = Vector2.zero;
     }
 }
