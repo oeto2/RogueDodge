@@ -9,6 +9,10 @@ public class PlayerStats : MonoBehaviour
 
     PlayerAttack AttackComponent;
     PlayerMovement MoveComponent;
+
+    //Curren Equip WeaponType
+    public WEAPONTYPE eEquipWeaponType = WEAPONTYPE.SWORD;
+
     //HP
     [SerializeField] int defaultMaxHp = 100;
     [SerializeField] int buffedMaxHp = 0;
@@ -53,16 +57,23 @@ public class PlayerStats : MonoBehaviour
         MoveComponent = GetComponent<PlayerMovement>();
         if (!AttackComponent) Debug.Log("PlayerStats.cs : AttackComponent is Null!");
         if (!MoveComponent) Debug.Log("PlayerStats.cs : MoveComponent is Null!");
+        ItemManager.Instance.GetItemEvent += ChageWeaponType;
     }
 
     public void PlayerDamaged(int _damage)
     {
+        //Play Hit Sound of Player
+        MainEffectManager.Instance.PlayPlayerHitSound();
+
         UIManager.Instance.playerHpUIScript.ApplyDamageToPlayerHpUI(getMaxHp, hp, _damage);
         hp -= _damage;
         if (isDead) PlayerDead();
     }
     public void PlayerDead()
     {
+        //Play Dead Sound of Player
+        MainEffectManager.Instance.PlayPlayerDeadSound();
+
         AttackComponent.onAttack = false;
         MoveComponent.onMove = false;
         Debug.Log("Player is Dead");
@@ -84,5 +95,12 @@ public class PlayerStats : MonoBehaviour
     {
         defaultAtk = _atk;
         defaultAtkCoolTime = _atkCoolTime;
+    }
+    public void ChageWeaponType(GameObject _Item)
+    {
+        if (_Item.CompareTag("BattleItem"))
+        {
+            eEquipWeaponType =  _Item.GetComponent<BattleItem>().Data.eWeaponType;
+        }
     }
 }

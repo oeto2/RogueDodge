@@ -57,6 +57,9 @@ public class PlayerAttack : MonoBehaviour
 
     IEnumerator Attack_Coroutine()
     {
+        //Play Attack Sound of Player
+        MainEffectManager.Instance.PlayPlayerAtkSound();
+
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //How to create an attack projectile, not an attack. Generation is also created using object pooling.
         ObjectPooling(PlayerAttack_Projectile, mousePos);

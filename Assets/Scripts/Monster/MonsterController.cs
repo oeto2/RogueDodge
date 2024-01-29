@@ -10,7 +10,6 @@ using System;
 
 public class MonsterController : MonoBehaviour
 {
-   
     public Rigidbody2D _rigidbody;
     public MonsterStats monsterStats;
     public Transform player;
@@ -52,14 +51,23 @@ public class MonsterController : MonoBehaviour
     }
     public void CallOnAttackEvent()
     {
+        //Play Attack Sound of Monster
+        MainEffectManager.Instance.PlayMonsterAtkSound();
+
         OnAttackEvent?.Invoke();
     }
     public void CallOnHitEvent()
     {
+        //Play Hit Sound of Monster
+        MainEffectManager.Instance.PlayMonsterHitSound();
+
         OnHitEvent?.Invoke();
     }
     public void CallOnDeathEvent()
     {
+        //Play Dead Sound of Monster
+        MainEffectManager.Instance.PlayMonsterDeadSound();
+
         OnDeathEvent?.Invoke();
     }
 
