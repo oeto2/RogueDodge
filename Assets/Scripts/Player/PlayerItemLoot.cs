@@ -8,7 +8,7 @@ public class PlayerItemLoot : MonoBehaviour
     //What to drag to the player using "Physics2D.Overlap".
     //int layerMask = 1 << LayerMask.NameToLayer("Gold");
     bool onMagnet;
-    int coin;
+    int coin = 0;
     public int getCoin
     {
         get { return coin; }
@@ -34,6 +34,7 @@ public class PlayerItemLoot : MonoBehaviour
         if (!PlayerRigid) Debug.Log("PlayerItemLoot.cs : PlayerRigid is Null!");
         if (!Stats) Debug.Log("PlayerAttack.cs : Stats is Null!");
         if (!AttackComponent) Debug.Log("PlayerAttack.cs : Attack is Null!");
+        getCoin = 100;
     }
 
     //In the event of a direct conflict with an item
