@@ -24,10 +24,10 @@ public class MonsterObjectPool : MonoBehaviour
             for (int i = 0; i < pool.amount; i++)
             {
                 GameObject obj = Instantiate(pool.obj);
-                obj.SetActive(false);
+                //obj.SetActive(false);
                 objQ.Enqueue(pool.obj);
             }
-            poolDic[pool.name] = objQ;
+            poolDic.Add(pool.name,objQ);
         }
     }
 

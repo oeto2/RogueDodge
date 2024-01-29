@@ -5,12 +5,14 @@ using UnityEngine;
 public class MonsterMovement : MonoBehaviour
 {
     MonsterController monsterController;
+    MonsterStats monsterStats;
     Rigidbody2D _rigidbody;
    // Vector2 dir = Vector2.zero;
 
     private void Awake()
     {
         monsterController = GetComponent<MonsterController>();
+        monsterStats = GetComponent<MonsterStats>();    
         _rigidbody = GetComponent<Rigidbody2D>();
     }
     void Start()
@@ -20,15 +22,18 @@ public class MonsterMovement : MonoBehaviour
 
     void Update()
     {
-        if (monsterController.dir.x > 0)
+        if(monsterStats.eMONSTER_STATE != MONSTER_STATE.DIE)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            if (monsterController.dir.x > 0)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else if (monsterController.dir.x < 0)
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+            }
         }
-        else if (monsterController.dir.x < 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        //  CheckPlayerDistance();
+    
     }
 
     private void FixedUpdate()
