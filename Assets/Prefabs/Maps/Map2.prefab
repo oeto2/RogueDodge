@@ -1714,7 +1714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2814089442000938035
 Transform:
   m_ObjectHideFlags: 0
@@ -11408,7 +11408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6570258260626367993
 Transform:
   m_ObjectHideFlags: 0
@@ -13434,6 +13434,8 @@ MonoBehaviour:
   - {x: -5, y: 3.6, z: 0}
   - {x: -0.5, y: 3.6, z: 0}
   - {x: 4, y: 3.6, z: 0}
+  portal: {fileID: 5253365108907863533}
+  itemSpawnPoint: {fileID: 4711375214499320772}
 --- !u!1 &7739156234933062979
 GameObject:
   m_ObjectHideFlags: 0
