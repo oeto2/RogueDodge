@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1217651841798164360}
   - component: {fileID: 269241185819136365}
   - component: {fileID: -3055346297821907193}
-  m_Layer: 19
+  m_Layer: 25
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -122,10 +122,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75aed38a6ab17114b8a2edcebcfa1eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
+  defaultMaxHp: 100
+  buffedMaxHp: 0
   hp: 0
-  speed: 10
-  atk: 10
+  defaultSpeed: 10
+  buffedSpeed: 0
+  defaultAtk: 10
+  buffedAtk: 0
+  defaultAtkCoolTime: 1
+  buffedAtkCoolTime: 0
 --- !u!114 &1217651841798164360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +159,6 @@ MonoBehaviour:
   onAttack: 0
   PlayerAttack_Projectile: {fileID: 5979131315597062299, guid: 551c303d05e4aec48a7ceed4cae04672,
     type: 3}
-  atkCoolTime: 0.1
 --- !u!114 &-3055346297821907193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6200521207940800436}
   - component: {fileID: 5748555439408697626}
-  m_Layer: 19
+  m_Layer: 25
   m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
