@@ -11,6 +11,10 @@ public class SpawnManager : MonoBehaviour
     public List<GameObject> bossMonsters;
     public List<GameObject> spawnerList;
     public List<GameObject> spawnMonsters;
+   
+
+
+  
 
     private void Start()
     {

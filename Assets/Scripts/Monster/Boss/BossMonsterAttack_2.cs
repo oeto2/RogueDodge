@@ -55,7 +55,7 @@ public class BossMonsterAttack_2 : MonoBehaviour
     IEnumerator OnAttackCo()
     {
         animator.SetTrigger(IsOpenning);
-        //bossUi.SetActiveUi();
+        bossUi.SetActiveUi();
         yield return new WaitForSeconds(2);
 
         while (monsterStats.eMONSTER_STATE != MONSTER_STATE.DIE)

@@ -131,7 +131,7 @@ Transform:
   - {fileID: 7593224538989035804}
   - {fileID: 7234801443819287387}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3259515451976995001
 Animator:
@@ -253,6 +253,7 @@ MonoBehaviour:
     m_Bits: 0
   eMONSTER_TYPE: 0
   eMONSTER_STATE: 0
+  eMONSTER_WD: 0
   projectile: {fileID: 0}
 --- !u!114 &2323531834750089045
 MonoBehaviour:
@@ -278,6 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf856fb975b04e3a9dcf2acd4988a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinObj: {fileID: 3196991988848291461, guid: 2100f480bd72a47eaadcc4e6312a4187, type: 3}
 --- !u!114 &4553154601940536501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,8 +307,8 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   monsterStats: {fileID: 0}
   player: {fileID: 0}
-  curMap: {fileID: 0}
   distance: 0
+  dir: {x: 0, y: 0}
 --- !u!114 &3543316178131184974
 MonoBehaviour:
   m_ObjectHideFlags: 0

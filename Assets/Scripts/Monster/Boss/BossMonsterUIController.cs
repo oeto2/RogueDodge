@@ -53,7 +53,7 @@ public class BossMonsterUIController : MonoBehaviour
 
     public void DestroyObj()
     {
-        Destroy(parentObj,1.5f);
+        Destroy(parentObj,5f);
     }
 
 }

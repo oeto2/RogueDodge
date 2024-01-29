@@ -125,7 +125,7 @@ Transform:
   - {fileID: 963056283664267917}
   - {fileID: 7541998963304005975}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6110460480647933109
 Animator:
@@ -233,8 +233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterName: 
-  hp: 100
+  hp: 50
   atk: 0
+  collisionDamage: 5
   speed: 2
   followRange: 10
   attackRange: 2
@@ -246,6 +247,7 @@ MonoBehaviour:
     m_Bits: 0
   eMONSTER_TYPE: 0
   eMONSTER_STATE: 0
+  eMONSTER_WD: 0
   projectile: {fileID: 0}
 --- !u!114 &8059460002575458995
 MonoBehaviour:
@@ -271,6 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf856fb975b04e3a9dcf2acd4988a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinObj: {fileID: 3196991988848291461, guid: 2100f480bd72a47eaadcc4e6312a4187, type: 3}
 --- !u!114 &3992490011526542991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +302,7 @@ MonoBehaviour:
   monsterStats: {fileID: 0}
   player: {fileID: 0}
   distance: 0
+  dir: {x: 0, y: 0}
 --- !u!114 &7414323399968352898
 MonoBehaviour:
   m_ObjectHideFlags: 0

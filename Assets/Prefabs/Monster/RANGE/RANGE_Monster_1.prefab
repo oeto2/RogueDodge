@@ -242,7 +242,7 @@ Transform:
   - {fileID: 5092364969804725504}
   - {fileID: 8361168205324427695}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5552222673280322648
 Animator:
@@ -381,6 +381,7 @@ MonoBehaviour:
     m_Bits: 0
   eMONSTER_TYPE: 1
   eMONSTER_STATE: 0
+  eMONSTER_WD: 0
   projectile: {fileID: 3377916364384926863, guid: 5787f8e5ded6540938b2dd129d66e1a4,
     type: 3}
 --- !u!114 &6839012220609141656
@@ -421,6 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf856fb975b04e3a9dcf2acd4988a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinObj: {fileID: 3196991988848291461, guid: 2100f480bd72a47eaadcc4e6312a4187, type: 3}
 --- !u!114 &8548607334089269788
 MonoBehaviour:
   m_ObjectHideFlags: 0
