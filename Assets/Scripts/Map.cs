@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    public int mapX = 0;
+    public int mapNum = 0;
     private bool isUsed = false;
 
     public Vector3[] itemSpawn;
@@ -19,6 +19,7 @@ public class Map : MonoBehaviour
     {
         GameManager.Instance.StageClearEvent += ShowPortal;
         GameManager.Instance.WaveClearEvent += ShowItemSpawnPoint;
+        ItemManager.Instance.GetItemAfterEvent += CloseItemSpawnPoint;
     }
 
     void ShowPortal()
@@ -29,5 +30,10 @@ public class Map : MonoBehaviour
     void ShowItemSpawnPoint()
     {
         itemSpawnPoint.SetActive(true);
+    }
+
+    void CloseItemSpawnPoint()
+    {
+        itemSpawnPoint.SetActive(false);
     }
 }

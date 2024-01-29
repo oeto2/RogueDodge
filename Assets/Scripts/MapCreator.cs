@@ -6,6 +6,8 @@ public class MapCreator : MonoBehaviour
 {
     //TODO: Check basic map's size and make new map's location vector
     [SerializeField] List<GameObject> maps;
+    int prevMap = 0;
+    bool isFirst = true;
 
     public static MapCreator instance;
 
@@ -22,25 +24,47 @@ public class MapCreator : MonoBehaviour
     GameObject CreateNewMap()
     {
         int rand = Random.Range(0, maps.Count);
+
+        if (!isFirst)
+        {
+            while(rand != prevMap) rand = Random.Range(0, maps.Count);
+        }
         GameObject newMap = Instantiate(maps[rand]);
+        prevMap = rand;
         GameManager.Instance.curMap = newMap;
-        
-        //TODO: if stage clear is implemented, create new method and write these code
-        GameManager.Instance.player.transform.SetParent(GameManager.Instance.curMap.transform);
-        GameManager.Instance.player.transform.position = new Vector3(0, 0, 0);
+
+        GameManager.Instance.Teleport(true);
+        isFirst = false;
 
         return newMap;
     }
 
     public void CreateNextMap()
     {
-        GameObject curMap = GameManager.Instance.curMap;
-        int curX = curMap.GetComponent<Map>().mapX;
+        int curX = GetMapSize();
         GameObject newMap = CreateNewMap();
+        int newX = GetMapSize();
 
-        Map nMap = newMap.GetComponent<Map>();
-        int newX = nMap.mapX;
+        newMap.transform.position = new Vector3(GameManager.Instance.curMap.transform.position.x + (curX + newX) / 2 + 5, 0, 0);
+    }
 
-        newMap.transform.position = new Vector3(curMap.transform.position.x + (curX + newX) / 2 + 5, 0, 0);
+    int GetMapSize()
+    {
+        int mapSize = 0;
+
+        switch (prevMap)
+        {
+            case 0:
+                mapSize = 24;
+                break;
+            case 1:
+                mapSize = 32;
+                break;
+            case 2:
+                mapSize = 38;
+                break;
+        }
+
+        return mapSize;
     }
 }
