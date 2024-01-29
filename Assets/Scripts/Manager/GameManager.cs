@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
         eGameState = GAMESTATE.CLEAR;
         deadMonsterNum = 0;
 
-        //TODO: Set CurrentMonsterNum to Map Obj
+        //TODO: Get CurrentMonsterNum to Map Obj
         curMonsterNum = 1;
 
         if (curWaveNum < targetWaveNum)
@@ -119,6 +119,7 @@ public class GameManager : MonoBehaviour
         else
         {
             eWaveType = WAVETYPE.BOSS;
+            StageStatusUI.Instance.ChangeWaveStatusImageToBoss();
             ResetWave();
         }
     }

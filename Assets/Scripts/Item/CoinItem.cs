@@ -15,7 +15,7 @@ public class CoinItem : MonoBehaviour
     public float chaseSpeed;
 
     bool IsChase;
-    
+    bool IsSpawning =true;
 
 
     private void Awake()
@@ -30,7 +30,7 @@ public class CoinItem : MonoBehaviour
 
     private void Update()
     {
-        if (Physics2D.OverlapCircle(transform.position, range, mask))
+        if (Physics2D.OverlapCircle(transform.position, range, mask)&&!IsSpawning)
         {
             IsChase = true;
         }
@@ -53,10 +53,15 @@ public class CoinItem : MonoBehaviour
 
     IEnumerator SpawnCoinCo()
     {
-        _rigidbody.gravityScale = 1;
-        _rigidbody.AddForce(Vector2.up*300*Time.deltaTime, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(1.5f);
+        float z = Random.Range(0, Mathf.PI);
+        Vector2 position = new Vector2(Mathf.Cos(z)*2, Mathf.Sin(z)*2);
+
+        _rigidbody.gravityScale = 0.5f;
+        _rigidbody.AddForce(position*20, ForceMode2D.Force);
+        yield return new WaitForSeconds(0.8f);
         _rigidbody.gravityScale = 0;
         _rigidbody.velocity = Vector2.zero;
+        yield return new WaitForSeconds(0.5f);
+        IsSpawning = false;
     }
 }

@@ -24,7 +24,6 @@ public class ItemManager : MonoBehaviour
     //Evnet called when player Get item After
     public event Action GetItemAfterEvent;
 
-
     public GameObject ItemObject;
 
     public GameObject[] BattleProjectile;
@@ -56,21 +55,13 @@ public class ItemManager : MonoBehaviour
         GameManager.Instance.WaveClearEvent += InstantiateItem;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            InstantiateItem();
-        }
-    }
-
     //Call Events
-    public void CallGetItemEvnet(GameObject _gameObject)
+    public void CallGetItemEvent(GameObject _gameObject)
     {
         GetItemEvent?.Invoke(_gameObject);
         GameManager.Instance.StartNextWave();
     }
-    public void CallGetItemAfterEvnet() => GetItemAfterEvent?.Invoke();
+    public void CallGetItemAfterEvent() => GetItemAfterEvent?.Invoke();
 
 
     //Instantiate GameItem

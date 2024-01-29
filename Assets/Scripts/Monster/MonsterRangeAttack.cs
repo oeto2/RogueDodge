@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+public enum PROJECTILE_TYPE
+{
+    Projectile_1,Projectile_2, Projectile_3
+}
+
 public class MonsterRangeAttack : MonoBehaviour
 {
     MonsterController monsterController;
@@ -10,20 +17,25 @@ public class MonsterRangeAttack : MonoBehaviour
     public float attackCooltime;
     public int attackListIdx = 0;
     delegate void RangeAttacks();
-
     RangeAttacks[] attackList = new RangeAttacks[5];
 
+    //public PROJECTILE_TYPE ePROJECTILE_TYPE;
+    //string projectileName;
+
+    //ObjectPool objectPools;
     private void Awake()
     {
         monsterController = GetComponent<MonsterController>();
+        //objectPools = GetComponent<ObjectPool>();
+
         attackList[0] = CreateProjectil;
         attackList[1] = RoundShot;
         attackList[2] = SpiralShot;
     }
     private void Start()
     {
-        monsterStats = monsterController.monsterStats;        
-
+        monsterStats = monsterController.monsterStats;
+        //projectileName = ePROJECTILE_TYPE.ToString();
     }
    
 
@@ -65,10 +77,14 @@ public class MonsterRangeAttack : MonoBehaviour
     {
         Vector2 lookDir = (monsterController.player.position - monsterStats.projectileSpawner.position).normalized;
         GameObject projectile = Instantiate(monsterStats.projectile, monsterStats.projectileSpawner.position, Quaternion.identity);
+        //GameObject projectile = objectPools.SpawnFromPool(projectileName);
+        //projectile.transform.position = monsterStats.projectileSpawner.position;
+        //projectile.SetActive(true);
+
         projectile.GetComponent<MonsterProjectile>().SetDir(lookDir);
         projectile.GetComponent<MonsterProjectile>().SetMonsterStats(monsterStats);
 
-    }
+    }//todo
 
 
     public void RoundShot()

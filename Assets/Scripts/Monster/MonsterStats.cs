@@ -45,5 +45,4 @@ public class MonsterStats : MonoBehaviour
     //Range
     public GameObject projectile;
 
-    
 }
