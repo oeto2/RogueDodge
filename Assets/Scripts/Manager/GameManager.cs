@@ -144,15 +144,13 @@ public class GameManager : MonoBehaviour
         //TODO: need Teleport Animation 
         if (isMap)
         {
-            Debug.Log("MapPortal");
             player.transform.SetParent(curMap.transform);
             player.transform.position = new Vector3(0, 0, 0);
         }
         else
         {
-            Debug.Log("ShopPortal");
             player.transform.SetParent(shop.transform);
-            player.transform.position = new Vector3(0, -2, 0);
+            player.transform.position = new Vector3(0, 28, 0);
         }
     }
 }

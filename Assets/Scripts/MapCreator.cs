@@ -27,10 +27,14 @@ public class MapCreator : MonoBehaviour
 
         if (!isFirst)
         {
-            while(rand != prevMap) rand = Random.Range(0, maps.Count);
+            while(true)
+            {
+                rand = Random.Range(0, maps.Count);
+                if (rand != prevMap) break;
+            }
         }
-        GameObject newMap = Instantiate(maps[rand]);
         prevMap = rand;
+        GameObject newMap = Instantiate(maps[rand]);
         GameManager.Instance.curMap = newMap;
 
         GameManager.Instance.Teleport(true);
@@ -42,10 +46,11 @@ public class MapCreator : MonoBehaviour
     public void CreateNextMap()
     {
         int curX = GetMapSize();
+        float curPosition = GameManager.Instance.curMap.transform.position.x;
         GameObject newMap = CreateNewMap();
         int newX = GetMapSize();
 
-        newMap.transform.position = new Vector3(GameManager.Instance.curMap.transform.position.x + (curX + newX) / 2 + 5, 0, 0);
+        newMap.transform.position = new Vector3(curPosition + (curX + newX) / 2 + 5, 0, 0);
     }
 
     int GetMapSize()
