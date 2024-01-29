@@ -8,6 +8,7 @@ public class MonsterProjectile : MonoBehaviour
     Rigidbody2D _rigidbody;
    
     public float projectileSpeed;
+    public int damage;
     //public float damage = 0;
 
     public MonsterStats monsterStats;
@@ -42,7 +43,11 @@ public class MonsterProjectile : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            int damage = (int)monsterStats.atk;
+            if(monsterStats != null)
+            {
+                damage = (int)monsterStats.atk;
+            }
+         
             collision.gameObject.GetComponent<PlayerStats>().PlayerDamaged(damage);
             Destroy(gameObject);
             //todo -Create ObjectPool, Recycling projectile 
