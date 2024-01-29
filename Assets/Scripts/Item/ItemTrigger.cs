@@ -12,7 +12,7 @@ public class ItemTrigger : MonoBehaviour
         {
             Debug.Log("æ∆¿Ã≈€ »πµÊ");
 
-            ItemManager.Instance.CallGetItemEvnet(this.gameObject);
+            ItemManager.Instance.CallGetItemEvent(this.gameObject);
             //Destroy Spawn items
             StartCoroutine(ItemManager.Instance.DestroyAllItem());
 
@@ -24,6 +24,6 @@ public class ItemTrigger : MonoBehaviour
     IEnumerator StartGetItemAfterEvent()
     {
         yield return new WaitForSeconds(0.1f);
-        ItemManager.Instance.CallGetItemAfterEvnet();
+        ItemManager.Instance.CallGetItemAfterEvent();
     }
 }

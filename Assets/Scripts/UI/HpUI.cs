@@ -7,6 +7,11 @@ public class HpUI : MonoBehaviour
 {
     [SerializeField] Slider HpSlider;
 
+    public void Start()
+    {
+        //Todo Event
+    }
+
     public void ApplyDamageToPlayerHpUI(int _maxHp, int _currentHp, float _damge)
     => HpSlider.value = (float)(_currentHp - _damge) / _maxHp;
 
