@@ -11,16 +11,21 @@ public class SpawnManager : MonoBehaviour
     public List<GameObject> bossMonsters;
     public List<GameObject> spawnerList;
     public List<GameObject> spawnMonsters;
-   
 
-
-  
+    private void Awake()
+    {
+        GameManager.Instance.maxMonsterNum = spawnAmount * spawnerList.Count;
+    }
 
     private void Start()
     {
+        ItemManager.Instance.GetItemAfterEvent += SetMaxMonterNum;
         ItemManager.Instance.GetItemAfterEvent += RunSpawn;
         RunSpawn();
     }
+
+        
+    public void SetMaxMonterNum() => GameManager.Instance.maxMonsterNum = spawnAmount* spawnerList.Count;
 
     public void RunSpawn()
     {

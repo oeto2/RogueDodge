@@ -31,10 +31,8 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject shop;
 
-    [SerializeField]
-    private int curMonsterNum = 0;
-    [SerializeField]
-    private int deadMonsterNum = 0;
+    public int maxMonsterNum = 0;
+    public int deadMonsterNum = 0;
 
     public int curWaveNum = 1;
     public int targetWaveNum = 3;
@@ -87,14 +85,14 @@ public class GameManager : MonoBehaviour
         deadMonsterNum++;
 
         //Call Wave Clear Event
-        if (curMonsterNum == deadMonsterNum)
+        if (maxMonsterNum == deadMonsterNum)
         {
             CallWaveClearEvent();
         }
     }
 
     //Add CurMonsterNum
-    public void AddCurMonsterNum(int _num) => curMonsterNum += _num;
+    public void AddCurMonsterNum(int _num) => maxMonsterNum += _num;
 
     //Call Function when Dead BossMonster
     public void StageClear()
@@ -113,7 +111,7 @@ public class GameManager : MonoBehaviour
         deadMonsterNum = 0;
 
         //TODO: Get CurrentMonsterNum to Map Obj
-        curMonsterNum = 1;
+        //curMonsterNum = curMap.GetComponent<>;
 
         if (curWaveNum < targetWaveNum)
             curWaveNum++;
@@ -127,7 +125,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetMonsterData()
     {
-        curMonsterNum = 0;
+        maxMonsterNum = 0;
         deadMonsterNum = 0;
     }
 
