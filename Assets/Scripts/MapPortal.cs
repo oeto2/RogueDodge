@@ -8,11 +8,21 @@ public class MapPortal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if(gameObject.CompareTag("MapPortal"))
         {
-            //TODO: Change to ButtonClicked
-            MapCreator.instance.CreateNextMap();
-            isUsed = true;
+            if(other.CompareTag("Player"))
+            {
+                
+                GameManager.Instance.Teleport(false);
+            }
+        } else if(gameObject.CompareTag("ShopPortal"))
+        {
+            if (other.CompareTag("Player") && !isUsed)
+            {
+                MapCreator.instance.CreateNextMap();
+                isUsed = true;
+            }
         }
+        
     }
 }

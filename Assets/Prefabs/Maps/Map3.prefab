@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4921384c499eb854f90fc03811fd6e4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapX: 38
+  mapNum: 2
   itemSpawn:
   - {x: -3, y: 9.6, z: 0}
   - {x: 0.5, y: 9.6, z: 0}
@@ -10613,7 +10613,7 @@ GameObject:
   - component: {fileID: 7690934501216385393}
   m_Layer: 0
   m_Name: PortalPoint
-  m_TagString: Portal
+  m_TagString: MapPortal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
