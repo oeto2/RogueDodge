@@ -16,6 +16,10 @@ public class MainEffectManager : MonoBehaviour
     [SerializeField] AudioClip MonsterHitSound;
     [SerializeField] AudioClip MonsterDeadSound;
 
+    [SerializeField] AudioClip GetItemSound;
+    [SerializeField] AudioClip GetCoinSound;
+
+
     AudioSource EffectAudioSource;
 
     private bool isPlayerDead;
@@ -24,6 +28,11 @@ public class MainEffectManager : MonoBehaviour
     {
         Instance = this;
         EffectAudioSource = this.gameObject.GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        ItemManager.Instance.GetItemAfterEvent += PlayGetItemSound;
     }
 
 
@@ -76,4 +85,8 @@ public class MainEffectManager : MonoBehaviour
     public void PlayMonsterAtkSound() => EffectAudioSource.PlayOneShot(MonsterAtkSound);
     public void PlayMonsterDeadSound() => EffectAudioSource.PlayOneShot(MonsterDeadSound);
     #endregion
+
+
+    public void PlayGetItemSound() => EffectAudioSource.PlayOneShot(GetItemSound);
+    public void PlayGetCoinSound() => EffectAudioSource.PlayOneShot(GetCoinSound);
 }

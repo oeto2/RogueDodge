@@ -73,7 +73,7 @@ public class PlayerStats : MonoBehaviour
     {
         //Play Dead Sound of Player
         MainEffectManager.Instance.PlayPlayerDeadSound();
-
+         
         AttackComponent.onAttack = false;
         MoveComponent.onMove = false;
         Debug.Log("Player is Dead");

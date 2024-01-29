@@ -142,11 +142,19 @@ public class GameManager : MonoBehaviour
         //TODO: need Teleport Animation 
         if (isMap)
         {
+            if (stageNum > 3)
+                MainBgmManager.Instance.PlayStageBGM(3);
+            else 
+                MainBgmManager.Instance.PlayStageBGM(stageNum);
+
+            eWaveType = WAVETYPE.NORMAL;
             player.transform.SetParent(curMap.transform);
             player.transform.position = new Vector3(0, 0, 0);
         }
         else
         {
+            MainBgmManager.Instance.PlayShopBgm();
+            eWaveType = WAVETYPE.SHOP;
             player.transform.SetParent(shop.transform);
             player.transform.position = new Vector3(0, 28, 0);
         }

@@ -47,6 +47,9 @@ public class CoinItem : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            //Play Get Coin Sound
+            MainEffectManager.Instance.PlayGetCoinSound();
+
             GameManager.Instance.PlayerTransform.gameObject.GetComponent<PlayerItemLoot>().getCoin=1;
             Debug.Log(GameManager.Instance.PlayerTransform.gameObject.GetComponent<PlayerItemLoot>().getCoin);
             Destroy(gameObject);

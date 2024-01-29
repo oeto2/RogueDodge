@@ -259,6 +259,8 @@ MonoBehaviour:
   MonsterAtkSound: {fileID: 8300000, guid: 1eeb0ad09bbc5074383c78e4455bc303, type: 3}
   MonsterHitSound: {fileID: 8300000, guid: 2a803c8c6b5eeaf4289fcc22fd1c026d, type: 3}
   MonsterDeadSound: {fileID: 8300000, guid: 603e5c0126365734ebb6f9b7fcf618ee, type: 3}
+  GetItemSound: {fileID: 8300000, guid: 40e0acf4aaf9861488585c7668a50bbb, type: 3}
+  GetCoinSound: {fileID: 8300000, guid: d74de17c1d4bef44ba1ecac6976aa5fc, type: 3}
 --- !u!82 &382617092
 AudioSource:
   m_ObjectHideFlags: 0
@@ -723,7 +725,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 357e17ab083ee89419606be5c9040847, type: 3}
   - {fileID: 8300000, guid: 46b68b2c7ab385348bf3b374517c1b03, type: 3}
   BossBgm: {fileID: 8300000, guid: 5b2cd79583cdfff4abf280ff0a99d92e, type: 3}
-  ShopBgm: {fileID: 0}
+  ShopBgm: {fileID: 8300000, guid: 9139002f09bdd6f4ea3ccf030ec462c1, type: 3}
 --- !u!82 &1867727039
 AudioSource:
   m_ObjectHideFlags: 0
