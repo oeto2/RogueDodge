@@ -39,7 +39,7 @@ Transform:
   m_Children:
   - {fileID: 7214082131157640357}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3479115861999183076
 Animator:
@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf856fb975b04e3a9dcf2acd4988a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinObj: {fileID: 3196991988848291461, guid: 2100f480bd72a47eaadcc4e6312a4187, type: 3}
 --- !u!114 &3129969855863169531
 MonoBehaviour:
   m_ObjectHideFlags: 0

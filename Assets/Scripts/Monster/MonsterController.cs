@@ -20,16 +20,14 @@ public class MonsterController : MonoBehaviour
     public event Action OnAttackEvent;
     public event Action OnHitEvent;
     public event Action OnDeathEvent;
-
-
-    
+  
     public float distance;
     public Vector2 dir;
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         monsterStats = GetComponent<MonsterStats>();
-        
+       
     }
 
     void Start()

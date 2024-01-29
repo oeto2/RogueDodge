@@ -48,6 +48,7 @@ public class FireBallProjectile : MonoBehaviour
             dir = Vector2.zero;
             GameObject _crashEffect = Instantiate(crashEffect, targetPosition, Quaternion.identity);
             _crashEffect.transform.Rotate(Vector3.forward, 90);
+            Destroy(_crashEffect, 1f);
             Destroy(gameObject, 2f);
         }
     }
@@ -71,6 +72,7 @@ public class FireBallProjectile : MonoBehaviour
             MainEffectOff();
             GameObject _crashEffect = Instantiate(crashEffect, targetPosition, Quaternion.identity);
             _crashEffect.transform.Rotate(Vector3.forward, zAngle);
+            Destroy(_crashEffect, 1f);
             collision.gameObject.GetComponent<PlayerStats>().PlayerDamaged(damage);
             Destroy(gameObject, 2f);
 
