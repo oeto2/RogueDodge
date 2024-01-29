@@ -15,7 +15,10 @@ public class Spawner : MonoBehaviour
         StartCoroutine(Spawning());
     }
 
-
+    //spawnManager,
+    //function Start, Spawn condition is GameState Battle.
+    //if GameState is Battle, List<Spawner> foreach, run coroutine function
+    //
 
     IEnumerator Spawning()
     {

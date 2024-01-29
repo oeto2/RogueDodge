@@ -39,8 +39,11 @@ public class MonsterLifeCycle : MonoBehaviour
             {
                 case MONSTER_WD.BOSS: Debug.Log("BOSS");
                     // gameManager gameClear;
+                    GameManager.Instance.WaveClear();
                     break;
-                case MONSTER_WD.WILD: Debug.Log("WILD"); break;
+                case MONSTER_WD.WILD: Debug.Log("WILD");
+                    GameManager.Instance.AddDeadMonsterNum();
+                    break;
                 default: break;
 
             }
