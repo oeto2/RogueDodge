@@ -20,7 +20,7 @@ public class Trap : MonoBehaviour
     public TRAP_TYPE eTRAP_TYPE = TRAP_TYPE.TIME;
 
     public int rayLength;
-    public int shotRate;
+    public float shotRate;
     public float shotCooltime;
     RaycastHit2D hit;
 

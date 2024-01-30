@@ -157,7 +157,8 @@ MonoBehaviour:
   PlayerTransform: {fileID: 0}
   curMap: {fileID: 0}
   player: {fileID: 0}
-  curMonsterNum: 4
+  shop: {fileID: 0}
+  maxMonsterNum: 0
   deadMonsterNum: 0
   curWaveNum: 1
   targetWaveNum: 3
@@ -244,6 +245,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MELLE_Monster_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213510042984239004, guid: d070ce381deafbf479b1d21627440a76,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -409,6 +415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RANGE_Monster_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5912869272207407543, guid: 4e9d02f496ef34949bdb3b9b9996b7bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
