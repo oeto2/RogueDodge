@@ -1205,7 +1205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8198747688828767426
 Transform:
   m_ObjectHideFlags: 0
@@ -1545,8 +1545,8 @@ Transform:
   - {fileID: 3208640839387423473}
   - {fileID: 7971052294086840741}
   - {fileID: 3488575547821380099}
-  - {fileID: 6672631891966069055}
   - {fileID: 8198747688828767426}
+  - {fileID: 6672631891966069055}
   - {fileID: 6231712750783562792}
   - {fileID: 7868090375012543313}
   - {fileID: 474066946823351614}
@@ -7526,7 +7526,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
