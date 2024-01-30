@@ -8,12 +8,22 @@ public class Trap4Dir : MonoBehaviour
     public float shotRate;
 
 
+
+    private void Awake()
+    {
+        ItemManager.Instance.GetItemAfterEvent += ShotTrap;
+    }
     private void Start()
     {
-        StartCoroutine(ShotTrapCo());
+        ShotTrap();
     }
 
 
+
+    void ShotTrap()
+    {
+        StartCoroutine(ShotTrapCo());
+    }
 
     IEnumerator ShotTrapCo()
     {
