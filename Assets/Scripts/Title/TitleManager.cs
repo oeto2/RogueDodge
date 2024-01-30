@@ -10,7 +10,7 @@ public class TitleManager : MonoBehaviour
     public void StartGame()
     {
         //Todo
-        SceneManager.LoadScene("ItemTest");
+        SceneManager.LoadScene("Main");
     }
 
     public void ExitGame()

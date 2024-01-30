@@ -39,7 +39,7 @@ Transform:
   - {fileID: 8755164402905706585}
   - {fileID: 1733050141845350160}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &493824889644633259
 BoxCollider2D:
@@ -135,7 +135,7 @@ MonoBehaviour:
   buffedAtk: 0
   defaultAtkCoolTime: 1
   buffedAtkCoolTime: 0
-  anim: {fileID: 0}
+  anim: {fileID: 8574667089386387822}
 --- !u!114 &1217651841798164360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onAttack: 0
-  PlayerAttack_Projectile: {fileID: 5979131315597062299, guid: 551c303d05e4aec48a7ceed4cae04672,
+  PlayerAttack_Projectile: {fileID: 352661393788512837, guid: 165b12a331b2ba94f93b78ee52b55b44,
     type: 3}
 --- !u!114 &-3055346297821907193
 MonoBehaviour:

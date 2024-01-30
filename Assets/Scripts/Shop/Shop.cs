@@ -49,6 +49,10 @@ public class Shop : MonoBehaviour
                 Debug.Log("Shop.cs : playerInventory is Null!");
             }
         }
+        else
+        {
+            PlayerCoinUI.text = playerInventory.getCoin.ToString() + " G";
+        }
         playerInventory.onShop(false);
     }
     private void OnDisable()
@@ -66,6 +70,7 @@ public class Shop : MonoBehaviour
             shopUseItem.Data = shopItem.useItemData;
             playerInventory.ItemUse(shopUseItem);
             playerInventory.lostCoin = shopItem.price;
+            UIManager.Instance.playerStatusUIScript.RefreshPlayerGoldText();
 
             PlayerCoinUI.text = playerInventory.getCoin.ToString();
         }
