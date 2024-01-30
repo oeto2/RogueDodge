@@ -19,7 +19,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] float maxLimitX = 0;
     [SerializeField] float minLimitY = 0;
     [SerializeField] float maxLimitY = 0;
-    // Start is called before the first frame update
+    
     void Start()
     {
         PlayerTransform = GameManager.Instance.PlayerTransform;
@@ -30,13 +30,15 @@ public class CameraMovement : MonoBehaviour
         //StartCoroutine(curMapWait_Coroutine());
     }
 
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, PlayerTransform.position + cameraPos, cameraMoveSpeed);
+        transform.position = Vector3.Lerp(transform.position, PlayerTransform.position + cameraPos, cameraMoveSpeed * Time.deltaTime);
         if (tilemap)
         {
+            //MapRadius - CameraWidth = LimitArea / 2
             float lx = (bounds.size.x / 2) - cameraWidth;
+            //MapPosition + (-LimitArea ~ LimitArea) + Additional modified values = CameraLimit X_Value
             float ClampX = Mathf.Clamp(transform.position.x, mapPos.x + (bounds.center.x - lx) + minLimitX, mapPos.x + (bounds.center.x + lx) + maxLimitX);
 
             float ly = (bounds.size.y / 2) - cameraHeight;
@@ -48,6 +50,7 @@ public class CameraMovement : MonoBehaviour
 
     public void LimitCameraArea()
     {
+        //Limit area setting
         switch (GameManager.Instance.eWaveType)
         {
             case WAVETYPE.NORMAL:
@@ -66,7 +69,7 @@ public class CameraMovement : MonoBehaviour
         transform.position = mapPos;
         bounds = tilemap.cellBounds;
     }
-    //test
+    //test coroutine
     IEnumerator curMapWait_Coroutine()
     {
         yield return new WaitUntil(() => GameManager.Instance.curMap);

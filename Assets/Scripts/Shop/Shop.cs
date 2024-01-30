@@ -13,7 +13,6 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         ShopItemTransform = transform.Find("BackGround/Scroll View/Viewport/Content");
-        gameObject.SetActive(false);
         int idx = 0;
         foreach(UseItemDataBaseEntity item in ItemManager.Instance.UseItems)
         {

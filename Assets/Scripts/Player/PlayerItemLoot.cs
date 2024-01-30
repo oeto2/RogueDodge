@@ -23,6 +23,7 @@ public class PlayerItemLoot : MonoBehaviour
     Rigidbody2D PlayerRigid;
     PlayerStats Stats;
     PlayerAttack AttackComponent;
+    PlayerMovement MoveComponent;
     List<BattleItem> BattleItems = new List<BattleItem>();
     List<BuffItem> BuffItems = new List<BuffItem>();
 
@@ -31,9 +32,11 @@ public class PlayerItemLoot : MonoBehaviour
         PlayerRigid = GetComponent<Rigidbody2D>();
         Stats = GetComponent<PlayerStats>();
         AttackComponent = GetComponent<PlayerAttack>();
+        MoveComponent = GetComponent<PlayerMovement>();
         if (!PlayerRigid) Debug.Log("PlayerItemLoot.cs : PlayerRigid is Null!");
-        if (!Stats) Debug.Log("PlayerAttack.cs : Stats is Null!");
-        if (!AttackComponent) Debug.Log("PlayerAttack.cs : Attack is Null!");
+        if (!Stats) Debug.Log("PlayerItemLoot.cs : Stats is Null!");
+        if (!AttackComponent) Debug.Log("PlayerItemLoot.cs : Attack is Null!");
+        if (!MoveComponent) Debug.Log("PlayerItemLoot.cs : Move is Null!");
         getCoin = 100;
     }
 
@@ -83,5 +86,6 @@ public class PlayerItemLoot : MonoBehaviour
     public void onShop(bool _setbool)
     {
         AttackComponent.onAttack = _setbool;
+        MoveComponent.onMove = _setbool;
     }
 }
