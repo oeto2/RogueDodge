@@ -16,6 +16,7 @@ public class BossMonsterAttack_2 : MonoBehaviour
     readonly int IsAttack_1 = Animator.StringToHash("attack_1");
     readonly int IsAttack_2 = Animator.StringToHash("attack_2");
     readonly int IsAttack_3 = Animator.StringToHash("attack_3");
+    readonly int IsAttack_4 = Animator.StringToHash("attack_4");
 
 
     delegate void AttackPattern();
@@ -44,9 +45,10 @@ public class BossMonsterAttack_2 : MonoBehaviour
     private void Start()
     {
         monsterStats = GetComponent<MonsterStats>();
-        attackPatterns.Add(AttackPattern_1);
-        attackPatterns.Add(AttackPattern_2);
-        attackPatterns.Add(AttackPattern_3);
+        //attackPatterns.Add(AttackPattern_1);
+        //attackPatterns.Add(AttackPattern_2);
+        //attackPatterns.Add(AttackPattern_3);
+        attackPatterns.Add(AttackPattern_4);
         player = GameManager.Instance.PlayerTransform.gameObject;
 
         StartCoroutine(OnAttackCo());
@@ -63,7 +65,7 @@ public class BossMonsterAttack_2 : MonoBehaviour
             int idx = random.Next(0, attackPatterns.Count);
             AttackPattern attack = attackPatterns[idx];
             attack();
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(7);
         }
     }
 
@@ -153,9 +155,33 @@ public class BossMonsterAttack_2 : MonoBehaviour
         attackEffects[2].SetActive(false);
 
     }
-   // 도트대미지 구현,
+    
+    void AttackPattern_4()
+    {
+        //애니메이션
+        animator.SetTrigger(IsAttack_4);
+        Vector2 dir = (GameManager.Instance.PlayerTransform.position - monsterStats.projectileSpawner.position).normalized;
+        GameObject holder = new GameObject("holder");
+        holder.transform.SetParent(transform);
+        StartCoroutine(AttackPattern_4Co(dir,holder));
 
-
+    }
+    IEnumerator AttackPattern_4Co(Vector2 dir,GameObject holder) //4 second
+    {
+        yield return new WaitForSeconds(1f);
+        float percent = 0;
+        while(percent < 2)
+        {
+            percent += Time.deltaTime;
+            GameObject projectile = Instantiate(projectils[1], monsterStats.projectileSpawner.position, Quaternion.identity);
+            projectile.transform.SetParent(holder.transform);
+            projectile.GetComponent<MonsterProjectile>().SetSpeed(30);
+            projectile.transform.right = dir;
+            yield return null;
+        }
+        Destroy(holder);
+        
+    }
     struct Coord
     {
         public float X;
