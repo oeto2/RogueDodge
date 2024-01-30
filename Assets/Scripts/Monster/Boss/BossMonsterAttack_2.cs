@@ -19,8 +19,8 @@ public class BossMonsterAttack_2 : MonoBehaviour
 
 
     delegate void AttackPattern();
-    public List<GameObject> attackEffects = new List<GameObject>();
     List<AttackPattern> attackPatterns = new List<AttackPattern>();
+    public List<GameObject> attackEffects = new List<GameObject>();
 
     public List<GameObject> projectils = new List<GameObject>();
 

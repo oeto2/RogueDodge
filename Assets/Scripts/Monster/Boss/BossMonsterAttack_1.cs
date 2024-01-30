@@ -14,6 +14,7 @@ public class BossMonsterAttack_1 : MonoBehaviour
     readonly int IsOpenning = Animator.StringToHash("boss_openning");
     readonly int IsAttack_1 = Animator.StringToHash("attack_1");
     readonly int IsAttack_2 = Animator.StringToHash("attack_2");
+
     delegate void AttackPattern();
     public  List<ParticleSystem> attackEffect = new List<ParticleSystem>();
     List<AttackPattern> attackPatterns = new List<AttackPattern>();
@@ -36,7 +37,7 @@ public class BossMonsterAttack_1 : MonoBehaviour
         bossUi = GetComponent<BossMonsterUIController>();
         monsterController= GetComponent<MonsterController>(); 
         random = new System.Random();
-        //monsterController.OnDeathEvent += DomeMonsterAllDie;
+        monsterController.OnDeathEvent += DomeMonsterAllDie;
 
         EffectOff();
     }

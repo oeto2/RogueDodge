@@ -6,6 +6,9 @@ public class SpawnManager : MonoBehaviour
 {
     public int round;
     int currentRound;
+    public bool IsClear;
+
+
     public int spawnAmount;
 
     public List<GameObject> bossMonsters;
@@ -29,20 +32,26 @@ public class SpawnManager : MonoBehaviour
 
     public void RunSpawn()
     {
-        if(round <= currentRound)
-        {
-            int ran = Random.Range(0, bossMonsters.Count);
-            Instantiate(bossMonsters[ran], transform.position, Quaternion.identity);
 
-        }
-        else
+        if (!IsClear)
         {
-            currentRound++;
-            foreach (GameObject spawner in spawnerList)
+            if (round <= currentRound)
             {
-                spawner.GetComponent<Spawner>().RunSpawn(spawnAmount,spawnMonsters);
+                int ran = Random.Range(0, bossMonsters.Count);
+                Instantiate(bossMonsters[ran], transform.position, Quaternion.identity);
+                IsClear = true;
+
+            }
+            else
+            {
+                currentRound++;
+                foreach (GameObject spawner in spawnerList)
+                {
+                    spawner.GetComponent<Spawner>().RunSpawn(spawnAmount, spawnMonsters);
+                }
             }
         }
+        
       
     }
 }
