@@ -9,6 +9,6 @@ public class InteractableObject : MonoBehaviour
 
     public void Interaction()
     {
-        InteractionEvent();
+        InteractionEvent?.Invoke();
     }
 }

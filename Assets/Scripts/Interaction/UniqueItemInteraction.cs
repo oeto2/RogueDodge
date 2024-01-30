@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class UniqueItemInteraction : InteractableObject
 {
-
-    // Start is called before the first frame update
-    void Start()
+    
+    public void OnUniqueItem()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
