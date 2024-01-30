@@ -62,12 +62,16 @@ public class PlayerStats : MonoBehaviour
 
     public void PlayerDamaged(int _damage)
     {
-        //Play Hit Sound of Player
-        MainEffectManager.Instance.PlayPlayerHitSound();
+        if (!isDead)
+        {
+            //Play Hit Sound of Player
+            MainEffectManager.Instance.PlayPlayerHitSound();
 
-        UIManager.Instance.playerHpUIScript.ApplyDamageToPlayerHpUI(getMaxHp, hp, _damage);
-        hp -= _damage;
-        if (isDead) PlayerDead();
+            UIManager.Instance.playerHpUIScript.ApplyDamageToPlayerHpUI(getMaxHp, hp, _damage);
+            hp -= _damage;
+
+            if(isDead) PlayerDead();
+        }
     }
     public void PlayerDead()
     {
