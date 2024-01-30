@@ -23,9 +23,14 @@ public class Trap : MonoBehaviour
     public float shotRate;
     public float shotCooltime;
     RaycastHit2D hit;
-
     public LayerMask target;
     public GameObject projectile;
+
+
+    private void Awake()
+    {
+        ItemManager.Instance.GetItemAfterEvent += Sentinel;
+    }
 
     private void Start()
     {
@@ -48,7 +53,7 @@ public class Trap : MonoBehaviour
         
         if(eTRAP_TYPE == TRAP_TYPE.TIME)
         {
-            StartCoroutine(SentinelCo());
+            Sentinel();
         }
         
     }
@@ -95,7 +100,10 @@ public class Trap : MonoBehaviour
         
     }
 
-
+    void Sentinel()
+    {
+        StartCoroutine(SentinelCo());
+    }
     IEnumerator SentinelCo()
     {
         while (GameManager.Instance.eGameState == GAMESTATE.BATTLE)

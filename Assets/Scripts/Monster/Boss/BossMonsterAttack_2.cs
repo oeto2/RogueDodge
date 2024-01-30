@@ -45,9 +45,9 @@ public class BossMonsterAttack_2 : MonoBehaviour
     private void Start()
     {
         monsterStats = GetComponent<MonsterStats>();
-        //attackPatterns.Add(AttackPattern_1);
-        //attackPatterns.Add(AttackPattern_2);
-        //attackPatterns.Add(AttackPattern_3);
+        attackPatterns.Add(AttackPattern_1);
+        attackPatterns.Add(AttackPattern_2);
+        attackPatterns.Add(AttackPattern_3);
         attackPatterns.Add(AttackPattern_4);
         player = GameManager.Instance.PlayerTransform.gameObject;
 
