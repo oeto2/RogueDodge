@@ -3603,7 +3603,7 @@ GameObject:
   - component: {fileID: 423410947993892450}
   - component: {fileID: 4966621658110420602}
   m_Layer: 0
-  m_Name: floor
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
