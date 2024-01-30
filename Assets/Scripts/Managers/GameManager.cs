@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject shop;
 
+    CameraMovement CameraCS;
+
     public int maxMonsterNum = 0;
     public int deadMonsterNum = 0;
 
@@ -58,6 +60,7 @@ public class GameManager : MonoBehaviour
 
         //TODO: if GameObject player is available -> delete
         PlayerTransform = GameObject.FindWithTag("Player").transform;
+        CameraCS = Camera.main.GetComponent<CameraMovement>();
     }
 
     public void Start()
@@ -157,6 +160,7 @@ public class GameManager : MonoBehaviour
             eWaveType = WAVETYPE.SHOP;
             player.transform.SetParent(shop.transform);
             player.transform.position = new Vector3(0, 28, 0);
+            CameraCS.LimitCameraArea();
         }
     }
 
