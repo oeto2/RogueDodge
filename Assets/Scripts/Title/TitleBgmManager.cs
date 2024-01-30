@@ -17,7 +17,7 @@ public class TitleBgmManager : MonoBehaviour
     private void Start()
     {
         StartTitleBGM();
-        SetBgmVolumeFromSlider();
+        SetBgmVoulme();
     }
 
     public void StartTitleBGM()
@@ -30,5 +30,10 @@ public class TitleBgmManager : MonoBehaviour
     {
         BGMAudioSource.volume = BgmVolumeSlider.value;
         TitleInfoManager.Instance.bgmVolume = BgmVolumeSlider.value;
+    }
+
+    public void SetBgmVoulme()
+    {
+        BGMAudioSource.volume = TitleInfoManager.Instance.bgmVolume;
     }
 }
