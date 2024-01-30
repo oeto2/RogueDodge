@@ -11,21 +11,13 @@ public class PlayerMovement : MonoBehaviour
     PlayerStats Stats;
     Rigidbody2D PlayerRigid;
     SpriteRenderer PlayerRenderer;
-    Camera PlayerCam;
     void Start()
     {
         Stats = GetComponent<PlayerStats>();
         PlayerRigid = GetComponent<Rigidbody2D>();
         PlayerRenderer = transform.Find("PlayerSprite").GetComponent<SpriteRenderer>();
-        PlayerCam = Camera.main;
         if (!PlayerRigid) Debug.Log("PlayerMovement.cs : Rigidbody is Null!");
         if (!PlayerRenderer) Debug.Log("PlayerMovement.cs : SpriteRenderer is Null!");
-        if (!PlayerCam) Debug.Log("PlayerMovement.cs : PlayerCam is Null");
-        else
-        {
-            //Main camera attribution to the player.
-            PlayerCam.transform.parent = transform;
-        }
         onMove = true;
     }
 

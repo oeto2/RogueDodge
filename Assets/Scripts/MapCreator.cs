@@ -8,17 +8,20 @@ public class MapCreator : MonoBehaviour
     [SerializeField] List<GameObject> maps;
     int prevMap = 0;
     bool isFirst = true;
+    CameraMovement CameraCS;
 
     public static MapCreator instance;
 
     private void Awake()
     {
         instance = this;
+        CameraCS = Camera.main.GetComponent<CameraMovement>();
     }
     // Start is called before the first frame update
     void Start()
     {
         CreateNewMap();
+        CameraCS.LimitCameraArea();
     }
 
     GameObject CreateNewMap()
@@ -36,7 +39,6 @@ public class MapCreator : MonoBehaviour
         prevMap = rand;
         GameObject newMap = Instantiate(maps[rand]);
         GameManager.Instance.curMap = newMap;
-
         GameManager.Instance.Teleport(true);
         isFirst = false;
 
@@ -51,6 +53,7 @@ public class MapCreator : MonoBehaviour
         int newX = GetMapSize();
 
         newMap.transform.position = new Vector3(curPosition + (curX + newX) / 2 + 5, 0, 0);
+        CameraCS.LimitCameraArea();
     }
 
     int GetMapSize()
