@@ -12,6 +12,7 @@ public class ShopInteraction : InteractableObject
         if (GameObject.Find("ShopUI") == null) ShopUI = Instantiate(ShopUIPrefeb);
         else ShopUI = GameObject.Find("ShopUI");
         ShopComponent = ShopUI.GetComponent<Shop>();
+        if (ShopUI.activeSelf) ShopUI.SetActive(false);
 
         InteractionEvent += OnShopUI;
     }
