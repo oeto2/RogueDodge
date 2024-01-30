@@ -69,9 +69,10 @@ public class BossMonsterAttack_2 : MonoBehaviour
             //int idx = random.Next(0, attackPatterns.Count);
             AttackPattern attack = attackPatterns[idx];
             attack();
+            idx--;
             yield return new WaitForSeconds(7);
         }
-        idx--;
+        
     }
 
 
