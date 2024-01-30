@@ -159,4 +159,10 @@ public class GameManager : MonoBehaviour
             player.transform.position = new Vector3(0, 28, 0);
         }
     }
+
+    IEnumerator TeleportAnimation()
+    {
+        //TODO: Player sprite alpha change animation for teleport
+        yield return new WaitForSeconds(3.0f);
+    }
 }
