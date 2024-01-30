@@ -50,6 +50,7 @@ public class PlayerStats : MonoBehaviour
     //bool
     public bool isDead { get { return hp <= 0; } }
 
+    [SerializeField] Animator anim;
     private void Start()
     {
         hp = currentMaxHp;
@@ -77,6 +78,7 @@ public class PlayerStats : MonoBehaviour
         AttackComponent.onAttack = false;
         MoveComponent.onMove = false;
         Debug.Log("Player is Dead");
+        anim.SetTrigger("Dead");
     }
     public void ItemBuff(BuffItem _buffItem)
     {
