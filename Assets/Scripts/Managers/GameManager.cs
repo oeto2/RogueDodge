@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public enum GAMESTATE
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     public GameObject curMap;
     public GameObject player;
     public GameObject shop;
+    public GameObject PlayerDeadPanel;
 
     CameraMovement CameraCS;
 
@@ -51,11 +53,6 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-        }
-        else
-        {
-            if (Instance != this)
-                Destroy(this.gameObject);
         }
 
         //TODO: if GameObject player is available -> delete
@@ -147,7 +144,7 @@ public class GameManager : MonoBehaviour
         {
             if (stageNum > 3)
                 MainBgmManager.Instance.PlayStageBGM(3);
-            else 
+            else
                 MainBgmManager.Instance.PlayStageBGM(stageNum);
 
             eWaveType = WAVETYPE.NORMAL;
@@ -164,9 +161,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator TeleportAnimation()
-    {
-        //TODO: Player sprite alpha change animation for teleport
-        yield return new WaitForSeconds(3.0f);
-    }
+    public void ShowPlayerDeadPanel() => PlayerDeadPanel.SetActive(true);
+
+    public void LoadMainScene() => SceneManager.LoadScene("MainScene");
 }
