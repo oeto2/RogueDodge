@@ -19,7 +19,6 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] float maxLimitX = 0;
     [SerializeField] float minLimitY = 0;
     [SerializeField] float maxLimitY = 0;
-    
     void Start()
     {
         PlayerTransform = GameManager.Instance.PlayerTransform;
@@ -44,7 +43,15 @@ public class CameraMovement : MonoBehaviour
             float ly = (bounds.size.y / 2) - cameraHeight;
             float ClampY = Mathf.Clamp(transform.position.y, mapPos.y + (bounds.center.y - ly) + minLimitY, mapPos.y + (bounds.center.y + ly) + maxLimitY);
 
-            transform.position = new Vector3(ClampX, ClampY, cameraPos.z);
+
+            if (lx >= 0 && ly >= 0)
+                transform.position = new Vector3(ClampX, ClampY, cameraPos.z);
+            else if (lx < 0)
+                transform.position = new Vector3(mapPos.x + bounds.center.x + minLimitX, ClampY, cameraPos.z);
+            else if (ly < 0)
+                transform.position = new Vector3(ClampX, mapPos.y + bounds.center.y + minLimitY, cameraPos.z);
+            else
+                transform.position = new Vector3(mapPos.x + bounds.center.x + minLimitX, mapPos.y + bounds.center.y + minLimitY, cameraPos.z);
         }
     }
 
