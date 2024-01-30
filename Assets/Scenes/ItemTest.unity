@@ -141,6 +141,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1082281267}
+    - target: {fileID: -1492829425155034770, guid: 66b69b9d9f65b23479acaae1f1744ae8,
+        type: 3}
+      propertyPath: PlayerDeadPanel
+      value: 
+      objectReference: {fileID: 6193984349006880884}
     - target: {fileID: 4551828443901298892, guid: 66b69b9d9f65b23479acaae1f1744ae8,
         type: 3}
       propertyPath: m_Name
@@ -247,11 +252,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5049843496740639949, guid: 9a18ffa00c329ef4b93acca2cc98b10e,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5049843496740639949, guid: 9a18ffa00c329ef4b93acca2cc98b10e,
         type: 3}
@@ -617,6 +617,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop
       objectReference: {fileID: 0}
+    - target: {fileID: 2502210528493009933, guid: 6a60dc1b7c9b1ad469ea33aa9b2a4e28,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6148601829856685669, guid: 6a60dc1b7c9b1ad469ea33aa9b2a4e28,
         type: 3}
       propertyPath: m_RootOrder
@@ -904,11 +909,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2227365225962947466, guid: 52915b70e5e180d47b52ff7fa39e6dc9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3520476221970817307, guid: 52915b70e5e180d47b52ff7fa39e6dc9,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -989,6 +989,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 122688338}
+    - target: {fileID: 7152406615679443426, guid: 52915b70e5e180d47b52ff7fa39e6dc9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadTitleScene
+      objectReference: {fileID: 0}
     - target: {fileID: 8214384895714122355, guid: 52915b70e5e180d47b52ff7fa39e6dc9,
         type: 3}
       propertyPath: m_Camera
@@ -1004,6 +1009,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52915b70e5e180d47b52ff7fa39e6dc9, type: 3}
+--- !u!1 &6193984349006880884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2227365225962947466, guid: 52915b70e5e180d47b52ff7fa39e6dc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 6193984349006880883}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7951392791676571160
 PrefabInstance:
   m_ObjectHideFlags: 0
