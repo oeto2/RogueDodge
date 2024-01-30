@@ -13,7 +13,9 @@ public class MonsterProjectile : MonoBehaviour
 
     public MonsterStats monsterStats;
     public GameObject particle_Spark;
-    
+    public GameObject crushEffect;
+
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -39,7 +41,10 @@ public class MonsterProjectile : MonoBehaviour
     {
         monsterStats = _monsterStats;
     }
-
+    public void SetSpeed(float _speed)
+    {
+        projectileSpeed = _speed;
+    }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,12 +57,18 @@ public class MonsterProjectile : MonoBehaviour
             }
          
             collision.gameObject.GetComponent<PlayerStats>().PlayerDamaged(damage);
+            if(crushEffect != null)
+            {
+            Destroy(Instantiate(crushEffect, transform.position, Quaternion.identity), 0.5f);
+            }
             Destroy(gameObject);
             //todo -Create ObjectPool, Recycling projectile 
         }
         else
         {
-           Destroy(gameObject);
+            Destroy(Instantiate(crushEffect, transform.position, Quaternion.identity), 0.5f);
+            Destroy(gameObject);
+
         }
      
     }
