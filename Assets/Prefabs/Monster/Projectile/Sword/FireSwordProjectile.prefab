@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 960013665076497870}
   - component: {fileID: 9089058983330981612}
   - component: {fileID: 604221105317146338}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: FireSwordProjectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 7379625278242979885}
   - component: {fileID: 4881127825239129129}
   - component: {fileID: 2760664798975153627}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

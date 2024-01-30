@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6587611646659260320}
   - component: {fileID: 8593558319911129720}
   - component: {fileID: 1290107948420800815}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: IceStaffProjectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5490468748744003685}
   - component: {fileID: 7472656169174797737}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -34,7 +34,7 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D _collision)
     {
         //Command to "false" your "Active" if you currently collide with any collider other than the player. Modified since then
-        if (_collision.gameObject.tag != "Player" && _collision.gameObject.tag != "Projectile")
+        if (_collision.tag != "Player" && _collision.tag != "Projectile" && _collision.tag != "MonsterProjectile")
         {
             switch (_collision.tag)
             {

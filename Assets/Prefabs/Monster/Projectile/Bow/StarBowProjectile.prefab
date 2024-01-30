@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 617930982059520370}
   - component: {fileID: 7375614933919984977}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7113050337030611709}
   - component: {fileID: 7554110631409021560}
   - component: {fileID: 5529955906856783599}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: StarBowProjectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
