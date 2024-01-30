@@ -50,7 +50,7 @@ public class BossMonsterAttack_2 : MonoBehaviour
         attackPatterns.Add(AttackPattern_3);
         attackPatterns.Add(AttackPattern_4);
         player = GameManager.Instance.PlayerTransform.gameObject;
-        idx = attackPatterns.Count;
+        idx = attackPatterns.Count-1;
         StartCoroutine(OnAttackCo());
     }
     

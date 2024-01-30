@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3981573797703036082}
   - component: {fileID: 4519616243561023508}
   - component: {fileID: 3626944537278621203}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4853,9 +4853,9 @@ GameObject:
   - component: {fileID: 6742198545635561294}
   - component: {fileID: 1456143141731647216}
   - component: {fileID: 8735295467586563120}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Laser
-  m_TagString: Untagged
+  m_TagString: MonsterProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4875,7 +4875,7 @@ Transform:
   - {fileID: 3981573797703036082}
   - {fileID: 2163150351454859272}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &598200514587645902
 SpriteRenderer:
@@ -5051,7 +5051,7 @@ GameObject:
   - component: {fileID: 2163150351454859272}
   - component: {fileID: 2684971524645057730}
   - component: {fileID: 8132615369284345524}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
