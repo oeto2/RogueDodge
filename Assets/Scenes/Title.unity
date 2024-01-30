@@ -534,6 +534,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1508751987}
+        m_TargetAssemblyTypeName: BgmSlider, Assembly-CSharp
+        m_MethodName: RefreshSliderValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &224792812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,8 +804,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676d166d1391bf34ebe82ab83b84f019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmVolume: 0
-  effectVolume: 0
+  bgmVolume: 0.75
+  effectVolume: 0.75
 --- !u!1 &372456886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 477376352}
   - component: {fileID: 477376353}
+  - component: {fileID: 477376354}
   m_Layer: 5
   m_Name: Effect_Slider
   m_TagString: Untagged
@@ -1272,6 +1285,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &477376354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477376351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270213534f634974e83718c959323623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &487741077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,6 +1916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1508751985}
   - component: {fileID: 1508751986}
+  - component: {fileID: 1508751987}
   m_Layer: 5
   m_Name: BGM_Slider
   m_TagString: Untagged
@@ -1984,6 +2010,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1508751987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508751984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 385a5f7ea63bfc745815938e1b7a4573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1519610917
 GameObject:
   m_ObjectHideFlags: 0

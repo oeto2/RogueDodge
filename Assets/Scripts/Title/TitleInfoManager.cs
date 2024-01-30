@@ -6,8 +6,8 @@ public class TitleInfoManager : MonoBehaviour
 {
     public static TitleInfoManager Instance = null;
 
-    [Range(0f,1f)] public float bgmVolume;
-    [Range(0f, 1f)] public float effectVolume;
+    [Range(0f,1f)] public float bgmVolume = 0.7f;
+    [Range(0f, 1f)] public float effectVolume = 0.7f;
 
     public void Awake()
     {
@@ -23,7 +23,6 @@ public class TitleInfoManager : MonoBehaviour
         }
     }
 
-    public void SetBgmSoundVolumeInfo(float _volume) => bgmVolume = _volume;
-    public void SetEffectSoundVolumeInfo(float _volume) => effectVolume = _volume;
-
+    //public void SetBgmSoundVolumeInfo(float _volume) => bgmVolume = _volume;
+    //public void SetEffectSoundVolumeInfo(float _volume) => effectVolume = _volume;
 }

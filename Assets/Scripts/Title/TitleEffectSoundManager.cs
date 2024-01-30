@@ -13,11 +13,11 @@ public class TitleEffectSoundManager : MonoBehaviour
     {
         TitleEffectAudioSource = this.gameObject.GetComponent<AudioSource>();
     }
-
     private void Start()
     {
-        SetTitleEffectVolumeFromSlider();
+        SetEffectVoulme();
     }
+
 
     public void PlayButtonClickSound() => TitleEffectAudioSource.PlayOneShot(ButtonClickSound);
 
@@ -25,5 +25,10 @@ public class TitleEffectSoundManager : MonoBehaviour
     {
         TitleEffectAudioSource.volume = TitleEffectSoundVolume_Slider.value;
         TitleInfoManager.Instance.effectVolume = TitleEffectSoundVolume_Slider.value;
+    }
+
+    public void SetEffectVoulme()
+    {
+        TitleEffectAudioSource.volume = TitleInfoManager.Instance.bgmVolume;
     }
 }
