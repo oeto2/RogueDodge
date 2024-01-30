@@ -163,5 +163,5 @@ public class GameManager : MonoBehaviour
 
     public void ShowPlayerDeadPanel() => PlayerDeadPanel.SetActive(true);
 
-    public void LoadMainScene() => SceneManager.LoadScene("MainScene");
+    public void LoadTitleScene() => SceneManager.LoadScene("Title");
 }
