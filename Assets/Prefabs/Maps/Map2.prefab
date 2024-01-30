@@ -11400,8 +11400,8 @@ GameObject:
   - component: {fileID: 6570258260626367993}
   - component: {fileID: 4484157302726947424}
   - component: {fileID: 2341593169222771023}
-  - component: {fileID: 1323076897793994620}
   - component: {fileID: 8098706883851844733}
+  - component: {fileID: 2168254784681956702}
   m_Layer: 0
   m_Name: PortalPoint
   m_TagString: MapPortal
@@ -11657,8 +11657,20 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!19719996 &1323076897793994620
-TilemapCollider2D:
+--- !u!114 &8098706883851844733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5253365108907863533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9c46179a25ebc49a994b6e9592ec8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &2168254784681956702
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11689,22 +11701,19 @@ TilemapCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
-  m_UseDelaunayMesh: 0
---- !u!114 &8098706883851844733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5253365108907863533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9c46179a25ebc49a994b6e9592ec8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Offset: {x: 11.518226, y: 0.4704962}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.79947853, y: 0.57624716}
+  m_EdgeRadius: 0
 --- !u!1 &5783139432693336530
 GameObject:
   m_ObjectHideFlags: 0
@@ -13408,7 +13417,7 @@ Transform:
   - {fileID: 3882922320479772676}
   - {fileID: 6782768801586301359}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &7852505178564258586
 Grid:

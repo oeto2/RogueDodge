@@ -163,4 +163,10 @@ public class GameManager : MonoBehaviour
             CameraCS.LimitCameraArea();
         }
     }
+
+    IEnumerator TeleportAnimation()
+    {
+        //TODO: Player sprite alpha change animation for teleport
+        yield return new WaitForSeconds(3.0f);
+    }
 }

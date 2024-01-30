@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     PlayerStats Stats;
     Rigidbody2D PlayerRigid;
     SpriteRenderer PlayerRenderer;
+
+    //Animation
+    [SerializeField] Animator anim;
     void Start()
     {
         Stats = GetComponent<PlayerStats>();
@@ -39,7 +42,13 @@ public class PlayerMovement : MonoBehaviour
         Vector2 moveDirection = ((Vector2.right * inputX) + (Vector2.up * inputY)).normalized;
         //If the magnitude of the direction vector is greater than zero
         if (moveDirection.magnitude > 0)
+        {
             PlayerRigid.position += moveDirection * Stats.getSpeed * Time.deltaTime;
+            anim.SetBool("IsWalking", true);
+        } else
+        {
+            anim.SetBool("IsWalking", false);
+        }
     }
     void Look()
     {
