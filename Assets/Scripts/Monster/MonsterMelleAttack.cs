@@ -13,7 +13,6 @@ public class MonsterMelleAttack : MonoBehaviour
     private void Awake()
     {
         monsterController = GetComponent<MonsterController>();
-        monsterController.OnDeathEvent += HitboxOff;
     }
     private void Start()
     {
@@ -47,12 +46,8 @@ public class MonsterMelleAttack : MonoBehaviour
         else
         {
             monsterController.monsterStats.eMONSTER_STATE = MONSTER_STATE.IDLE;
+            hitBox.SetActive(false);
         }
-    }
-
-    void HitboxOff()
-    {
-        hitBox.SetActive(false);
     }
 
 }
