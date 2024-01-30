@@ -617,6 +617,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop
       objectReference: {fileID: 0}
+    - target: {fileID: 2502210528493009933, guid: 6a60dc1b7c9b1ad469ea33aa9b2a4e28,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6148601829856685669, guid: 6a60dc1b7c9b1ad469ea33aa9b2a4e28,
         type: 3}
       propertyPath: m_RootOrder
