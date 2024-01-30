@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1604991209059637794}
   - component: {fileID: 1084254006651135996}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 14227877027353248}
   - component: {fileID: 7012932451235880654}
   - component: {fileID: 231335619605273775}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: GreenStaffProjectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}

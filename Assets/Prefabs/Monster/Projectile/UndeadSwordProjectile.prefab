@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8406264833448900987}
   - component: {fileID: 6819060852104785979}
   - component: {fileID: 1995483219501595891}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: UndeadSwordProjectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 8628211254978382791}
   - component: {fileID: 6367808059151802500}
   - component: {fileID: 4840397886269232465}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

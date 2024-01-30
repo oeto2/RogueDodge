@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 539181038586082011}
   - component: {fileID: 9127543517209104254}
   - component: {fileID: 5239068395389829193}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: OldtSwordProjectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   range: 10
-  atk: 20
+  atk: 5
 --- !u!50 &9127543517209104254
 Rigidbody2D:
   serializedVersion: 4
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 716485509902233046}
   - component: {fileID: 7508337913007242288}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6329038778107581491}
   - component: {fileID: 2730465195914536002}
   - component: {fileID: 2252409781777390436}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: HolySwordProjectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 6390946799449206911}
   - component: {fileID: 2609771715147516805}
   - component: {fileID: 8957123102215794990}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

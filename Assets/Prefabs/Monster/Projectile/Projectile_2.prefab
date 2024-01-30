@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5812398974227677073}
   - component: {fileID: 7756913421652769680}
   - component: {fileID: 6674214078388642204}
-  m_Layer: 23
+  m_Layer: 17
   m_Name: Projectile_2
   m_TagString: MonsterProjectile
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ Transform:
   - {fileID: 3520784706604669900}
   - {fileID: 6619315304796453395}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1478143993440797903
 Rigidbody2D:
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 6619315304796453395}
   - component: {fileID: 4942619714962081919}
   - component: {fileID: 3245651742562048704}
-  m_Layer: 23
+  m_Layer: 17
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5092,7 +5092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3520784706604669900}
   - component: {fileID: 4504564257742160049}
-  m_Layer: 23
+  m_Layer: 17
   m_Name: "\uC0BC\uAC01\uD615"
   m_TagString: MonsterProjectile
   m_Icon: {fileID: 0}

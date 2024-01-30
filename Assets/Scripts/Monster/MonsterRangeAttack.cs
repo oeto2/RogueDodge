@@ -97,7 +97,7 @@ public class MonsterRangeAttack : MonoBehaviour
         float angle = Mathf.Atan2(monsterController.dir.y, monsterController.dir.x)*Mathf.Rad2Deg - 50;
         while(percent < duration)
         {
-            angle += 10;
+            angle += 30;
             percent += 0.1f;
             GameObject projectile = Instantiate(monsterStats.projectile, monsterStats.projectileSpawner.position, Quaternion.identity);
             projectile.GetComponent<MonsterProjectile>().SetMonsterStats(monsterStats);

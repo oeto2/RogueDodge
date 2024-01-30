@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2176566936921288118}
   - component: {fileID: 1067378639608637405}
   - component: {fileID: 7251027848042553303}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: OldBowProjectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2918761208689122399}
   - component: {fileID: 5866698137459706345}
-  m_Layer: 2
+  m_Layer: 18
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
