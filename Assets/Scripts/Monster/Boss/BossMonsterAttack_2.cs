@@ -22,7 +22,7 @@ public class BossMonsterAttack_2 : MonoBehaviour
     delegate void AttackPattern();
     List<AttackPattern> attackPatterns = new List<AttackPattern>();
     public List<GameObject> attackEffects = new List<GameObject>();
-
+    int idx;
     public List<GameObject> projectils = new List<GameObject>();
 
     public GameObject visibleAttackPoint;
@@ -50,23 +50,28 @@ public class BossMonsterAttack_2 : MonoBehaviour
         attackPatterns.Add(AttackPattern_3);
         attackPatterns.Add(AttackPattern_4);
         player = GameManager.Instance.PlayerTransform.gameObject;
-
+        idx = attackPatterns.Count;
         StartCoroutine(OnAttackCo());
     }
-
+    
     IEnumerator OnAttackCo()
     {
+        if (idx < 0)
+        {
+            idx = attackPatterns.Count-1;
+        }
         animator.SetTrigger(IsOpenning);
         bossUi.SetActiveUi();
         yield return new WaitForSeconds(2);
 
         while (monsterStats.eMONSTER_STATE != MONSTER_STATE.DIE)
         {
-            int idx = random.Next(0, attackPatterns.Count);
+            //int idx = random.Next(0, attackPatterns.Count);
             AttackPattern attack = attackPatterns[idx];
             attack();
             yield return new WaitForSeconds(7);
         }
+        idx--;
     }
 
 

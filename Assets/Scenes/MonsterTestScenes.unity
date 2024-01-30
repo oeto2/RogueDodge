@@ -158,6 +158,7 @@ MonoBehaviour:
   curMap: {fileID: 0}
   player: {fileID: 0}
   shop: {fileID: 0}
+  PlayerDeadPanel: {fileID: 0}
   maxMonsterNum: 0
   deadMonsterNum: 0
   curWaveNum: 1
