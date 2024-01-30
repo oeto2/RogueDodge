@@ -14523,6 +14523,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trap4Dir
       objectReference: {fileID: 0}
+    - target: {fileID: 550906457645372275, guid: 8b6c8f4017e37417199d764482bd05a5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3535412633815403794, guid: 8b6c8f4017e37417199d764482bd05a5,
         type: 3}
       propertyPath: m_RootOrder
@@ -14531,17 +14536,17 @@ PrefabInstance:
     - target: {fileID: 3535412633815403794, guid: 8b6c8f4017e37417199d764482bd05a5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.49
+      value: -6.01
       objectReference: {fileID: 0}
     - target: {fileID: 3535412633815403794, guid: 8b6c8f4017e37417199d764482bd05a5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.41
+      value: 0.82
       objectReference: {fileID: 0}
     - target: {fileID: 3535412633815403794, guid: 8b6c8f4017e37417199d764482bd05a5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.020867992
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3535412633815403794, guid: 8b6c8f4017e37417199d764482bd05a5,
         type: 3}
@@ -14577,6 +14582,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524254280990959108, guid: 8b6c8f4017e37417199d764482bd05a5,
+        type: 3}
+      propertyPath: shotRate
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
