@@ -66,7 +66,11 @@ public class MonsterProjectile : MonoBehaviour
         }
         else
         {
-            Destroy(Instantiate(crushEffect, transform.position, Quaternion.identity), 0.5f);
+            if(crushEffect != null)
+            {
+
+                Destroy(Instantiate(crushEffect, transform.position, Quaternion.identity), 0.5f);
+            }
             Destroy(gameObject);
 
         }
