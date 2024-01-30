@@ -36,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 6200521207940800436}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &493824889644633259
 BoxCollider2D:
@@ -70,7 +70,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00000011920929, y: -0.74266255}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -81,7 +81,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5691426, y: 0.4897738}
   m_EdgeRadius: 0
 --- !u!50 &642974633232891995
 Rigidbody2D:
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75aed38a6ab17114b8a2edcebcfa1eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eEquipWeaponType: 0
   defaultMaxHp: 100
   buffedMaxHp: 0
   hp: 0
@@ -171,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d01c8d67f8b7b943b5d6935e7c7637d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coin: 0
 --- !u!1 &5944227688969470768
 GameObject:
   m_ObjectHideFlags: 0
