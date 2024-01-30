@@ -10,6 +10,7 @@ public class BossMonsterAttack_1 : MonoBehaviour
     MonsterStats monsterStats;
     BossMonsterUIController bossUi;
     MonsterController monsterController;
+   
 
     readonly int IsOpenning = Animator.StringToHash("boss_openning");
     readonly int IsAttack_1 = Animator.StringToHash("attack_1");
@@ -35,7 +36,8 @@ public class BossMonsterAttack_1 : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         bossUi = GetComponent<BossMonsterUIController>();
-        monsterController= GetComponent<MonsterController>(); 
+        monsterController= GetComponent<MonsterController>();
+     
         random = new System.Random();
         monsterController.OnDeathEvent += DomeMonsterAllDie;
 
@@ -89,6 +91,7 @@ public class BossMonsterAttack_1 : MonoBehaviour
         int collisionDamage = 15;
         monsterStats.collisionDamage = collisionDamage;
         Vector2 playerPosition = player.transform.position;
+      
         StartCoroutine(AttackPattern_1Co(playerPosition));
         //monsterStats.collisionDamage = defaultCollisionDamge;
         
@@ -99,11 +102,12 @@ public class BossMonsterAttack_1 : MonoBehaviour
         animator.SetTrigger(IsAttack_1);
         while (parcent < 1)
         {
-            parcent += Time.deltaTime * 0.5f;
+            parcent += Time.deltaTime;
             _rigidbody.position = Vector2.Lerp(transform.position, playerPosition, parcent);
             yield return null;
         }
         attackEffect[0].Stop();
+
     }
 
     void AttackPatern_2_SpawnMonster()

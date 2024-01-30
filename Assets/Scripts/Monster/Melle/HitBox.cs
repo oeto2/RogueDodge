@@ -11,6 +11,7 @@ public class HitBox : MonoBehaviour
         {
             GameManager.Instance.PlayerTransform.GetComponent<PlayerStats>().PlayerDamaged(damage);
             gameObject.SetActive(false);
+           
         }
     }
 }

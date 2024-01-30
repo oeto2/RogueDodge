@@ -4891,7 +4891,7 @@ Transform:
   - {fileID: 134369611797159153}
   - {fileID: 2443240894110654743}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1426749989776423773
 GameObject:
@@ -5534,8 +5534,8 @@ MonoBehaviour:
   collisionDamage: 5
   speed: 0
   followRange: 3
-  attackRange: 3
-  attackCoolTime: 1
+  attackRange: 0
+  attackCoolTime: 1000
   IsAttacking: 0
   projectileSpawner: {fileID: 0}
   target:
@@ -5600,7 +5600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitBox: {fileID: 6110427026190960608}
-  attackCooltime: 100
+  attackCooltime: 0
 --- !u!114 &4556229396002156758
 MonoBehaviour:
   m_ObjectHideFlags: 0
