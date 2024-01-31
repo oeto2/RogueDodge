@@ -1,6 +1,7 @@
 ## Time Keeper
 
-![제목 없음](https://github.com/oeto2/MakeZep/assets/118743238/d187fba5-9f2a-4c90-bd42-f309ee877839)  
+![Title](https://github.com/oeto2/RogueDodge/assets/118743238/8e547c0c-56f0-47cf-83c4-c25838f9ccaf)
+![Battle](https://github.com/oeto2/RogueDodge/assets/118743238/65236de8-3acd-4f9d-9e4b-73352df8e7a8)
 
 ## 🙋‍♀️ 개요
 - 프로젝트 이름 : The Time Keeper
