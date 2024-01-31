@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
         //TODO: Get CurrentMonsterNum to Map Obj
         //curMonsterNum = curMap.GetComponent<>;
 
-        if (curWaveNum < targetWaveNum)
+        if (curWaveNum <= targetWaveNum)
             curWaveNum++;
         else
         {

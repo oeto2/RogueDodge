@@ -35,7 +35,7 @@ public class SpawnManager : MonoBehaviour
 
         if (!IsClear)
         {
-            if (round <= currentRound)
+            if (round < currentRound)
             {
                 int ran = Random.Range(0, bossMonsters.Count);
                 Instantiate(bossMonsters[ran], transform.position, Quaternion.identity);

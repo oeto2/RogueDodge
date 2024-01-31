@@ -56,16 +56,18 @@ public class BossMonsterAttack_2 : MonoBehaviour
     
     IEnumerator OnAttackCo()
     {
-        if (idx < 0)
-        {
-            idx = attackPatterns.Count-1;
-        }
+        
         animator.SetTrigger(IsOpenning);
         bossUi.SetActiveUi();
         yield return new WaitForSeconds(2);
 
         while (monsterStats.eMONSTER_STATE != MONSTER_STATE.DIE)
         {
+            if (idx < 0)
+            {
+                idx = attackPatterns.Count - 1;
+            }
+
             //int idx = random.Next(0, attackPatterns.Count);
             AttackPattern attack = attackPatterns[idx];
             attack();
