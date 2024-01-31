@@ -3,7 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Projectile
+  - Monster
+  - MonsterProjectile
+  - MonsterHitBox
+  - Portal
+  - ItemSpawn
+  - Item
+  - BattleItem
+  - UseItem
+  - BuffItem
+  - MapPortal
+  - ShopPortal
+  - Interactable
   layers:
   - Default
   - TransparentFX
@@ -22,18 +35,18 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - MonsterProjectile
+  - Projectile
   - 
   - Layer 1
   - Layer 2
   - Layer 3
   - 
+  - Monster
+  - Player
+  - Coin
   - 
-  - 
-  - 
-  - 
-  - 
+  - Interactable
   - 
   - 
   - 
