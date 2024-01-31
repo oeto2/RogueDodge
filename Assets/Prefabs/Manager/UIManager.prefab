@@ -250,7 +250,7 @@ Transform:
   - {fileID: 7422115955304376538}
   - {fileID: 6732506183727630549}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3991573183263524159
 MonoBehaviour:
@@ -465,7 +465,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadMainScene
+        m_MethodName: LoadTitleScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -617,6 +617,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameStatusCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 278683413583405428, guid: 54c5a132898841347a3aab95a5e9b474,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816046363089959162, guid: 54c5a132898841347a3aab95a5e9b474,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330876938942090508, guid: 54c5a132898841347a3aab95a5e9b474,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5740111701183398862, guid: 54c5a132898841347a3aab95a5e9b474,
         type: 3}
       propertyPath: m_Pivot.x
@@ -730,6 +745,16 @@ PrefabInstance:
     - target: {fileID: 6231072531956918928, guid: 54c5a132898841347a3aab95a5e9b474,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7301840854984565069, guid: 54c5a132898841347a3aab95a5e9b474,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076125878475103673, guid: 54c5a132898841347a3aab95a5e9b474,
+        type: 3}
+      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

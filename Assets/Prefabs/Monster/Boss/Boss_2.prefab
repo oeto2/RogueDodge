@@ -58546,7 +58546,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2116191217504479651}
   m_FillRect: {fileID: 1144331770057158511}
   m_HandleRect: {fileID: 0}
@@ -58623,7 +58623,7 @@ Transform:
   - {fileID: 558902577213214725}
   - {fileID: 6752578397010039756}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8706222674779240965
 GameObject:
