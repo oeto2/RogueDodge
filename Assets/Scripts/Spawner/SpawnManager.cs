@@ -35,7 +35,7 @@ public class SpawnManager : MonoBehaviour
 
         if (!IsClear)
         {
-            if (round < currentRound)
+            if (GameManager.Instance.eWaveType == WAVETYPE.BOSS)
             {
                 int ran = Random.Range(0, bossMonsters.Count);
                 Instantiate(bossMonsters[ran], transform.position, Quaternion.identity);
@@ -44,7 +44,6 @@ public class SpawnManager : MonoBehaviour
             }
             else
             {
-                currentRound++;
                 foreach (GameObject spawner in spawnerList)
                 {
                     spawner.GetComponent<Spawner>().RunSpawn(spawnAmount, spawnMonsters);

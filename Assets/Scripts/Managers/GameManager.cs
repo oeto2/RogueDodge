@@ -58,12 +58,14 @@ public class GameManager : MonoBehaviour
         //TODO: if GameObject player is available -> delete
         PlayerTransform = GameObject.FindWithTag("Player").transform;
         CameraCS = Camera.main.GetComponent<CameraMovement>();
+
+        WaveClearEvent += ResetMonsterData;
+        WaveClearEvent += WaveClear;
     }
 
     public void Start()
     {
-        WaveClearEvent += ResetMonsterData;
-        WaveClearEvent += WaveClear;
+       
     }
 
     public void CallWaveClearEvent()
@@ -109,13 +111,12 @@ public class GameManager : MonoBehaviour
     {
         eGameState = GAMESTATE.CLEAR;
         deadMonsterNum = 0;
-
+        
+        curWaveNum++;
         //TODO: Get CurrentMonsterNum to Map Obj
         //curMonsterNum = curMap.GetComponent<>;
 
-        if (curWaveNum <= targetWaveNum)
-            curWaveNum++;
-        else
+        if (curWaveNum > targetWaveNum)
         {
             eWaveType = WAVETYPE.BOSS;
             StageStatusUI.Instance.ChangeWaveStatusImageToBoss();

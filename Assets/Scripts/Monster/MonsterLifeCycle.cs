@@ -24,9 +24,13 @@ public class MonsterLifeCycle : MonoBehaviour
 
     void Hit()
     {
+        StartCoroutine(de());
         Death();
     }
-
+    IEnumerator de()
+    {
+        yield return new WaitForSeconds(0.01f);
+    }
     void Death()
     {
         if(monsterStats.hp <= 0 && monsterStats.eMONSTER_STATE != MONSTER_STATE.DIE)
