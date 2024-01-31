@@ -1,6 +1,8 @@
 ## Time Keeper
+<p>$\bf\color{#D3D3D3}클릭\ 시\ 시연\ 영상으로\ 이동$</p>
 
-![Title](https://github.com/oeto2/RogueDodge/assets/118743238/8e547c0c-56f0-47cf-83c4-c25838f9ccaf)
+[![Title](https://github.com/oeto2/RogueDodge/assets/118743238/8e547c0c-56f0-47cf-83c4-c25838f9ccaf)](https://www.youtube.com/watch?v=c4ySjISqRx0&feature=youtu.be)
+
 
 ## 🙋‍♀️ 개요
 - 프로젝트 이름 : The Time Keeper
